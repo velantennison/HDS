@@ -1,0 +1,460 @@
+img{
+
+    width: 90%;
+    margin-left: 4%;
+  }
+      .row .col-2{
+        border: 2px solid rgb(243, 228, 216);
+        height: 900px;
+        
+        margin-top: 2%;
+      }
+
+    
+   
+  
+      
+
+
+      .row .col-2 button{
+        margin-left: 12%;
+      }
+
+     
+     
+      button {
+  display: inline-block;
+  /* background-color: #1b3266; */
+  border-radius: 10px;
+  /* border: 4px double #cccccc; */
+  border:4px double #1b3266;;
+  color: black;
+  text-align: center;
+  
+  font-size: 15px;
+
+  height: 60px;
+  width: 200px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-top: 4%;
+}
+
+ button :hover,button:active{background-color: turquoise;}
+      
+/* Full-width input fields */
+input[type=text], input[type=password] {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+
+button:hover {
+opacity: 0.8;
+}
+
+
+.container {
+padding: 16px;
+}
+
+span.psw {
+float: right;
+padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+background-color: #fefefe;
+margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+border: 1px solid #888;
+width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+position: absolute;
+right: 25px;
+top: 0;
+color: #000;
+font-size: 35px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: red;
+cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+-webkit-animation: animatezoom 0.6s;
+animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+from {-webkit-transform: scale(0)} 
+to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+from {transform: scale(0)} 
+to {transform: scale(1)}
+}
+
+
+#second_div,#third_div,#fourth_div,#fifth_div,#tenth_div,#eleventh_div,#nineth_div,#eight_div{
+
+  height: 800px;
+  width: 20%;
+  margin-left: 4%;
+  margin-top: 2%;
+  font-family: sans-serif;
+  border: 1px solid silver;
+}
+
+#second_div h1{
+ color: teal;
+ margin-left: 10%;
+ margin-top: 8%;
+ font-weight: bold;
+}
+
+#third_div h1{
+  color: teal;
+  margin-left: 10%;
+  margin-top: 8%;
+  font-weight: bold;
+ }
+
+ #fourth_div h1{
+  color: teal;
+  margin-left: 10%;
+  margin-top: 8%;
+  font-weight: bold;
+ }
+
+ #fifth_div h1{
+  color: teal;
+  margin-left: 10%;
+  margin-top: 8%;
+  font-weight: bold;
+  
+ }
+ 
+ #eleventh_div h1{
+  color: teal;
+  margin-left: 10%;
+  margin-top: 8%;
+  font-weight: bold;
+ }
+
+ #tenth_div h1{
+  color: teal;
+  margin-left: 10%;
+  margin-top: 8%;
+  font-weight: bold;
+ }
+
+ #nineth_div h1{
+  color: teal;
+  margin-left: 10%;
+  margin-top: 8%;
+  font-weight: bold;
+ }
+#eight_div h1{
+
+color: teal;
+margin-left: 10%;
+margin-top: 8%;
+font-weight: bold;
+}
+
+#second_div h2{
+  
+  margin-left: 15%;
+ }
+ 
+ #third_div h2{
+   
+   margin-left: 15%;
+  }
+ 
+  #fourth_div h2{
+   
+   margin-left: 15%;
+  }
+ 
+  #fifth_div h2{
+   
+   margin-left: 15%;
+   
+  }
+  
+  #eleventh_div h2{
+   
+   margin-left: 15%;
+  }
+ 
+  #tenth_div h2{
+   
+   margin-left: 15%;
+  }
+ 
+  #nineth_div h2{
+   
+   margin-left: 15%;
+  }
+ #eight_div h2{
+ 
+ 
+ margin-left: 15%;
+ }
+#second_div p{
+
+  
+  margin-left: 20%;
+  }
+  #second_div li{
+
+  
+    margin-left: 7%;
+    }
+
+    #third_div p{
+
+  
+      margin-left: 20%;
+      }
+      #third_div li{
+    
+      
+        margin-left: 7%;
+        }
+        #fourth_div p{
+
+  
+          margin-left: 20%;
+          }
+          #fourth_div li{
+        
+          
+            margin-left: 7%;
+            }
+            #fifth_div p{
+
+  
+              margin-left: 20%;
+              }
+              #fifth_div li{
+            
+              
+                margin-left: 7%;
+                }
+
+                #eight_div p{
+
+  
+                  margin-left: 20%;
+                  }
+                  #eight_div li{
+                
+                  
+                    margin-left: 7%;
+                    }
+                    #nineth_div p{
+
+  
+                      margin-left: 20%;
+                      }
+                      #nineth_div li{
+                    
+                      
+                        margin-left: 7%;
+                        }
+
+                        #tenth_div p{
+
+  
+                          margin-left: 20%;
+                          }
+                          #tenth_div li{
+                        
+                          
+                            margin-left: 7%;
+                            }
+                            #eleventh_div p{
+
+  
+                              margin-left: 20%;
+                              margin-top: 8%;
+                              }
+                              #eleventh_div li{
+                            
+                              
+                                margin-left: 7%;
+                                }
+                            
+                    
+            
+        
+
+
+.row #second_div li{list-style: none;
+  text-align-last: left;}
+.row #second_div li::before{
+        
+  content: "\00BB"; 
+  width: 5%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: ui-monospace;
+
+}
+
+.row #third_div li{list-style: none;
+  text-align-last: left;}
+.row #third_div li::before{
+        
+  content: "\00BB"; 
+  width: 5%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: ui-monospace;
+
+}
+.row #fourth_div li{list-style: none;
+  text-align-last: left;}
+.row #fourth_div li::before{
+        
+  content: "\00BB"; 
+  width: 5%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: ui-monospace;
+
+}
+
+.row #fifth_div li{list-style: none;
+  text-align-last: left;}
+.row #fifth_div li::before{
+        
+  content: "\00BB"; 
+  width: 5%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: ui-monospace;
+
+}
+
+.row #eight_div li{list-style: none;
+  text-align-last: left;}
+.row #eight_div li::before{
+        
+  content: "\00BB"; 
+  width: 5%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: ui-monospace;
+
+}
+
+.row #nineth_div li{list-style: none;
+  text-align-last: left;}
+.row #nineth_div li::before{
+        
+  content: "\00BB"; 
+  width: 5%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: ui-monospace;
+
+}
+
+.row #tenth_div li{list-style: none;
+  text-align-last: left;}
+.row #tenth_div li::before{
+        
+  content: "\00BB"; 
+  width: 5%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: ui-monospace;
+
+}
+
+.row #eleventh_div li{list-style: none;
+  text-align-last: left;}
+.row #eleventh_div li::before{
+        
+  content: "\00BB"; 
+  width: 5%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: ui-monospace;
+
+}
+
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+
+#second_div:hover, #second_div:active { background-color: #1b3266; cursor: pointer; font-weight: bold; color: white; }
+
+#tenth_div:hover, #tenth_div:active { background-color: #1b3266; cursor: pointer; font-weight: bold;color: white;}
+#third_div:hover, #third_div:active { background-color: #1b3266; cursor: pointer; font-weight: bold; color: white;}
+#fourth_div:hover, #fourth_div:active { background-color: #1b3266; cursor: pointer; font-weight: bold; color: white; }
+#fifth_div:hover, #fifth_div:active {  background-color: #1b3266; cursor: pointer; font-weight: bold; color: white; }
+#eleventh_div:hover, #sixth_div:active {  background-color: #1b3266; cursor: pointer; font-weight: bold; color: white; }
+#nineth_div:hover, #sixth_div:active { background-color: #1b3266;  cursor: pointer; font-weight: bold; color: white;}
+#eight_div:hover, #sixth_div:active {  background-color: #1b3266; cursor: pointer; font-weight: bold; color: white; }
+
+
+
+   
+@media screen and (max-width: 1080px) {
+span.psw {
+display: block;
+float: none;
+}
+.cancelbtn {
+width: 100%;
+}
+
+#second_div,#third_div,#fourth_div,#fifth_div,#tenth_div,#eleventh_div,#nineth_div,#eight_div{
+
+  height: 800px;
+  width: 100%;
+  margin-left: 4%;
+  margin-top: 5%;
+  font-family: sans-serif;
+  border: 1px solid silver;
+}
+}
+

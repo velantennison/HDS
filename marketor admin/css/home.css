@@ -1,0 +1,271 @@
+.content-wrapper>.content {
+    padding: 0rem;
+}
+
+    .cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin-top: 2px;
+}
+.card-single{
+display: flex;
+justify-content: space-between;
+background: #fff;
+padding: 2rem;
+border-radius: 2px;
+}
+
+.card-single div:last-child span{
+  font-size: 3rem;
+  color: white;
+  
+}
+.card-single div:first-child span {
+  color: var(--text-grey);
+}
+
+.card-single {
+  background: #2595af;
+}
+/* .card-single:last-child h1,
+.card-single:last-child div:first-child span,
+.card-single:last-child div:last-child span {
+  color: #fff;
+} */
+@media only screen and (max-width: 1023px){
+  .cards{
+      grid-template-columns: repeat(3, 1fr);
+      width: 1%;
+  }
+  .col-6{
+    max-width: 50%;
+  }
+  .inner h3{
+    font-size: 120%;
+  }
+  .inner h3,p {
+    padding: none;
+    margin: 0%;
+  }
+ 
+}
+@media only screen and  (max-width: 1023px) {
+  .cards {
+      grid-template-columns: repeat(2, 1fr);
+      width: 1%;
+  }
+}
+
+@media only screen and  (max-width: 768px) {
+  .cards {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0.1rem;
+      width: 1%;
+  }
+  .card-single{
+    margin-left: 12%;
+    width: 95%;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    padding-left: 11px;
+    height: 137px;
+  }
+}
+  
+  #staff_{
+    background: #ece5e7;
+    height : 120px;
+    margin-top: 1%;
+    border-bottom: 3px solid black;
+    border-radius: 12px;
+  }
+  #staff_1{
+    background: #ece5e7;
+    height : 120px;
+    margin-top: 1%;
+    border-bottom: 3px solid black;
+    border-radius: 12px;
+  }
+  #contact_div{
+    width: 14%; 
+    float:left;
+    margin-left: 10px;
+  }
+  #contact_div1{
+    width: 13%; 
+    float:left;
+    margin-left: 10px;
+  }
+  #roll_div{
+    width:10%;
+    float:left; 
+  }
+  #roll_div1{
+    width:14%;
+    float:left;
+  }
+  #pos_div{
+    width: 10%;
+    float:left;
+  }
+  #pos_div1{
+    width: 14%;
+    float:left;
+  }
+  #detail_div{
+    width:10%;
+    float:left;
+  }
+  #detail_div1{
+    width:14%;
+    float:left;
+  }
+  #Acc_div{ 
+    width:10%;
+    float:left;
+  }
+  #Acc_div1{ 
+    width:14%;
+    float:left;
+  }
+  #status_div{
+    width: 10%;
+    float:left;
+  }
+  #status_div1{
+    width: 14%;
+    float:left;
+  }
+ #completed_div{
+    width: 10%;
+    float:left; 
+  } 
+  #incompleted_div{
+    width:10%;
+    float:left;
+  } 
+  #salary_div{
+    width:5%;
+    float:left;
+  }
+  #button_div{
+    width : 10%;
+    float:left;
+  }
+  #button_div1{
+    width : 14%;
+    float:left;
+  }
+  #Block_1{
+    margin-left: 6%;
+    margin-top: 19%;
+    width: 40%;
+    border-radius: 13px;
+    color: white;
+    background-color: #0b32bd;
+  }
+  #Edit_1{
+    margin-left: 6%;
+    margin-top: 19%;
+    width: 40%;
+    color: white;
+    border-radius: 13px;
+    background-color: #0b32bd;
+  }
+  
+  @media only screen and  (max-width: 1023px){
+    #staff_{
+    background: #ece5e7;
+    min-height: 418px;
+    margin-top: 1%;
+    border-bottom: 3px solid black;
+    border-radius: 12px;
+    min-width: 90%;
+    }
+    #staff_1{
+    background: #ece5e7;
+    min-height: 355px;
+    margin-top: 1%;
+    border-bottom: 3px solid black;
+    border-radius: 12px;
+    min-width: 90%;
+    }
+    #contact_div1{
+    width: 100%;
+    margin-left: 10px;
+  }
+  #roll_div1{
+    width:100%;
+    margin-left: 10px;
+    
+  }
+  #pos_div1{
+    width: 100%;
+    margin-left: 10px;
+  }
+  #detail_div1{
+    width:100%;
+    margin-left: 10px;
+  }
+  #Acc_div1{ 
+    width:100%;
+    margin-left: 10px;
+  }
+  #status_div1{
+    width: 100%;
+    margin-left: 10px;
+  }
+  #button_div1{
+    width : 100%;
+    margin-left: 10px;
+  }
+
+
+ #contact_div{
+    width: 100%;
+    margin-left: 10px;
+  }
+  #roll_div{
+    width:100%;
+    margin-left: 10px;
+    
+  }
+  #pos_div{
+    width: 100%;
+    margin-left: 10px;
+  }
+  #detail_div{
+    width:100%;
+    margin-left: 10px;
+  }
+  #Acc_div{ 
+    width:100%;
+    margin-left: 10px;
+  }
+  #status_div{
+    width: 100%;
+    margin-left: 10px;
+  }
+ #completed_div{
+    width: 100%;
+    margin-left: 10px;
+  } 
+  #incompleted_div{
+    width:100%;
+    margin-left: 10px;
+  } 
+  #salary_div{
+    width:100%;
+    margin-left: 10px;
+  }
+  #button_div{
+    width : 100%;
+    margin-left: 10px;
+  }
+  #Block_1, #Edit_1 {
+    margin-left: 6%;
+    margin-top: 4%;
+    width: 40%;
+}
+  }
