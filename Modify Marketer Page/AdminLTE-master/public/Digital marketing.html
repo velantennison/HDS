@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hds Marketer</title>
+  <title>Hds Digital marketing</title>
+  <link href="css/digital.css" rel="stylesheet">
   <style>
     #mobile{
     height: 190px;
@@ -83,7 +84,22 @@ float: right;
   text-align: center;
   opacity: 0.5;
 }
-
+.btn3 {
+  font-size: 30px;
+  position: absolute;
+  top: 1165px;
+    left: 24.8%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color:#90b3e8;
+  color: black;
+  padding: 0px 15px;
+  border: none;
+  cursor: pointer;
+  
+  text-align: center;
+  opacity: 0.5;
+}
 
 .btn1:hover {
   background-color: black;
@@ -144,7 +160,7 @@ float: right;
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 </head>
-<body onload="myFunction()" class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -259,7 +275,7 @@ float: right;
               
           </li>
           <li class="nav-item">
-            <a href="add_new_projecy.html" class="nav-link active">
+            <a href="add_new_projecy.html" class="nav-link ">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                Add Projects
@@ -269,7 +285,7 @@ float: right;
            
           </li>
           <li class="nav-item">
-            <a href="Digital marketing.html" class="nav-link">
+            <a href="Digital marketing.html" class="nav-link active">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                Digital marketing
@@ -368,7 +384,6 @@ float: right;
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -382,57 +397,114 @@ float: right;
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-
                 <div class="card-body">
                   <label >Logo</label><br>
                   <div class="form-group" >
                     <div class="logo_div" >
-                  <img id="myimg" class="logo">
+                  <img id="logo_" class="logo">
                     </div>
-                  <button class="btn1" id="select">+</button>
+                  <button class="btn1" id="select_">+</button>
                 </div>
-
-                <label >Image</label><br>
-                  <div class="form-group" >  
-                    <div class="imA_div" >
-                  <img id="myimg1" class="imA">
+                <label>Banner Add</label><br>
+                  <div class="form-group">  
+                    <div class="imA_div">
+                  <img id="img_" class="imA">
                     </div>
-                  <button class="btn2" id="select">+</button>
+                  <button class="btn2" id="select1_">+</button>
                 </div>
-                
                   <div class="form-group">
-                    <label >Client Name</label>
-                    <input type="text" class="form-control" id="client_name1" placeholder="Enter Name">
+                    <label >Content</label>
+                    <textarea class="form-control" id="content_" placeholder="Enter Content..."></textarea>
+                    <!-- <input type="text" class="form-control" id="client_name1" placeholder="Enter Name"> -->
                   </div>
                   <div class="form-group">
-                    <label >Prefer color</label>
-                    <input type="text" class="form-control" id="description" placeholder="Description">
+                    <label >Domain</label>
+                    <input type="text" class="form-control" id="domain" placeholder="Domain...">
                   </div>
-                  <div class="form-group">
-                    <label >Project Description</label>
-                    <input type="text" class="form-control" id="description" placeholder="Description">
+                  <!-- <div class="form-group">
+                    <label >Preview</label>
+                    <button id="preview">Click Here</button>
+              <input type="button" class="form-control" id="description" placeholder="Preview"> 
                   </div>
+                  <div class="preview">
+                    <img id="img1_" alt="Snow" style="width:100%;">
+                    <div class="bottom-left">Bottom Left
+                    </div>
+                    <div class="top-left">
+                      <img id="logo1_" class="preview_logo">
+                    </div>
+                    <div class="top-right">Top Right</div>
+                    <div class="bottom-right">Bottom Right</div>
+                    <div class="centered">Centered</div>
+                  </div>  -->
                   <div class="form-group">
                     <label >Client Phone Number</label>
-                    <input type="text" class="form-control" id="phonenum" placeholder="Enter Mobile Number">
+                    <input type="text" class="form-control" id="phonenum_" placeholder="Enter Mobile Number">
                   </div>
                   <div class="form-group">
                     <label >Client Mail Id</label>
-                    <input type="email" class="form-control" id="mail" placeholder="Enter Mail id">
+                    <input type="email" class="form-control" id="mail_" placeholder="Enter Mail id">
                   </div>
                   <div class="form-group">
                     <label >Shop Address</label>
-                    <input type="text" class="form-control" id="address_" placeholder="Enter Address">
+                    <input type="text" class="form-control" id="address1_" placeholder="Enter Address">
                   </div>
                   <div class="form-group">
                     <label >Client Address</label>
-                    <input type="text" class="form-control" id="address_" placeholder="Enter Address">
+                    <input type="text" class="form-control" id="s_address_" placeholder="Enter Address">
                   </div>
                   <div class="form-group">
-                    <label >Month and Year</label>
-                    <input type="text" class="form-control" id="demo" >
+                    <label>video add (optional)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <button class="btn btn-primary" id="click_">click here..</button>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" id="add_video" style="display: none;">
+                    <video id="video_" controls autoplay>
+                      <source  type="video/mp4"></video>
+
+                    <button class="btn3" id="v_select">+</button>
+                  </div>
+                  
+                  <div class="form-group" id="video_div" style="display: none;">
+                    <input type="radio" id="video1" >
+                    <video  controls autoplay>
+                      <source src="images/lux.mp4" type="video/mp4">
+                      
+                      Your browser does not support the video tag.
+                    </video>
+                    <input type="radio" id="video2" >
+                    <video controls autoplay>
+                      <source src="images/lux1.mp4" type="video/mp4">
+                     
+                      Your browser does not support the video tag.
+                    </video>
+                    <input type="radio" id="video3" >
+                    <video controls autoplay>
+                      <source src="images/ponds.mp4" type="video/mp4">
+                      
+                      Your browser does not support the video tag.
+                    </video> 
+                   
+                    <input type="radio" id="video4" >
+                     <video controls autoplay>
+                      <source src="images/jewel.mp4" type="video/mp4">
+                      
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="form-group" id="zone_div" style="display: none;">
+                    <label >Zone</label>
+                    <input type="text" class="form-control" id="zone" value="upto 20 to 25km" disabled>
+                  </div>
+                  <div class="form-group" id="cost_div" style="display: none;">
+                    <label >Budget</label>
+                    <input type="text" class="form-control" id="budget" value="1200" onkeyup="gst1()">
+                   
+                    <label >GST</label>
+                    <input type="text" class="form-control" id="gst1_" value="216" disabled>
+                  </div>
+                  
+                  
+                  <!-- <div class="form-group">
                     <label >Choose Plan</label>
                     <select id="cur_plan" class="form-control" onclick="measure(this.value)">
                       <option>Choose</option>
@@ -445,25 +517,25 @@ float: right;
                       <option>SmartUp Plan</option>
                       <option>Custom Plan</option>
                     </select>
-                  </div>
-                  <div id="plan_" class="form-group" style="display: none;">
+                  </div> -->
+                  <!-- <div id="plan_" class="form-group">
                     <label >Plan Price</label>
                     <input type="text" class="form-control" id="Plan_price" >
                   </div>
-                  <div id="domain" class="form-group" style="display: none;">
+                  <div  class="form-group">
                     <label >Check Domain Here</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="https://domains.google/" class="btn btn-primary">Google Domain</a>
                   </div>
-                  <div id="domain1" class="form-group" style="display: none;">
+                  <div id="domain1" class="form-group" >
                     <label >Project Domain</label>
                     <input type="text" class="form-control" id="domain_" placeholder="Enter Domain Name">
                   </div>
-                  <div id="domain2" class="form-group" style="display: none;">
+                  <div id="domain2" class="form-group">
                     <label >Domain cost</label>
                     <input  type="number" class="form-control" id="domain_cost" placeholder="Enter Cost" onkeyup="gst()">
                     <label >GST</label>
                     <input  type="number" class="form-control" id="domain_GST" placeholder="Enter Cost">
-                  </div>
+                  </div> -->
                   <!-- <div class="form-group">
                     <label >File input</label>
                     <div class="input-group">
@@ -474,16 +546,15 @@ float: right;
                       
                     </div>
                   </div> -->
-                  
                 <!-- /.card-body -->
-                <div class="card-footer" id="payment_button" style="display: block;">
-                  <button type="submit" onclick="paymentProcess()" class="btn btn-primary" >Submit</button>
+                <div class="card-footer" id="payment_button" >
+                  <button type="submit" id="digital_payment" class="btn btn-primary" >Submit</button>
                 </div>
 
-                <div class="card-footer" id="submit_button" style="display: none;">
-                  <button type="submit" class="btn btn-primary"  onclick="datainsert()">Submit</button>
+                <!-- <div class="card-footer" id="submit_button" >
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-              
+               -->
             </div>
             <!-- /.card -->
 
@@ -546,7 +617,8 @@ float: right;
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
-<script src="js/payment.js"></script>
+<!-- <script src="js/payment.js"></script> -->
+<script src = "js/digital.js"></script>
 
 
   
@@ -555,7 +627,7 @@ $(function () {
   bsCustomFileInput.init();
 });
 </script>
-<script>
+<!-- <script>
 
 function measure(x1){
            
@@ -664,7 +736,7 @@ function measure(x1){
    input.click();
   } 
   
-</script>
+</script> -->
 <script src="js/logout.js"></script>
 
 </body>

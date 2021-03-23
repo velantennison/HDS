@@ -5,6 +5,10 @@ function gst(){
         document.getElementById("domain_GST").value = domaincost;
 }
 
+
+
+
+
 function paymentProcess(){
     var domainprice = document.getElementById("domain_cost").value;
 var price = document.getElementById("Plan_price").value;
@@ -112,24 +116,11 @@ function savetoDB(response){
 }
 
 
-var firebaseConfig = {
-    apiKey: "AIzaSyCMMQ4UxdvijiXdDf4r5eOwrt0cMypioOY",
-    authDomain: "marketerswebsite.firebaseapp.com",
-    databaseURL: "https://marketerswebsite-default-rtdb.firebaseio.com",
-    projectId: "marketerswebsite",
-    storageBucket: "marketerswebsite.appspot.com",
-    messagingSenderId: "649356297786",
-    appId: "1:649356297786:web:1a40270faa147fffe21703",
-    measurementId: "G-RC1XMVLDGX"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
 var user_email_fr_lg2;
 function myFunction() {
 
-    prod_no();
+    // prod_no();
     user_email_fr_lg2 =  localStorage.getItem("Email_from_login");
     document.getElementById('Marketer_Email').innerHTML = user_email_fr_lg2 ; 
 	
@@ -154,55 +145,3 @@ function myFunction() {
   document.getElementById("demo").value = current_month;
 }
 
-
-
-function datainsert() {
-    pnum = document.getElementById('prod_num').value;
-
-
-var uploadTask = firebase.storage().ref('Logo/'+ pnum).put(files[0]);
-uploadTask.on('state_changed', function(snapshot)
-      {
-          var progress = (snapshot.bytesTransfered / snapshot.totalBytes) * 100;
-          document.getElementById('UpProgress').innerHTML = 'upload : '+progress+'%';
-
-      }, 
-      function(){
-        uploadTask.snapshot.ref.getDownloadURL().then(function(url){
-            ImgUrl = url;
-
-  var Client_name_ = document.getElementById("client_name1").value;
-  var Project_color_ = document.getElementById("color").value;
-  var Project_Number_ = document.getElementById("prod_num").value;
-  var Project_description_ = document.getElementById("description").value;
-  var Client_number_ = document.getElementById("phonenum").value;
-  var Client_mail_ = document.getElementById("mail").value;
-  var Plan_ = document.getElementById("cur_plan").value;
-  var budget_price= document.getElementById("Plan_price").value;
-  var shop_address_ = document.getElementById("address_").value;
-  var Client_address_ = document.getElementById("address_").value;
-  var month_and_year_ = document.getElementById("demo").value;
-  var select_domain_ = document.getElementById("domain_").value;
-  var marketer_mob = localStorage.getItem("MOB");
-  
-firebase.database().ref('Projects/' + month_and_year_ + Client_number_).set({
-    Logo: ImgUrl,
-    Client_name:Client_name_,
-    Client_mail:Client_mail_,
-    Client_number:Client_number_,
-    Client_address:Client_address_,
-    Project_description:Project_description_,
-    select_domain:select_domain_,
-    month_and_year:month_and_year_,
-    Choosen_plan: Plan_,
-    Plan_price: budget_price,
-    Marketer_mobile:marketer_mob,
-    MARKETER_EMAIL: user_email_fr_lg2
-
-
-    
-});
-alert("Project added successfully");
-});
-})
-}

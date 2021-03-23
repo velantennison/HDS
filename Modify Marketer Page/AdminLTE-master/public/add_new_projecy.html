@@ -365,16 +365,16 @@ float: right;
                     <div class="logo_div" >
                   <img id="myimg" class="logo">
                 </div>
-                  <button class="btn1" id="select">+</button>
+                  <button class="btn1" id="select1">+</button>
                  
                 </div>
                   <div class="form-group">
                     <label >Client Name</label>
-                    <input type="text" class="form-control" id="client_name1" placeholder="Enter Name">
+                    <input type="text" class="form-control" id="client_name1" placeholder="Enter Name" onclick="prod_no()">
                   </div>
                   <div class="form-group">
                     <label >Project Number</label>
-                    <input type="text" class="form-control" id="prod_num" placeholder="color">
+                    <input type="text" class="form-control" id="prod_num" placeholder="Project Number">
                   </div>
                   <div class="form-group">
                     <label >Prefer color</label>
@@ -395,6 +395,10 @@ float: right;
                   <div class="form-group">
                     <label >Shop Address</label>
                     <input type="text" class="form-control" id="shop_address_" placeholder="Enter Address">
+                  </div>
+                  <div class="form-group">
+                    <label >GST</label>
+                    <input type="text" class="form-control" id="GST_" placeholder="Enter GST">
                   </div>
                   <div class="form-group">
                     <label >Client Address</label>
@@ -453,7 +457,7 @@ float: right;
                 </div>
 
                 <div class="card-footer" id="submit_button" style="display: none;">
-                  <button type="submit" class="btn btn-primary"  onclick="datainsert()">Submit</button>
+                  <button type="submit" class="btn btn-primary" id="data_insert" >Submit</button>
                 </div>
               
             </div>
@@ -499,9 +503,11 @@ float: right;
 <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 
 <!-- Page specific script -->
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-storage.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <!-- <script>
@@ -518,9 +524,24 @@ float: right;
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
-<script src="js/payment.js"></script>
 
 
+
+<!-- <script>
+var firebaseConfig = {
+    apiKey: "AIzaSyBHMZB5nJXtm3UAnVACsxR-LXyK8KtVdno",
+    authDomain: "hyper-mart-shopping.firebaseapp.com",
+    databaseURL: "https://hyper-mart-shopping-default-rtdb.firebaseio.com",
+    projectId: "hyper-mart-shopping",
+    storageBucket: "hyper-mart-shopping.appspot.com",
+    messagingSenderId: "306358878756",
+    appId: "1:306358878756:web:9de20019ab10ca65998eb1",
+    measurementId: "G-8FNG928M5F"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script> -->
+<script src="js/auth.js"></script>
   
 <script>
 $(function () {
@@ -621,33 +642,21 @@ function measure(x1){
       
     }
 
-    document.getElementById("select").onclick = function(e){
-      var input = document.createElement('input');
-      input.type = 'file';
-  input.onchange = e => {
-      files = e.target.files;
-      reader = new FileReader();
-      reader.onload = function()
-      {
-          document.getElementById("myimg").src = reader.result;
-      }
-      reader.readAsDataURL(files[0]);
-  }
-   input.click();
-  } 
+    
   
 
   function prod_no(){
-    alert("prod");
-    
-    var playersRef = firebase.database().ref("Projects/") ;
+
+   
+    var playersRef = firebase.database().ref('Projects1/') ;
     playersRef.on('value',getReq);
     function getReq(snap){
      var array = [];
         snap.forEach(keyReq => { 
-            var total = keyReq.val().Roll_number;
+            var total = keyReq.val().project_number;
+            console.log(total);
             var res = total.split('-');
-            var Number=res[1];
+            var Number=res[1];   
             var array_val = parseInt(Number);
             array.push(array_val);
             console.log(array);
@@ -655,7 +664,7 @@ function measure(x1){
             var high_=Math.max(...array);
             var project_1 = high_ + 1;
             var x3_ = "HDSECP";
-            var project_number =    x3_ + x1_[0] + '-' + project_1 ;
+            var project_number =    x3_ + '-' + project_1 ;
             console.log("project number :" + project_number);
             document.getElementById("prod_num").value = project_number;
          });
@@ -664,6 +673,8 @@ function measure(x1){
 
 </script>
 <script src="js/logout.js"></script>
+<script src="js/add.js"></script>
+<script src="js/payment.js"></script>
 
 </body>
 </html>
