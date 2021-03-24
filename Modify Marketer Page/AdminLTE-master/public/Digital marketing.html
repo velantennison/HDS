@@ -54,9 +54,9 @@ float: right;
 
 .btn1 {
   font-size: 30px;
-  position: absolute;
-  top: 235px;
-  left: 31.8%;
+  position: relative;
+  top: -27px;
+    left: 30.5%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color:#90b3e8;
@@ -70,9 +70,9 @@ float: right;
 }
 .btn2 {
   font-size: 30px;
-  position: absolute;
-  top: 448px;
-  left: 31.8%;
+  position: relative;
+  top: -27px;
+    left: 30.5%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color:#90b3e8;
@@ -86,9 +86,9 @@ float: right;
 }
 .btn3 {
   font-size: 30px;
-  position: absolute;
-  top: 1165px;
-    left: 24.8%;
+  position: relative;
+  top: -50px;
+    left: -151px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color:#90b3e8;
@@ -398,45 +398,7 @@ float: right;
               <!-- /.card-header -->
               <!-- form start -->
                 <div class="card-body">
-                  <label >Logo</label><br>
-                  <div class="form-group" >
-                    <div class="logo_div" >
-                  <img id="logo_" class="logo">
-                    </div>
-                  <button class="btn1" id="select_">+</button>
-                </div>
-                <label>Banner Add</label><br>
-                  <div class="form-group">  
-                    <div class="imA_div">
-                  <img id="img_" class="imA">
-                    </div>
-                  <button class="btn2" id="select1_">+</button>
-                </div>
-                  <div class="form-group">
-                    <label >Content</label>
-                    <textarea class="form-control" id="content_" placeholder="Enter Content..."></textarea>
-                    <!-- <input type="text" class="form-control" id="client_name1" placeholder="Enter Name"> -->
-                  </div>
-                  <div class="form-group">
-                    <label >Domain</label>
-                    <input type="text" class="form-control" id="domain" placeholder="Domain...">
-                  </div>
-                  <!-- <div class="form-group">
-                    <label >Preview</label>
-                    <button id="preview">Click Here</button>
-              <input type="button" class="form-control" id="description" placeholder="Preview"> 
-                  </div>
-                  <div class="preview">
-                    <img id="img1_" alt="Snow" style="width:100%;">
-                    <div class="bottom-left">Bottom Left
-                    </div>
-                    <div class="top-left">
-                      <img id="logo1_" class="preview_logo">
-                    </div>
-                    <div class="top-right">Top Right</div>
-                    <div class="bottom-right">Bottom Right</div>
-                    <div class="centered">Centered</div>
-                  </div>  -->
+
                   <div class="form-group">
                     <label >Client Phone Number</label>
                     <input type="text" class="form-control" id="phonenum_" placeholder="Enter Mobile Number">
@@ -454,37 +416,98 @@ float: right;
                     <input type="text" class="form-control" id="s_address_" placeholder="Enter Address">
                   </div>
                   <div class="form-group">
+                    <label >Domain</label>
+                    <input type="text" class="form-control" id="domain" placeholder="Domain...">
+                  </div>
+                
+                  
+                  <!-- image radio button -->
+                  <label>Image add </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           
+                    <input type="radio" name="Image" id="my_banner"  value="1250" onclick="image_cost()">&nbsp;Add My Banner&nbsp;&nbsp;
+                    <input type="radio" name="Image" id="new_banner" value="1500" onclick="image_cost()">&nbsp;Add New Banner
+                    <div class="form-group" id="image1_div" style="display: none;">
+                      <label>Banner Add</label><br>
+                      <div class="form-group">  
+                        <div class="imA_div">
+                      <img id="img_" class="imA">
+                        </div>
+                      <button class="btn2" id="select1_">+</button>
+                      </div>
+                    </div>
+                    <div class="form-group" id="image_div" style="display: none;">
+                      
+                  
+                          <label >Logo</label><br>
+                          <div class="form-group" >
+                            <div class="logo_div" >
+                          <img id="logo_" class="logo">
+                            </div>
+                          <button class="btn1" id="select_">+</button>
+                        </div>
+                      
+                        <div class="form-group">
+                          <label >Content</label>
+                          <textarea class="form-control" id="content_" placeholder="Enter Content..."></textarea>
+                          <!-- <input type="text" class="form-control" id="client_name1" placeholder="Enter Name"> -->
+                        </div>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label >Cost For Image Ad</label>
+                      <input type="text" class="form-control" id="cost_" placeholder="Cost for Image Ad.." disabled>
+                    </div>
+                  <!-- <div class="form-group">
+                    <label >Preview</label>
+                    <button id="preview">Click Here</button>
+                  <input type="button" class="form-control" id="description" placeholder="Preview"> 
+                  </div>
+                  <div class="preview">
+                    <img id="img1_" alt="Snow" style="width:100%;">
+                    <div class="bottom-left">Bottom Left
+                    </div>
+                    <div class="top-left">
+                      <img id="logo1_" class="preview_logo">
+                    </div>
+                    <div class="top-right">Top Right</div>
+                    <div class="bottom-right">Bottom Right</div>
+                    <div class="centered">Centered</div>
+                  </div>  -->
+                
+                  <div class="form-group">
                     <label>video add (optional)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   <button class="btn btn-primary" id="click_">click here..</button>
+                    <input type="checkbox" id="myCheck" onclick="check_()">
+
+                    <p id="click_">click here for video ad..</P>
                   </div>
                   <div class="form-group" id="add_video" style="display: none;">
-                    <video id="video_" controls autoplay>
+                    <video id="video_1" controls autoplay>
                       <source  type="video/mp4"></video>
 
                     <button class="btn3" id="v_select">+</button>
                   </div>
                   
                   <div class="form-group" id="video_div" style="display: none;">
-                    <input type="radio" id="video1" >
+                    <input type="radio" name="video"  value="video1" onclick="video_ad()">
                     <video  controls autoplay>
                       <source src="images/lux.mp4" type="video/mp4">
                       
                       Your browser does not support the video tag.
                     </video>
-                    <input type="radio" id="video2" >
+                    <input type="radio" name="video"  value="video2" onclick="video_ad()">
                     <video controls autoplay>
                       <source src="images/lux1.mp4" type="video/mp4">
                      
                       Your browser does not support the video tag.
                     </video>
-                    <input type="radio" id="video3" >
+                    <input type="radio" name="video" value="video3" onclick="video_ad()">
                     <video controls autoplay>
                       <source src="images/ponds.mp4" type="video/mp4">
                       
                       Your browser does not support the video tag.
                     </video> 
                    
-                    <input type="radio" id="video4" >
+                    <input type="radio" name="video" value="video4" onclick="video_ad()">
                      <video controls autoplay>
                       <source src="images/jewel.mp4" type="video/mp4">
                       
@@ -497,10 +520,7 @@ float: right;
                   </div>
                   <div class="form-group" id="cost_div" style="display: none;">
                     <label >Budget</label>
-                    <input type="text" class="form-control" id="budget" value="1200" onkeyup="gst1()">
-                   
-                    <label >GST</label>
-                    <input type="text" class="form-control" id="gst1_" value="216" disabled>
+                    <input type="text" class="form-control" id="budget" value="1250" >
                   </div>
                   
                   
@@ -547,6 +567,10 @@ float: right;
                     </div>
                   </div> -->
                 <!-- /.card-body -->
+                <label >Total</label>
+                <input type="text" class="form-control" id="total_" placeholder="Grant Total">
+                <label >GST</label>
+                <input type="text" class="form-control" id="gst1_" disabled>
                 <div class="card-footer" id="payment_button" >
                   <button type="submit" id="digital_payment" class="btn btn-primary" >Submit</button>
                 </div>
@@ -598,10 +622,13 @@ float: right;
 <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 
 <!-- Page specific script -->
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/auth.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <!-- <script>
   $.widget.bridge('uibutton', $.ui.button)
@@ -623,9 +650,9 @@ float: right;
 
   
 <script>
-$(function () {
-  bsCustomFileInput.init();
-});
+// $(function () {
+//   bsCustomFileInput.init();
+// });
 </script>
 <!-- <script>
 
