@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+    </head>
+    <body onload="fetch()">
+        <p id="demo2"></p>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+<button id="insert">add</button>
+
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script id="MainScript">
+    var firebaseConfig = {
+        apiKey: "AIzaSyCF1qURBvj2zQ7VGToziIakI8_nGfc5Lgg",
+            authDomain: "contact-form-6ed5f.firebaseapp.com",
+            databaseURL: "https://contact-form-6ed5f.firebaseio.com",
+            projectId: "contact-form-6ed5f",
+            storageBucket: "contact-form-6ed5f.appspot.com",
+            messagingSenderId: "1091951892832",
+            appId: "1:1091951892832:web:85bd350c749dadf11e2605",
+            measurementId: "G-SCC9REY4VZ"
+    };
+    firebase.initializeApp(firebaseConfig);
+    var name, roll, email, mobile,x1;
+    function Ready() {
+      
+        mobile = document.getElementById('demo').innerHTML;
+    }
+    function fetch(){
+    firebase.database().ref('1 year/').on('value', function(snapshot) {
+       x1=snapshot.val().Mobile;
+       oneyear(x1);
+    })
+}
+document.getElementById('insert').onclick = function() {
+Ready();
+console.log(mobile);
+firebase.database().ref('1 year/').set({
+    Mobile: mobile
+});
+}
+
+var d = new Date();
+var year = d.getFullYear();
+    var month = d.getMonth();
+    var day = d.getDate();
+    var hour =d.getHours();
+    var minute =d.getMinutes();
+    var c = new Date(year + 1, month-11, day-27 ,hour -23,minute-59);
+    document.getElementById("demo2").innerHTML = d;
+document.getElementById("demo").innerHTML = c;
+var countDownDate;
+    Ready();
+    // Set the date we're counting down to
+    function oneyear(x1){
+
+        var ab = x1;
+    countDownDate = new Date(ab).getTime();
+    }
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("demo1").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+//         clearInterval(x);
+//         //document.getElementById("demo1").innerHTML = "EXPIRED";  
+//         //function () {
+// function FetchAllData() {
+//     firebase.database().ref().child('Mobiles/Accessories/').on('value', function(snapshot) {
+//         snapshot.forEach(
+//             function(ChilSnapshot) {
+//                 // document.getElementById('myimg').src = ChilSnapshot.val().src=ChilSnapshot.val().Link;
+//                 let Link = ChilSnapshot.val().src = ChilSnapshot.val().Link;
+//                 let Name = ChilSnapshot.val().Name;
+//                 let price = ChilSnapshot.val().price;
+//                 let detail = ChilSnapshot.val().detail;
+//                 addItemsToList(Link, Name, price, detail);
+//             }
+//         )
+//     })
+// }
+// window.onload(FetchAllData());
+}
+function mtb(e,e1){
+    console.log(s1);
+    x1 = e;
+    x2 = e1;
+firebase.database().ref('Mobiles/Accessories/' + x1).on('value', function(snapshot) {
+    Url1= e1;
+    document.getElementById('img1').src = Url1;
+    document.getElementById('name1').value = snapshot.val().Name;
+    document.getElementById('price1').value = snapshot.val().price;
+    document.getElementById('feature1').value = snapshot.val().detail;
+
+    s1 = document.getElementById('name1').value;
+    s2 = document.getElementById('price1').value;
+    s3 = document.getElementById('feature1').value;
+    s4 = document.getElementById('img1').src;
+})
+        //window.location.href="https://console.firebase.google.com/u/0/project/hyper-mart-shopping/database/hyper-mart-shopping-default-rtdb/data"
+      }
+    }, 1000);
+    function addItemsToList(Link, Name, price, detail){
+        console.log(Name);
+        var n1= Name;
+            var n2= Link;
+            var n3= price;
+            var n4= detail;
+            //btn2.addEventListener('click',
+            //function(){
+           // mtb(n1,n2,n3,n4);
+                        firebase.database().ref('message/Accessories/' + n1).set({
+                            Name: n1,
+                            Link: n2,
+                            price: n3,
+                            detail: n4
+                        });
+                        alert("Image Added Successfully");
+          //  });     
+    }
+    </script>
+    </body>
+</html>

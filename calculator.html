@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            button{
+                height: 65px;
+                font-size: 46px;
+            }
+            #total_div{
+                background-color: pink;
+                height: 622px;
+                 width: 39%;
+            }
+            #calc_total{
+                width: 99%;
+                height: 75px;
+                text-align: right;
+                font-size: 46px;
+            }
+            .grid{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 1rem;
+                margin-top: 2px;
+                width:70%;
+                float:left;
+            }
+            .grid_{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 1rem;
+                margin-top: 2px;
+                width:30%;
+                float:right;
+                margin-left: 9%;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div id = "total_div">
+                <div> 
+                    <input type="text" id = "calc_total" value="0" disabled>
+                </div>
+                <div id = "row">
+                    <div class = "grid">
+                        <button id="btn1" onclick="claer()">C</button>
+                        <button id="btn2" onclick="diVide()">/</button>
+                        <button id="btn3" onclick="mUl()">*</button>
+                        <button id="btn1" onclick="nUm(7)" value = "7">7</button>
+                        <button id="btn2" onclick="nUm(8)" value = "8">8</button>
+                        <button id="btn3" onclick="nUm(9)" value="9">9</button>
+                        <button id="btn4" onclick="nUm(4)" value="4">4</button>
+                        <button id="btn5" onclick="nUm(5)" value="5">5</button>
+                        <button id="btn6" onclick="nUm(6)" value="6">6</button>
+                        <button id="btn7" onclick="nUm(1)" value="1">1</button>
+                        <button id="btn8" onclick="nUm(2)" value="2">2</button>
+                        <button id="btn9" onclick="nUm(3)" value="3">3</button>
+                        <button id="btn10" onclick="dOt()">.</button>
+                        <button id="btn11" onclick="nUm(0)" value="0">0</button>
+                        <button id="btn12" onclick="per()" >%</button>
+                    </div>
+                    <div id="grid_">
+                        <button id="btn13" style="margin-left: 9%; margin-top: 1%;width: 14%;" onclick="back()">CE</button>
+                        <button id="btn14" style="margin-left: 9%; width: 14%;margin-top: 1rem;" onclick="miNus()">-</button>
+                        <button id="btn15" style="margin-left: 9%; width: 14%;margin-top: 1rem;" onclick="plus()">+</button>
+                        <button id="btn16" style="margin-left: 9%; height: 58px;; width: 14%; margin-top: 1rem;" onclick="result()">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function nUm(n){
+                let dis = document.getElementById("calc_total").value;
+            if(dis == 0){   
+                if(dis === "0."){
+                    ans = dis + n;
+            document.getElementById("calc_total").value = ans;
+                }
+                else{
+                document.getElementById("calc_total").value = n;
+                }
+            }
+            else{
+            ans = dis + n;
+            document.getElementById("calc_total").value = ans;
+            }
+        }
+            function dOt(){
+                let dis = document.getElementById("calc_total").value;
+                if(dis === 0){
+                    document.getElementById("calc_total").value = "0.";
+                }
+                else{
+                    ans = dis + ".";
+                    document.getElementById("calc_total").value = ans;
+                }
+            }
+            function plus(){
+                
+                let dis = document.getElementById("calc_total").value;
+                var sum = [];
+                sum.push(dis);
+                var sum = sum[0].split("+");
+                
+                console.log(sum);
+                if(sum[1]){
+                total = parseFloat(sum[0]) + parseFloat(sum[1]);
+                console.log(total);
+                sum.splice(0,0,total);
+                sum.pop();
+                ans = dis + "+";
+                document.getElementById("calc_total").value = sum[0] + "+";
+                var p = sum[0];
+                sessionStorage.setItem("DUN",p);
+                }
+                else{
+                  var m = dis.indexOf("-",1);
+                   var mn = dis.indexOf("*",1);
+                   var nm = dis.indexOf("/",1);
+                    if(m>=1){
+                        sessionStorage.clear();
+                        miNus();
+                        let d = sessionStorage.getItem("DUN");
+                        document.getElementById("calc_total").value =  d + "+";
+                }
+                else 
+                if(mn>=1){
+                    sessionStorage.clear();
+                    mUl();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d + "+";
+                }
+                else
+                 if(nm>=1){
+                    sessionStorage.clear();
+                    diVide();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d + "+";
+                }
+                else{
+                    ans = dis + "+";
+                document.getElementById("calc_total").value = ans;
+                }
+                }
+                    
+            }
+            function miNus(){
+                let dis = document.getElementById("calc_total").value;
+                var sum = [];
+                sum.push(dis);
+                var sum = sum[0].split("-");
+                if(sum[0] === ""){
+                    sum.shift();
+                    sum.shift();
+                    sum.splice(0,0,total)
+                    console.log(sum);
+                }
+                console.log(sum);
+                if(sum[1]){
+                    total = parseFloat(sum[0]) - parseFloat(sum[1]);
+                console.log(total);
+                sum.splice(0,0,total);
+                sum.pop();
+                ans = dis - "+";
+                document.getElementById("calc_total").value = sum[0] +"-";
+                var p = sum[0];
+                sessionStorage.setItem("DUN",p);
+                }
+                else{    
+                  var m = dis.indexOf("+",1);
+                   var mn = dis.indexOf("*",1);
+                   var nm = dis.indexOf("/",1);
+                    if(m>=1){
+                        sessionStorage.clear();
+                        plus();
+                        let d = sessionStorage.getItem("DUN");
+                        document.getElementById("calc_total").value =  d + "-";
+                }
+                else if(mn>=1){
+                    sessionStorage.clear();
+                    mUl();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d + "-";
+                }
+                else if(nm>=1){
+                    sessionStorage.clear();
+                    diVide();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d + "-";
+                }
+                else{
+                    ans = dis + "-";
+                document.getElementById("calc_total").value = ans;
+                }
+                }
+            }
+            function mUl(){
+                let dis = document.getElementById("calc_total").value;
+                var sum = [];
+                sum.push(dis);
+                var sum = sum[0].split("*");
+                console.log(sum);
+                // console.log(sim);
+                if(sum[1]){
+                    total = parseFloat(sum[0]) * parseFloat(sum[1]);
+                console.log(total);
+                sum.splice(0,0,total);
+                sum.pop();
+                ans = dis + "*";
+                document.getElementById("calc_total").value = sum[0] +"*";
+                var p = sum[0];
+                sessionStorage.setItem("DUN",p);
+                }
+                else{
+                  var m = dis.indexOf("-",1);
+                   var mn = dis.indexOf("+",1);
+                   var nm = dis.indexOf("/",1);
+                    if(m>=1){
+                        sessionStorage.clear();
+                        miNus();
+                        let d = sessionStorage.getItem("DUN");
+                        document.getElementById("calc_total").value =  d + "*";
+                }
+                else 
+                if(mn>=1){
+                    sessionStorage.clear();
+                    plus();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d + "*";
+                }
+                else
+                 if(nm>=1){
+                    sessionStorage.clear();
+                    diVide();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d + "*";
+                }
+                else{
+                    ans = dis + "*";
+                document.getElementById("calc_total").value = ans;
+                }
+            }
+        }
+            function diVide(){
+                let dis = document.getElementById("calc_total").value;
+                var sum = [];
+                sum.push(dis);
+                var sum = sum[0].split("/");
+                console.log(sum);
+                // console.log(sim);
+                if(sum[1]){
+                    total = parseFloat(sum[0]) / parseFloat(sum[1]);
+                console.log(total);
+                sum.splice(0,0,total);
+                sum.pop();
+                ans = dis + "/";
+                document.getElementById("calc_total").value = sum[0] +"/";
+                var p = sum[0];
+                sessionStorage.setItem("DUN",p);
+                }
+                else{
+                  var m = dis.indexOf("-",1);
+                   var mn = dis.indexOf("*",1);
+                   var nm = dis.indexOf("+",1);
+                    if(m>=1){
+                        sessionStorage.clear();
+                        miNus();
+                        let d = sessionStorage.getItem("DUN");
+                        document.getElementById("calc_total").value =  d + "/";
+                }
+                else 
+                if(mn>=1){
+                    sessionStorage.clear();
+                    mUl();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d + "/";
+                }
+                else
+                 if(nm>=1){
+                    sessionStorage.clear();
+                    plus();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d + "/";
+                }
+                else{
+                    ans = dis + "/";
+                document.getElementById("calc_total").value = ans;
+                }
+            }
+        }
+            function claer(){
+                document.getElementById("calc_total").value = 0;
+            }
+            function result(){
+                var dis = document.getElementById("calc_total").value;
+                var m = dis.indexOf("-",1);
+                   var mn = dis.indexOf("*",1);
+                   var nm = dis.indexOf("+",1);
+                   var n = dis.indexOf("/",1);
+                    if(m>=1){
+                        sessionStorage.clear();
+                        miNus();
+                        let d = sessionStorage.getItem("DUN");
+                        document.getElementById("calc_total").value =  d;
+                }
+                else 
+                if(mn>=1){
+                    sessionStorage.clear();
+                    mUl();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d ;
+                }
+                else
+                 if(nm>=1){
+                    sessionStorage.clear();
+                    plus();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d ;
+                }
+                else
+                 if(n>=1){
+                    sessionStorage.clear();
+                    plus();
+                    let d = sessionStorage.getItem("DUN");
+                    document.getElementById("calc_total").value =  d ;
+                }
+            }
+            function back(){
+                var dis = document.getElementById("calc_total").value;
+                var d = dis.slice(0,-1);
+                document.getElementById("calc_total").value =  d;
+            }
+            
+            function per(){
+                var dis = document.getElementById("calc_total").value;
+                d = parseFloat(dis) / 100;
+                document.getElementById("calc_total").value =  d;
+            }
+        </script>
+    </body>
+</html>

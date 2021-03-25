@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head><title></title></head>
+    <body>
+        <style>
+                img{height: 200px; width: 200px; border: 2px solid black;}
+        </style>
+
+    <div style="width: 50%;float: left;">
+    <img id="myimg">  <label id="UpProgress"></label><br>
+    <button id="select">Select Image</button><br>
+    <img id="myimg1">  <label id="UpProgress"></label><br>
+    <button id="select1">Select Image</button>
+    <button id="upload">Upload</button><br>
+    <button id="retrieve">search</button>
+    Model <input id="namebox" type="text"><br>
+    Price <input id="price" type="number"><br>
+    features <input id="detail" type="text"><br>
+</div>
+    
+    <div style="width: 50%;float: right;">
+        <ul id="list" style="list-style: none;">
+            
+            <li id="img"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+
+<script>
+    
+</script>
+
+<script id="MainScript">    
+    var modelname, ImgUrl ,ImgUrl1;
+    var files = [] ;
+    var files1 = [] ;
+    var reader = new FileReader();
+    
+    var firebaseConfig = {
+        apiKey: "AIzaSyDlAHAP09N5CVchxRdDcEv-LDdXTMnouyk",
+    authDomain: "hds-admin.firebaseapp.com",
+    databaseURL: "https://hds-admin.firebaseio.com",
+    projectId: "hds-admin",
+    storageBucket: "hds-admin.appspot.com",
+    messagingSenderId: "646749977065",
+    appId: "1:646749977065:web:e4789295f85716fe123378",
+    measurementId: "G-9XB29E6NGE"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  document.getElementById("select").onclick = function(e){
+      var input = document.createElement('input');
+      input.type = 'file';
+  input.onchange = e => {
+      files = e.target.files;
+      reader = new FileReader();
+      reader.onload = function() {
+          document.getElementById("myimg").src = reader.result;
+      }
+      reader.readAsDataURL(files[0]);
+  }
+   input.click();
+  } 
+
+
+document.getElementById("select1").onclick = function(e) {
+            var input2 = document.createElement('input');
+            input2.type = 'file';
+            input2.onchange = e => {
+                files1 = e.target.files;
+                reader = new FileReader();
+                reader.onload = function() {
+                    document.getElementById("myimg1").src = reader.result;
+                }
+                reader.readAsDataURL(files1[0]);
+            }
+            input2.click();
+        }
+
+  document.getElementById('upload').onclick = function(){
+      modelname = document.getElementById('namebox').value;
+    //  var modelname = "1";
+    //  var modelname1 = "2";
+      Price = document.getElementById('price').value;
+      Detail = document.getElementById('detail').value;
+      var uploadTask = firebase.storage().ref('Test1/Images1/'+modelname+".png").put(files[0]);
+      var uploadTask1 = firebase.storage().ref('Test1/Images2/'+modelname+".png").put(files1[0]);
+      uploadTask.on('state_changed', function(snapshot)
+      {
+          var progress = (snapshot.bytesTransfered / snapshot.totalBytes) * 100;
+          document.getElementById('UpProgress').innerHTML = 'upload'+100+'%';
+
+      },
+      function(error){
+          alert('error in saving image')
+      },
+
+      function(){
+          uploadTask.snapshot.ref.getDownloadURL().then(function(url){
+            ImgUrl = url;
+         
+            uploadTask1.snapshot.ref.getDownloadURL().then(function(url1){
+            ImgUrl1 = url1;
+    
+          
+          firebase.database().ref('Mobiles/realme/'+modelname).set({Link1: ImgUrl,Link2: ImgUrl1,name: modelname,price: Price,detail: Detail});
+          alert("Image Added Successfully");
+      }
+
+    );
+},
+);
+});
+  }
+alert('success')
+        var stdNo=0;
+
+        function addItemsToList(Link,Name,price,detail){
+            var ul = document.getElementById('list');
+            var header = document.createElement('h2');
+
+
+            var _Link = document.createElement('li');
+            var _Name = document.createElement('li');
+            var _price = document.createElement('li');
+            var _detail = document.createElement('li');
+           
+
+
+            header.innerHTML = 'Redmi-' +(++stdNo);
+
+            _Link.innerHTML = 'Image:' +Link;
+            _Name.innerHTML = 'Name:' +Name;
+            _price.innerHTML = 'Price:' +price;
+            _detail.innerHTML = 'Detail:' +detail;
+            
+            
+
+             ul.appendChild(header);
+             ul.appendChild(_Link);
+             ul.appendChild(_Name);
+             ul.appendChild(_price);
+             ul.appendChild(_detail);
+             
+        }
+        document.getElementById("retrieve").onclick = function() {
+        function FetchAllData(){
+            firebase.database().ref().child('Mobiles/redmi/').on('value',function(snapshot){
+                snapshot.forEach(
+                    function(ChilSnapshot){
+                        let Link = ChilSnapshot.val().Link;
+                        let Name = ChilSnapshot.val().Name;
+                        let price = ChilSnapshot.val().price;
+                        let detail = ChilSnapshot.val().detail;
+                        
+                        addItemsToList(Link,Name,price,detail);
+                    }
+                )
+            })
+        }
+//   document.getElementById('retrieve')
+// .onclick=function(){
+//     modelname=document.getElementById('namebox').value;
+//     firebase.database().ref().child('Mobiles/redmi/' + modelname).on('value', function(snapshot){
+//         document.getElementById('myimg').src=snapshot.val().Link;
+//         document.getElementById('namebox').value=snapshot.val().Name;
+//         document.getElementById('detail').value=snapshot.val().detail;
+//         document.getElementById('price').value=snapshot.val().price;
+//     });
+//     }
+        window.onload(FetchAllData());
+        }
+</script> 
+  
+</body>
+</html>

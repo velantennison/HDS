@@ -1,0 +1,30 @@
+
+<body>
+
+<button onclick="send()">send</button>
+<script>
+    function send(){
+var unirest = require("unirest");
+
+var req = unirest("POST", "https://www.fast2sms.com/dev/bulkV2");
+
+req.headers({
+  "authorization": "uCLtGPNsq6aklzwT1ZWcRY5p8EegSOFBVmyX2407h3MijQDdvHGCJuUZgYdXN3RjopcQ6rtK1f8ADxmv"
+});
+
+req.form({
+  "sender_id": "CHKSMS",
+  "message": "MESSAGE_ID",
+  "variables_values": "123456787|asdaswdx",
+  "route": "s",
+  "numbers": "8667703871",
+});
+
+req.end(function (res) {
+  if (res.error) throw new Error(res.error);
+
+  console.log(res.body);
+});
+    }
+</script>
+</body>

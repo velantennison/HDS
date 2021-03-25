@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+ 
+      <head>
+        <meta charset="utf-8">
+        <title>count</title>
+        
+        <style>
+      
+        </style>
+      </head>
+  <body onload="fetch()">
+    <h1 id="demo"></h1>
+ 
+
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+
+    <script id="MainScript">
+        //firebase authentication
+        var firebaseConfig = {
+            apiKey: "AIzaSyBHMZB5nJXtm3UAnVACsxR-LXyK8KtVdno",
+    authDomain: "hyper-mart-shopping.firebaseapp.com",
+    databaseURL: "https://hyper-mart-shopping-default-rtdb.firebaseio.com",
+    projectId: "hyper-mart-shopping",
+    storageBucket: "hyper-mart-shopping.appspot.com",
+    messagingSenderId: "306358878756",
+    appId: "1:306358878756:web:9de20019ab10ca65998eb1",
+    measurementId: "G-8FNG928M5F"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+
+function fetch(){
+//var table = new Firebase('https://hyper-mart-shopping-default-rtdb.firebaseio.com/1%20year');
+var child =  firebase.database().ref('Customer_Signup/');
+
+child.on('value', function(snapshot) {
+   var count = 0;
+   snapshot.forEach(function() {
+       count++;
+       console.log(count);
+      ready(count);
+   });
+   //count is now safe to use.
+});
+
+
+  function ready(count)
+  {
+    var child =  firebase.database().ref('client_account/');
+
+child.on('value', function(snapshot) {
+   var count2 = 0;
+   
+   snapshot.forEach(function() {
+       count2++;
+       console.log(count2);
+       var count3 = count2 + count;
+      ready2(count3);
+   });
+  
+   //count is now safe to use.
+});
+
+}
+}
+</script>
+<script>
+  
+function ready2(count3)
+{
+  //document.getElementById("demo").innerHTML =count3;
+  var child =  firebase.database().ref('Test/');
+
+child.on('value', function(snapshot) {
+   var count4 = 0;
+   
+   snapshot.forEach(function() {
+       count4++;
+      
+       var count5 = count3 + count4;
+     // ready2(count5); 
+     console.log("total"+count5);
+      document.getElementById("demo").innerHTML =count5;
+   });
+  
+   //count is now safe to use.
+});
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the name of this month.</p>
+
+<button onclick="myFunction()">Try it</button>
+<button id="insert" onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script id="MainScript">
+    var firebaseConfig = {
+        apiKey: "AIzaSyBHMZB5nJXtm3UAnVACsxR-LXyK8KtVdno",
+            authDomain: "hyper-mart-shopping.firebaseapp.com",
+            databaseURL: "https://hyper-mart-shopping-default-rtdb.firebaseio.com",
+            projectId: "hyper-mart-shopping",
+            storageBucket: "hyper-mart-shopping.appspot.com",
+            messagingSenderId: "306358878756",
+            appId: "1:306358878756:web:9de20019ab10ca65998eb1",
+            measurementId: "G-8FNG928M5F"
+    };
+    firebase.initializeApp(firebaseConfig);
+    var date,current_month,year, n,d;
+    
+
+//     function Ready() {
+      
+//       date = document.getElementById('demo').innerHTML;
+//   }
+ 
+    document.getElementById('insert').onclick = function() {
+//Ready();
+console.log(current_month);
+firebase.database().ref('Current_month/').set({
+    Date: current_month
+
+    
+});
+}
+
+function myFunction() {
+  var month = new Array();
+  month[0] = "January";
+  month[1] = "February";
+  month[2] = "March";
+  month[3] = "April";
+  month[4] = "May";
+  month[5] = "June";
+  month[6] = "July";
+  month[7] = "August";
+  month[8] = "September";
+  month[9] = "October";
+  month[10] = "November";
+  month[11] = "December";
+//var year = new Array();
+   d = new Date();
+   n = month[d.getMonth()];
+   year = d.getFullYear();
+   current_month =  n + ' ' + year;
+  document.getElementById("demo").innerHTML = current_month;
+   //document.getElementById("demo").innerHTML =year;
+}
+</script>
+
+</body>
+</html>
