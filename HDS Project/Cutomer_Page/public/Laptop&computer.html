@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="keywords" content="MediaCenter, Template, eCommerce">
+<meta name="robots" content="all">
+<title>Marazzo premium HTML5 & CSS3 Template</title>
+<style>
+ * {
+  box-sizing: border-box;
+}
+
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #6200ee;
+}
+
+#mainimage{
+
+width:287px;
+height:206px;
+padding-left:70px;
+margin-left: -72px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float:left;
+  width: 25%;
+  background-color:"black";
+  padding-bottom: 20%;
+  height: 420px; /* Should be removed. Only for demonstration */
+}
+
+
+.column h4{
+margin-left:14px;
+margin-top:6%;
+margin-right:22px;
+}
+.column h5{
+color:green;
+font-size:20px;
+margin-left:14px;
+ 
+}
+
+
+
+
+@media only screen and (max-width:1020px){
+
+   #mainimage{
+
+		width:330px;
+		height:190px;
+		margin-left: -16px;
+		margin-top: 3%;
+}
+
+.column {
+ 
+  width: 100%;
+  background-color:"black";
+ 
+  height: 360px; /* Should be removed. Only for demonstration */
+  border-bottom:1px solid #dbdcf7;
+  
+}
+
+
+#mobile {
+   
+    margin-left: 23%;
+	margin-right:3%;
+    margin-top: -40%;
+	
+}
+
+#mobile h4{
+   font-size:20px;
+}
+
+.main-header .top-search-holder .search-area .search-field {
+    border-radius: 1225px;
+    width: 88%;
+}
+
+.fa-search:before {
+    content: "\f002";
+    color: white;
+	margin-right:2px;
+	margin-top:7px;
+}
+
+}
+@media only screen and (max-width:1020px){
+.main-header .top-search-holder .search-area .search-field {
+    border-radius: 999px;
+    width: 60%;
+}
+}
+
+
+.LOgo h10{
+  color:white;
+  font-size:400%;
+}
+      
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.r{
+margin-left:10%;
+margin-right:10%;
+}
+
+@media only screen and (max-width:1020px){
+      .r {
+  margin-left:0;
+  margin-right:0;
+}
+
+}
+ 
+		#foot{
+display:none;
+
+}
+	#result{
+display:none;
+
+}
+
+#footer{
+
+display:none;
+}
+
+
+
+</style>
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+
+
+<!-- Customizable CSS -->
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/blue.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.css">
+<link rel="stylesheet" href="assets/css/owl.transitions.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/rateit.css">
+<link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+
+<!-- Icons/Glyphs -->
+<link rel="stylesheet" href="assets/css/font-awesome.css">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Barlow:200,300,300i,400,400i,500,500i,600,700,800" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body onload="Lap()" class="cnt-home">
+  <div background="color:#6200ee;" class="top-bar animate-dropdown">
+    <div class="container">
+      <div class="header-top-inner">
+        <div class="cnt-account">
+          <ul class="list-unstyled">
+            <li class="myaccount"><a href="#"><span id="result-name"></span></a></li>
+            <li class="wishlist"><a href="#"><span>Wishlist</span></a></li>
+            <li class="header_cart hidden-xs"><a href="#"><span>My Cart</span></a></li>
+            <li class="check"><a href="#"><span>Checkout</span></a></li>
+            <li class="login"><a href="#"><span>Login</span></a></li>
+          </ul>
+        </div>
+        <!-- /.cnt-account -->
+       
+        <div class="cnt-block">
+          <ul class="list-unstyled list-inline">
+            <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">INR </span><b class="caret"></b></a>
+             
+               
+            </li>
+            <li class="dropdown dropdown-small lang"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">English </span><b class="caret"></b></a>
+             
+            </li>
+          </ul>
+          <!-- /.list-unstyled -->
+        </div>
+
+
+       <div class="clearfix"></div>
+      </div>
+      <!-- /.header-top-inner -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.header-top -->
+<!-- ============================================== HEADER ============================================== -->
+<header class="header-style-1"> 
+  
+  <!-- ============================================== TOP MENU ============================================== -->
+  <div class="top-bar animate-dropdown">
+    <div class="container">
+     
+        <!-- /.cnt-cart -->
+        <div class="clearfix"></div>
+      </div>
+      <!-- /.header-top-inner --> 
+    </div>
+    <!-- /.container --> 
+  </div>
+  <!-- /.header-top --> 
+  <!-- ============================================== TOP MENU : END ============================================== -->
+  <div class="main-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
+          <!-- ============================================================= LOGO ============================================================= -->
+       <div class="LOgo"> <h10> DyolMart </h10> </div>
+          <!-- /.logo --> 
+          <!-- ============================================================= LOGO : END ============================================================= --> </div>
+        <!-- /.logo-holder -->
+        
+        <div class="col-lg-7 col-md-6 col-sm-8 col-xs-12 top-search-holder"> 
+          <!-- /.contact-row --> 
+          <!-- ============================================================= SEARCH AREA ============================================================= -->
+          <div class="search-area">
+            <form>
+              <div class="control-group">
+                 <a class=" fa fa-search" style="font-size:30px;padding-left:10px;padding-top:10px;"> </a>
+                <input id="searchbar" onkeyup="search_animal()" type="text" class="search-field" placeholder="Search here..." />
+                
+            </form>
+          </div>
+          <!-- /.search-area --> 
+          <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
+        <!-- /.top-search-holder -->
+        
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 animate-dropdown top-cart-row"> 
+          <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
+          
+          <div class="dropdown dropdown-cart"> <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+            <div class="items-cart-inner">
+             
+            </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="cart-item product-summary">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      
+                    </div>
+                    <div class="col-xs-7">
+                      <h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3>
+                      <div class="price">$600.00</div>
+                    </div>
+                    <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
+                  </div>
+                </div>
+                <!-- /.cart-item -->
+                <div class="clearfix"></div>
+                <hr>
+                <div class="clearfix cart-total">
+                  <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
+                  <div class="clearfix"></div>
+                  <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
+                <!-- /.cart-total--> 
+                
+              </li>
+            </ul>
+            <!-- /.dropdown-menu--> 
+          </div>
+          <!-- /.dropdown-cart --> 
+          
+          <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
+        <!-- /.top-cart-row --> 
+      </div>
+      <!-- /.row --> 
+      
+    </div>
+    <!-- /.container --> 
+    
+  </div>
+  <!-- /.main-header --> 
+  
+  <!-- ============================================== NAVBAR ============================================== -->
+  <div class="header-nav animate-dropdown">
+    <div class="container">
+      <div class="yamm navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+       <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> 
+       <div class="sr-only">Toggle navigation</div> <div class="icon-bar"></div> <div class="icon-bar"></div> <div class="icon-bar"></div> </button>
+        </div>
+        <div class="nav-bg-class">
+          <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
+            <div class="nav-outer">
+              <ul class="nav navbar-nav">
+			  <li class="active dropdown"> <a href="index.html">Home</a> </li>
+                <li class="active dropdown"> <a href="Aces.html">Accessories</a> </li>
+                <li class="dropdown yamm mega-menu"> <a href="Fashion.html" >Clothing</a> </li>
+                <li class="dropdown mega-menu"> 
+                <a href="category.html"  >Electronics  </a>
+                </li>
+                <li class="dropdown hidden-sm"> <a href="Beauty.html">Health & Beauty </a> </li>
+                <li class="dropdown hidden-sm"> <a href="Watches.html">Watches</a> </li>
+                <li class="dropdown"> <a id="viewbtn" href="Mobile.html">Mobiles</a> </li>
+                <li class="dropdown"> <a href="Footwear.html">Footwear</a> </li>
+                <li class="dropdown"> <a href="Laptop&computer.html">Laptop & Computer</a> </li>
+                <li class="dropdown"> <a href="login.html" >Log In</a></li>
+                
+                  
+              <!-- /.navbar-nav -->
+              <div class="clearfix"></div>
+            </div>
+            <!-- /.nav-outer --> 
+          </div>
+          <!-- /.navbar-collapse --> 
+          
+        </div>
+        <!-- /.nav-bg-class --> 
+      </div>
+      <!-- /.navbar-default --> 
+    </div>
+    <!-- /.container-class --> 
+    
+  </div>
+  <!-- /.header-nav --> 
+  <!-- ============================================== NAVBAR : END ============================================== --> 
+  
+</header>
+
+<div class="r" >
+        <div id="div1" Class="" >
+
+          
+            <!-- <div id="div2" class="col-4">
+              <h1>Hello</h1>
+
+            </div>
+
+            <div class="col-4">
+                <h1>Hello</h1>
+            </div>
+            <div class="col-4">
+              <h1>Hello</h1>
+            </div> -->
+          
+
+            <!-- <div class="col-4">
+              One of two columns
+            </div> -->
+
+          </div>
+		  </div>
+
+
+
+
+
+      
+				
+<!-- For demo purposes – can be removed on production --> 
+
+<!-- For demo purposes – can be removed on production : End --> 
+
+<!-- JavaScripts placed at the end of the document so the pages load faster --> 
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+<script src="js/Lap & Comp.js"></script>
+<script src="assets/js/jquery-1.11.1.min.js"></script> 
+<script src="assets/js/bootstrap.min.js"></script> 
+<script src="assets/js/bootstrap-hover-dropdown.min.js"></script> 
+<script src="assets/js/owl.carousel.min.js"></script> 
+<script src="assets/js/echo.min.js"></script> 
+<script src="assets/js/jquery.easing-1.3.min.js"></script> 
+<script src="assets/js/bootstrap-slider.min.js"></script> 
+<script src="assets/js/jquery.rateit.min.js"></script> 
+<script type="text/javascript" src="assets/js/lightbox.min.js"></script> 
+<script src="assets/js/bootstrap-select.min.js"></script> 
+<script src="assets/js/wow.min.js"></script> 
+<script src="assets/js/scripts.js"></script>
+<script>
+// JavaScript code 
+function search_animal() { 
+    let input = document.getElementById('searchbar').value 
+    input=input.toLowerCase(); 
+    let x = document.getElementsByClassName('column'); 
+      
+    for (i = 0; i < x.length; i++) {  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+            x[i].style.display="none"; 
+        } 
+        else { 
+            x[i].style.display="list-item";                  
+        } 
+    } 
+} 
+
+</script>
+</body>
+
+</html>

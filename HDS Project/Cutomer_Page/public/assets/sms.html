@@ -1,0 +1,43 @@
+
+
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+<button onclick="res()">
+Send Sms
+
+
+</button>
+<script>
+
+function res(){
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://www.fast2sms.com/dev/bulkV2",
+  "method": "POST",
+  "headers": {
+    "authorization": "PXgqwbEBWAHJ60sodL2yIrQ48zmY1KTUiuchvGDZSFlt5VO9xa8dIQbDPTYwEOfNrAWMhLlcKUvkt7mC",
+  },
+  "data": {
+    "sender_id": "CHKSMS",
+    "message": "MESSAGE_ID",
+    "variables_values": "12345|asdaswdx",
+    "route": "s",
+    "numbers": "9750593005",
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+}
+</script>
+</body>
+
+</html>
