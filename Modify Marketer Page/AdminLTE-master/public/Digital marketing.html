@@ -335,11 +335,6 @@ float: right;
               </p>
             </a>
           </li>
-         
-            
-          
-          <!-- <button id="logout1"> Logout</button> -->
-            
         </ul>
          
           
@@ -457,23 +452,6 @@ float: right;
                       <label >Cost For Image Ad</label>
                       <input type="text" class="form-control" id="cost_" value="0" placeholder="Cost for Image Ad.." disabled>
                     </div>
-                  <!-- <div class="form-group">
-                    <label >Preview</label>
-                    <button id="preview">Click Here</button>
-                  <input type="button" class="form-control" id="description" placeholder="Preview"> 
-                  </div>
-                  <div class="preview">
-                    <img id="img1_" alt="Snow" style="width:100%;">
-                    <div class="bottom-left">Bottom Left
-                    </div>
-                    <div class="top-left">
-                      <img id="logo1_" class="preview_logo">
-                    </div>
-                    <div class="top-right">Top Right</div>
-                    <div class="bottom-right">Bottom Right</div>
-                    <div class="centered">Centered</div>
-                  </div>  -->
-                
                   <div class="form-group">
                     <label>video add (optional)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="video_" id="my_video"  value="0" onclick="video_cost()">&nbsp;Add My Banner <br>
@@ -520,49 +498,6 @@ float: right;
                       <input type="text" class="form-control" id="v_cost" value="0" disabled>
                     </div>
                   </div>
-                 
-                  
-                  <!-- <div class="form-group">
-                    <label >Choose Plan</label>
-                    <select id="cur_plan" class="form-control" onclick="measure(this.value)">
-                      <option>Choose</option>
-                      <option>Demo Plan</option>
-                      <option>Base Plan</option>
-                      <option>Pre Plan</option>
-                      <option>Smart Plan</option>
-                      <option>Start Plan</option>
-                      <option>Green Plan</option>
-                      <option>SmartUp Plan</option>
-                      <option>Custom Plan</option>
-                    </select>
-                  </div> -->
-                  <!-- <div id="plan_" class="form-group">
-                    <label >Plan Price</label>
-                    <input type="text" class="form-control" id="Plan_price" >
-                  </div>
-                  <div  class="form-group">
-                    <label >Check Domain Here</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://domains.google/" class="btn btn-primary">Google Domain</a>
-                  </div>
-                  <div id="domain1" class="form-group" >
-                    <label >Project Domain</label>
-                    <input type="text" class="form-control" id="domain_" placeholder="Enter Domain Name">
-                  </div>
-                  <div id="domain2" class="form-group">
-                    <label >Domain cost</label>
-                    <input  type="number" class="form-control" id="domain_cost" placeholder="Enter Cost" onkeyup="gst()">
-                    <label >GST</label>
-                    <input  type="number" class="form-control" id="domain_GST" placeholder="Enter Cost">
-                  </div> -->
-                  <!-- <div class="form-group">
-                    <label >File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label">Choose file</label>
-                      </div>
-                    </div>
-                  </div> -->
                 <!-- /.card-body -->
                 <div class="form-group" id="zone_div" >
                   <label >Zone</label>
@@ -660,116 +595,7 @@ float: right;
 //   bsCustomFileInput.init();
 // });
 </script>
-<!-- <script>
 
-function measure(x1){
-           
-           console.log(x1);
-       if( x1=="Demo Plan"){
-         document.getElementById("Plan_price").value= "1121";
-         document.getElementById("plan_").style.display = "block";
-     
-         document.getElementById("domain_cost").value = "";
-         document.getElementById("domain_GST").value = "";
-         document.getElementById("domain").style.display = "none";
-         document.getElementById("domain1").style.display = "none";
-         document.getElementById("domain2").style.display = "none";
-         document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Base Plan"){
-           document.getElementById("Plan_price").value="1844";
-           document.getElementById("domain_cost").value = "";
-         document.getElementById("domain_GST").value = "";
-           document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "none";
-           document.getElementById("domain1").style.display = "none";
-         document.getElementById("domain2").style.display = "none";
-         document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Pre Plan"){
-           document.getElementById("Plan_price").value="2140";
-           document.getElementById("domain_cost").value = "";
-         document.getElementById("domain_GST").value = "";
-           document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "none";
-           document.getElementById("domain1").style.display = "none";
-         document.getElementById("domain2").style.display = "none";
-         document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Smart Plan"){
-           document.getElementById("Plan_price").value="4500";
-           document.getElementById("domain_cost").value = "";
-         document.getElementById("domain_GST").value = "";
-           document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "none";
-           document.getElementById("domain1").style.display = "none";
-           document.getElementById("domain2").style.display = "none";
-           document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Start Plan"){
-           document.getElementById("Plan_price").value="1844";
-           
-           document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "block";
-           document.getElementById("domain1").style.display = "block";
-           document.getElementById("domain2").style.display = "block";
-           document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Green Plan"){
-           document.getElementById("Plan_price").value="2140";
-           
-         document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "block";
-           document.getElementById("domain1").style.display = "block";
-           document.getElementById("domain2").style.display = "block";
-           document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="SmartUp Plan"){
-           document.getElementById("Plan_price").value="4500";
-           
-           document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "block";
-           document.getElementById("domain1").style.display = "block";
-         document.getElementById("domain2").style.display = "block";
-         document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Custom Plan"){
-     
-           document.getElementById("domain_cost").value = "";
-         document.getElementById("domain_GST").value = "";
-           document.getElementById("plan_").style.display = "none";
-           document.getElementById("domain").style.display = "none";
-           document.getElementById("domain1").style.display = "none";
-         document.getElementById("domain2").style.display = "none";
-         document.getElementById("payment_button").style.display = "none";
-         document.getElementById("submit_button").style.display = "block";
-       }
-      
-    }
-
-    document.getElementById("select").onclick = function(e){
-      var input = document.createElement('input');
-      input.type = 'file';
-  input.onchange = e => {
-      files = e.target.files;
-      reader = new FileReader();
-      reader.onload = function()
-      {
-          document.getElementById("myimg").src = reader.result;
-      }
-      reader.readAsDataURL(files[0]);
-  }
-   input.click();
-  } 
-  
-</script> -->
 <script src="js/logout.js"></script>
 
 </body>
