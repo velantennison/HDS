@@ -11,7 +11,7 @@ var uploadTask3;
 var content_,domain_,phone_,mail_,Add_,Shop_address_,zone_,budget_,gst_1_;
 
 var link;
-var cost_add,cost,total_cost;
+var cost_add,cost,video_amount,total_cost,gst_amount;
 
 
 var reader = new FileReader();
@@ -64,12 +64,38 @@ document.getElementById("select1_").onclick = function(e){
   input2.click();
   }
 
+  // total cost count
+  document.getElementById("section_div").addEventListener("keyup", function() {
+    // alert("Hello World!"); 
+    var A = document.getElementById("cost_").value;
+    var B = document.getElementById("v_cost").value;
+    var C_ = document.getElementById("budget").value;
+    var D_ = document.getElementById("gst1_").value;
+
+    total_cost = parseFloat(A)+parseFloat(B)+parseFloat(C_)+parseFloat(D_);
+    console.log(total_cost);
+    document.getElementById("total_").value = total_cost;
+
+  });
+  document.getElementById("section_div").addEventListener("click", function() {
+    // alert("Hello World!"); 
+    var A = document.getElementById("cost_").value;
+    var B = document.getElementById("v_cost").value;
+    var C_ = document.getElementById("budget").value;
+    var D_ = document.getElementById("gst1_").value;
+
+    total_cost = parseFloat(A)+parseFloat(B)+parseFloat(C_)+parseFloat(D_);
+    console.log(total_cost);
+    document.getElementById("total_").value = total_cost;
+
+  });
 
   // gst calculation
   function gst1(){
-      
+    cost = document.getElementById("budget").value;
     
-    var gst_amount = total_cost * 0.18;
+    var gst_amount = cost * 0.18;
+    
     document.getElementById("gst1_").value = gst_amount;
 }
 // display div when click the click here button
@@ -85,36 +111,40 @@ document.getElementById("select1_").onclick = function(e){
 // }
 
 // checked or not and payment calculation
-function check_() {
-  var checkBox = document.getElementById("myCheck");
-  var text = document.getElementById("text");
-  if (checkBox.checked == true){
-    alert('Do you want to add Video Ad');
-    document.getElementById("add_video").style.display = "block";
-    document.getElementById("video_div").style.display = "block";
-    document.getElementById("zone_div").style.display = "block";
-    document.getElementById("cost_div").style.display = "block";
-    cost = document.getElementById("budget").value;
+
+
+
+// function check_() {
+//   var checkBox = document.getElementById("myCheck");
+//   var text = document.getElementById("text");
+//   if (checkBox.checked == true){
+//     alert('Do you want to add Video Ad');
+//     document.getElementById("add_video").style.display = "block";
+//     document.getElementById("video_div").style.display = "block";
+//     document.getElementById("zone_div").style.display = "block";
+//     document.getElementById("cost_div").style.display = "block";
+//     cost = document.getElementById("budget").value;
     
-    total_cost = parseFloat(cost_add)+parseFloat(cost);
-   document.getElementById("total_").value = total_cost;
-    console.log(total_cost);
+//     total_cost = parseFloat(cost_add)+parseFloat(cost);
+//    document.getElementById("total_").value = total_cost;
+//     console.log(total_cost);
 
   
-  } else if(checkBox.checked == false) {
+//   } else if(checkBox.checked == false) {
     
-    document.getElementById("add_video").style.display = "none";
-    document.getElementById("video_div").style.display = "none";
-    document.getElementById("zone_div").style.display = "none";
-    document.getElementById("cost_div").style.display = "none";
-    total_cost = parseFloat(total_cost)+parseFloat(cost);
-   document.getElementById("total_").value = total_cost;
-    console.log(total_cost);
+//     document.getElementById("add_video").style.display = "none";
+//     document.getElementById("video_div").style.display = "none";
+//     document.getElementById("zone_div").style.display = "none";
+//     document.getElementById("cost_div").style.display = "none";
+//     total_cost = parseFloat(total_cost)-parseFloat(cost);
+//    document.getElementById("total_").value = total_cost;
+//     console.log(total_cost);
      
-  }
-}
+//   }
+// }
 
 //video ad
+link = "null";
 function video_ad(){
   let L= document.getElementsByName("video");
   for( i = 0; i < L.length; i++){
@@ -122,9 +152,7 @@ function video_ad(){
       link = L[i].value;
       console.log(link);
     }
-    else{
-    
-  }
+   
 }
  
 }
@@ -135,21 +163,45 @@ function video_ad(){
     if(C[i].checked){
       cost_add = C[i].value;
       document.getElementById("cost_").value = cost_add;
-      if(cost_add == 1250){
+      if(cost_add == 0){
         alert("Do you want to add your own Image AD");
         document.getElementById("image1_div").style.display = "block";
         document.getElementById("image_div").style.display = "none";
-        document.getElementById("gst1_").value = "216";
-      }else if(cost_add == 1500){
+      
+        
+      }else if(cost_add == 100){
         alert("Do you want to add Custom Image AD");
         document.getElementById("image_div").style.display = "block";
         document.getElementById("image1_div").style.display = "none";
-        document.getElementById("gst1_").value = "225";
+        
       }
     }
     
 }
    
+ }
+ //video cost
+ function video_cost(){
+   alert("welcome");
+   let D = document.getElementsByName("video_");
+   for(i = 0; i < D.length; i++){
+     if(D[i].checked){
+      video_amount = D[i].value;
+      document.getElementById("v_cost").value = video_amount;
+      if(video_amount == 0){
+        alert("Do you want to add your own video AD");
+        document.getElementById("add_video").style.display = "block";
+        document.getElementById("video_div").style.display = "none";
+      
+        
+      }else if(video_amount == 1000){
+        alert("Do you want to add Custom Video AD");
+        document.getElementById("video_div").style.display = "block";
+        document.getElementById("add_video").style.display = "none";
+        
+      }
+     }
+   }
  }
 //image radio 
 // document.getElementById("my_banner").onclick = function() {
@@ -201,7 +253,8 @@ uploadTask1.snapshot.ref.getDownloadURL().then(function(url1){
       Zone: zone_,
       Cost: budget_,
     
-      GST: gst_1_
+      GST: gst_1_,
+      Grand_Total: grand_total
      
     
     });
@@ -215,7 +268,7 @@ uploadTask1.snapshot.ref.getDownloadURL().then(function(url1){
 }
 
 
-document.getElementById("digital_payment").onclick = function() {
+function datainsert(){
 
   // alert("hello darling");
   
@@ -228,7 +281,7 @@ document.getElementById("digital_payment").onclick = function() {
    zone_ = document.getElementById("zone").value;
    budget_ = document.getElementById("budget").value;
    gst_1_ = document.getElementById("gst1_").value;
- 
+   grand_total = document.getElementById("total_").value
 
   console.log(domain_);
   // console.log(link);
@@ -238,7 +291,7 @@ document.getElementById("digital_payment").onclick = function() {
    uploadTask2 = firebase.storage().ref('Digital_marketing/' +  phone_ +".png.2").put(files1[0]);
    uploadTask3 = firebase.storage().ref('Digital_marketing/' +  phone_ +".mp4.3").put(files3[0]);
  
-  link = "null";
+  
   uploadTask1.on('state_changed', function(snapshot)
   {
     //   var progress = (snapshot.bytesTransfered / snapshot.totalBytes) * 100;
@@ -320,3 +373,73 @@ document.getElementById("digital_payment").onclick = function() {
     
 //     //    location.href = redirect_url;
 //     }
+
+// payment process
+function paymentProcess(){
+  var Payment_ = document.getElementById("total_").value;
+
+
+
+var options = {
+  "key": "rzp_test_GmJyzKJA6xsOC6", // Enter the Key ID generated from the Dashboard
+  "amount":  Payment_ * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 means 50000 paise or ₹500.
+  "currency": "INR",
+  "name": "Hyper Mart",
+  "description": "Tutorial",
+  // "callback_url": 'https://www.google.com',
+  "image": "logo.png",// Replace this with the order_id created using Orders API (https://razorpay.com/docs/api/orders).
+  "handler": function (response){
+      savetoDB(response);
+      $('#myModal').modal();
+  },
+  "prefill": {
+      "name": "",
+      "email": "",
+      "contact": "",
+      "phoneno" : ""
+  },
+  "notes": {
+      "address": "note value"
+  },
+  "theme": {
+      "color": "blue"
+  }
+}
+var propay = new Razorpay(options);
+propay.open();
+  }   
+
+
+
+
+// if (typeof response.razorpay_payment_id == 'undefined' || response.razorpay_payment_id < 1) {
+//      redirect_url = '/you-owe-money.html';
+//     } else { 
+//         redirect_url = '/thnx-you-paid.html';
+//     }
+//     location.href = redirect_url;
+
+
+function savetoDB(response){
+  {
+  console.log(response)
+ 
+  var name = document.getElementById("phonenum_").value;
+  var payRef = firebase.database().ref('payment_for_Digital_Marketing/');
+ 
+  if (typeof response.razorpay_payment_id == 'undefined' || response.razorpay_payment_id < 1) {
+      // redirect_url = 'preloadergeeks.html';
+      console.log('failed');
+     } else { 
+      //    redirect_url = 'preloadergeeks.html';
+         console.log('success');
+         payRef.child(name).set({
+         Mobile_number : name,
+        payment_id : response.razorpay_payment_id
+      })
+      datainsert();
+     }
+}
+
+//    location.href = redirect_url;
+}

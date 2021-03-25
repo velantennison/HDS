@@ -385,7 +385,7 @@ float: right;
       </div><!-- /.container-fluid -->
     </section>
     <!-- Main content -->
-    <section class="content">
+    <section class="content" id="section_div">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
@@ -401,7 +401,7 @@ float: right;
 
                   <div class="form-group">
                     <label >Client Phone Number</label>
-                    <input type="text" class="form-control" id="phonenum_" placeholder="Enter Mobile Number">
+                    <input type="number" class="form-control" id="phonenum_" placeholder="Enter Mobile Number">
                   </div>
                   <div class="form-group">
                     <label >Client Mail Id</label>
@@ -424,8 +424,8 @@ float: right;
                   <!-- image radio button -->
                   <label>Image add </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            
-                    <input type="radio" name="Image" id="my_banner"  value="1250" onclick="image_cost()">&nbsp;Add My Banner&nbsp;&nbsp;
-                    <input type="radio" name="Image" id="new_banner" value="1500" onclick="image_cost()">&nbsp;Add New Banner
+                    <input type="radio" name="Image" id="my_banner"  value="0" onclick="image_cost()">&nbsp;Add My Banner<br>
+                    <input type="radio" name="Image" id="new_banner" value="100" onclick="image_cost()" style="margin-left: 16%;">&nbsp;Add New Banner
                     <div class="form-group" id="image1_div" style="display: none;">
                       <label>Banner Add</label><br>
                       <div class="form-group">  
@@ -455,7 +455,7 @@ float: right;
                   
                     <div class="form-group">
                       <label >Cost For Image Ad</label>
-                      <input type="text" class="form-control" id="cost_" placeholder="Cost for Image Ad.." disabled>
+                      <input type="text" class="form-control" id="cost_" value="0" placeholder="Cost for Image Ad.." disabled>
                     </div>
                   <!-- <div class="form-group">
                     <label >Preview</label>
@@ -476,9 +476,11 @@ float: right;
                 
                   <div class="form-group">
                     <label>video add (optional)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="checkbox" id="myCheck" onclick="check_()">
+                    <input type="radio" name="video_" id="my_video"  value="0" onclick="video_cost()">&nbsp;Add My Banner <br>
+                    <input type="radio" name="video_" id="new_video" value="1000" onclick="video_cost()" style="margin-left: 29.25%;">&nbsp;Add New Banner
+                    
 
-                    <p id="click_">click here for video ad..</P>
+                    
                   </div>
                   <div class="form-group" id="add_video" style="display: none;">
                     <video id="video_1" controls autoplay>
@@ -513,16 +515,12 @@ float: right;
                       
                       Your browser does not support the video tag.
                     </video>
+                    <div class="form-group" id="cost_div" >
+                      <label >Video Cost</label>
+                      <input type="text" class="form-control" id="v_cost" value="0" disabled>
+                    </div>
                   </div>
-                  <div class="form-group" id="zone_div" style="display: none;">
-                    <label >Zone</label>
-                    <input type="text" class="form-control" id="zone" value="upto 20 to 25km" disabled>
-                  </div>
-                  <div class="form-group" id="cost_div" style="display: none;">
-                    <label >Budget</label>
-                    <input type="text" class="form-control" id="budget" value="1250" >
-                  </div>
-                  
+                 
                   
                   <!-- <div class="form-group">
                     <label >Choose Plan</label>
@@ -563,16 +561,24 @@ float: right;
                         <input type="file" class="custom-file-input" id="exampleInputFile">
                         <label class="custom-file-label">Choose file</label>
                       </div>
-                      
                     </div>
                   </div> -->
                 <!-- /.card-body -->
-                <label >Total</label>
-                <input type="text" class="form-control" id="total_" placeholder="Grant Total">
+                <div class="form-group" id="zone_div" >
+                  <label >Zone</label>
+                  <input type="text" class="form-control" id="zone" value="upto 20 to 25km">
+                </div>
+                <div class="form-group" id="cost_div" >
+                  <label >Budget</label>
+                  <input type="number" class="form-control" id="budget" value="1250" onkeyup="gst1()" >
+                </div>
+               
                 <label >GST</label>
-                <input type="text" class="form-control" id="gst1_" disabled>
+                <input type="text" class="form-control" id="gst1_" value="225" disabled>
+                <label >Total</label>
+                <input type="text" class="form-control" id="total_"  placeholder="Grant Total">
                 <div class="card-footer" id="payment_button" >
-                  <button type="submit" id="digital_payment" class="btn btn-primary" >Submit</button>
+                  <button type="submit"  class="btn btn-primary"  onclick="paymentProcess()">Submit</button>
                 </div>
 
                 <!-- <div class="card-footer" id="submit_button" >

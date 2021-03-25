@@ -95,8 +95,8 @@ function savetoDB(response){
     {
     console.log(response)
    datainsert();
-    var name = document.getElementById('fname').value;
-    var payRef = firebase.database().ref('payment/');
+    var name =  document.getElementById("phonenum").value;
+    var payRef = firebase.database().ref('payment_for_new_project/');
    
     if (typeof response.razorpay_payment_id == 'undefined' || response.razorpay_payment_id < 1) {
         // redirect_url = 'preloadergeeks.html';
@@ -105,7 +105,7 @@ function savetoDB(response){
         //    redirect_url = 'preloadergeeks.html';
            console.log('success');
            payRef.child(name).set({
-            NameOfStudent: name,
+            Mobile_number: name,
         payment_id : response.razorpay_payment_id
         })
     

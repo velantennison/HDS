@@ -96,7 +96,7 @@
 
 
 
-  document.getElementById('data_insert').onclick = function(){
+  function datainsert(){
     var Client_name_ = document.getElementById("client_name1").value;
     var Project_color_ = document.getElementById("color").value;
     var Project_Number_ = document.getElementById("prod_num").value;

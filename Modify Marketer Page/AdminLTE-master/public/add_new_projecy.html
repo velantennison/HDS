@@ -396,10 +396,7 @@ float: right;
                     <label >Shop Address</label>
                     <input type="text" class="form-control" id="shop_address_" placeholder="Enter Address">
                   </div>
-                  <div class="form-group">
-                    <label >GST</label>
-                    <input type="text" class="form-control" id="GST_" placeholder="Enter GST">
-                  </div>
+                  
                   <div class="form-group">
                     <label >Client Address</label>
                     <input type="text" class="form-control" id="address_" placeholder="Enter Address">
@@ -425,6 +422,10 @@ float: right;
                   <div id="plan_" class="form-group" style="display: none;">
                     <label >Plan Price</label>
                     <input type="text" class="form-control" id="Plan_price" >
+                  </div>
+                  <div class="form-group">
+                    <label >GST</label>
+                    <input type="text" class="form-control" id="GST_" placeholder="Enter GST">
                   </div>
                   <div id="domain" class="form-group" style="display: none;">
                     <label >Check Domain Here</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -457,7 +458,7 @@ float: right;
                 </div>
 
                 <div class="card-footer" id="submit_button" style="display: none;">
-                  <button type="submit" class="btn btn-primary" id="data_insert" >Submit</button>
+                  <button type="submit" class="btn btn-primary"  onclick="datainsert()">Submit</button>
                 </div>
               
             </div>
@@ -555,6 +556,7 @@ function measure(x1){
            console.log(x1);
        if( x1=="Demo Plan"){
          document.getElementById("Plan_price").value= "1121";
+         document.getElementById("GST_").value= "201.78";
          document.getElementById("plan_").style.display = "block";
      
          document.getElementById("domain_cost").value = "";
@@ -567,6 +569,7 @@ function measure(x1){
        }
        else if(x1=="Base Plan"){
            document.getElementById("Plan_price").value="1844";
+           document.getElementById("GST_").value= "";
            document.getElementById("domain_cost").value = "";
          document.getElementById("domain_GST").value = "";
            document.getElementById("plan_").style.display = "block";
@@ -578,6 +581,7 @@ function measure(x1){
        }
        else if(x1=="Pre Plan"){
            document.getElementById("Plan_price").value="2140";
+           document.getElementById("GST_").value= "";
            document.getElementById("domain_cost").value = "";
          document.getElementById("domain_GST").value = "";
            document.getElementById("plan_").style.display = "block";
@@ -590,6 +594,7 @@ function measure(x1){
        else if(x1=="Smart Plan"){
            document.getElementById("Plan_price").value="4500";
            document.getElementById("domain_cost").value = "";
+           document.getElementById("GST_").value= "";
          document.getElementById("domain_GST").value = "";
            document.getElementById("plan_").style.display = "block";
            document.getElementById("domain").style.display = "none";
@@ -600,7 +605,7 @@ function measure(x1){
        }
        else if(x1=="Start Plan"){
            document.getElementById("Plan_price").value="1844";
-           
+           document.getElementById("GST_").value= "";
            document.getElementById("plan_").style.display = "block";
            document.getElementById("domain").style.display = "block";
            document.getElementById("domain1").style.display = "block";
@@ -610,7 +615,7 @@ function measure(x1){
        }
        else if(x1=="Green Plan"){
            document.getElementById("Plan_price").value="2140";
-           
+           document.getElementById("GST_").value= "";
          document.getElementById("plan_").style.display = "block";
            document.getElementById("domain").style.display = "block";
            document.getElementById("domain1").style.display = "block";
@@ -620,7 +625,7 @@ function measure(x1){
        }
        else if(x1=="SmartUp Plan"){
            document.getElementById("Plan_price").value="4500";
-           
+           document.getElementById("GST_").value= "";
            document.getElementById("plan_").style.display = "block";
            document.getElementById("domain").style.display = "block";
            document.getElementById("domain1").style.display = "block";
@@ -629,7 +634,7 @@ function measure(x1){
          document.getElementById("submit_button").style.display = "none";
        }
        else if(x1=="Custom Plan"){
-     
+        document.getElementById("GST_").value= "";
            document.getElementById("domain_cost").value = "";
          document.getElementById("domain_GST").value = "";
            document.getElementById("plan_").style.display = "none";
