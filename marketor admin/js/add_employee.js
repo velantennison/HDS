@@ -159,11 +159,7 @@ document.getElementById('add_emp_sub').onclick = function(){
 function roll_no(){
     alert("hello");
     var x1_ = document.getElementById("add_position").value;
-    
     var playersRef = firebase.database().ref("Project1/" +  x1_ + "/") ;
-   
-  
-    
     playersRef.on('value',getReq);
     function getReq(snap){
      var array = [];
@@ -181,14 +177,6 @@ function roll_no(){
             var roll_number_12 =    x2_ + x1_[0] + '-' + roll_1 ;
             console.log("roll number" + roll_number_12);
             document.getElementById("add_roll_no_").value = roll_number_12;
-            // var sum = 0;
-            // for(var i in array){
-                 
-            //     sum += array[i];
-                                  
-            // }
-            // console.log(sum);
-      
          });
     }
 }
