@@ -114,7 +114,7 @@
     var select_domain_ = document.getElementById("domain_").value;
     var marketer_mob = localStorage.getItem("MOB");
     console.log(Project_Number_);
-      var uploadTask = firebase.storage().ref('Projects1/' + month_and_year_ + Client_number_ +".png").put(files[0]);
+      var uploadTask = firebase.storage().ref('Marketors_Projects/' + month_and_year_ + Client_number_ +".png").put(files[0]);
   
       uploadTask.on('state_changed', function(snapshot)
       {
@@ -133,7 +133,7 @@
         
     
           
-          firebase.database().ref('Projects1/' + month_and_year_ + Client_number_).set({
+          firebase.database().ref('Marketors_Projects/' + month_and_year_ + Client_number_).set({
                     Logo: ImgUrl,
                     Client_name:Client_name_,
                     Design_color: Project_color_,

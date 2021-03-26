@@ -419,14 +419,11 @@ float: right;
                       <option>Custom Plan</option>
                     </select>
                   </div>
-                  <div id="plan_" class="form-group" style="display: none;">
+                  <div id="plan_" class="form-group" style="display: none;" >
                     <label >Plan Price</label>
                     <input type="text" class="form-control" id="Plan_price" >
                   </div>
-                  <div class="form-group">
-                    <label >GST</label>
-                    <input type="text" class="form-control" id="GST_" placeholder="Enter GST">
-                  </div>
+                 
                   <div id="domain" class="form-group" style="display: none;">
                     <label >Check Domain Here</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="https://domains.google/" class="btn btn-primary">Google Domain</a>
@@ -451,20 +448,15 @@ float: right;
                       
                     </div>
                   </div> -->
-                  
                 <!-- /.card-body -->
                 <div class="card-footer" id="payment_button" style="display: block;">
                   <button type="submit" onclick="paymentProcess()" class="btn btn-primary" >Submit</button>
                 </div>
-
                 <div class="card-footer" id="submit_button" style="display: none;">
                   <button type="submit" class="btn btn-primary"  onclick="datainsert()">Submit</button>
-                </div>
-              
+                </div> 
             </div>
             <!-- /.card -->
-
-            
                   <div class="form-group">
                   </div>
                 </form>
@@ -487,7 +479,6 @@ float: right;
     </div>
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
-
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -495,7 +486,6 @@ float: right;
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -514,7 +504,6 @@ float: right;
 <!-- <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script> -->
-
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
@@ -525,25 +514,7 @@ float: right;
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
-
-
-
-<!-- <script>
-var firebaseConfig = {
-    apiKey: "AIzaSyBHMZB5nJXtm3UAnVACsxR-LXyK8KtVdno",
-    authDomain: "hyper-mart-shopping.firebaseapp.com",
-    databaseURL: "https://hyper-mart-shopping-default-rtdb.firebaseio.com",
-    projectId: "hyper-mart-shopping",
-    storageBucket: "hyper-mart-shopping.appspot.com",
-    messagingSenderId: "306358878756",
-    appId: "1:306358878756:web:9de20019ab10ca65998eb1",
-    measurementId: "G-8FNG928M5F"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script> -->
 <script src="js/auth.js"></script>
-  
 <script>
 $(function () {
   bsCustomFileInput.init();
@@ -551,14 +522,13 @@ $(function () {
 </script>
 <script>
 
-function measure(x1){
-           
+function measure(x1){  
            console.log(x1);
        if( x1=="Demo Plan"){
          document.getElementById("Plan_price").value= "1121";
-         document.getElementById("GST_").value= "201.78";
+         
          document.getElementById("plan_").style.display = "block";
-     
+        
          document.getElementById("domain_cost").value = "";
          document.getElementById("domain_GST").value = "";
          document.getElementById("domain").style.display = "none";
@@ -569,9 +539,10 @@ function measure(x1){
        }
        else if(x1=="Base Plan"){
            document.getElementById("Plan_price").value="1844";
-           document.getElementById("GST_").value= "";
+          
            document.getElementById("domain_cost").value = "";
          document.getElementById("domain_GST").value = "";
+        
            document.getElementById("plan_").style.display = "block";
            document.getElementById("domain").style.display = "none";
            document.getElementById("domain1").style.display = "none";
@@ -581,9 +552,10 @@ function measure(x1){
        }
        else if(x1=="Pre Plan"){
            document.getElementById("Plan_price").value="2140";
-           document.getElementById("GST_").value= "";
+        
            document.getElementById("domain_cost").value = "";
          document.getElementById("domain_GST").value = "";
+       
            document.getElementById("plan_").style.display = "block";
            document.getElementById("domain").style.display = "none";
            document.getElementById("domain1").style.display = "none";
@@ -594,8 +566,9 @@ function measure(x1){
        else if(x1=="Smart Plan"){
            document.getElementById("Plan_price").value="4500";
            document.getElementById("domain_cost").value = "";
-           document.getElementById("GST_").value= "";
+ 
          document.getElementById("domain_GST").value = "";
+        
            document.getElementById("plan_").style.display = "block";
            document.getElementById("domain").style.display = "none";
            document.getElementById("domain1").style.display = "none";
@@ -605,7 +578,8 @@ function measure(x1){
        }
        else if(x1=="Start Plan"){
            document.getElementById("Plan_price").value="1844";
-           document.getElementById("GST_").value= "";
+          
+           
            document.getElementById("plan_").style.display = "block";
            document.getElementById("domain").style.display = "block";
            document.getElementById("domain1").style.display = "block";
@@ -615,7 +589,8 @@ function measure(x1){
        }
        else if(x1=="Green Plan"){
            document.getElementById("Plan_price").value="2140";
-           document.getElementById("GST_").value= "";
+          
+           
          document.getElementById("plan_").style.display = "block";
            document.getElementById("domain").style.display = "block";
            document.getElementById("domain1").style.display = "block";
@@ -625,7 +600,8 @@ function measure(x1){
        }
        else if(x1=="SmartUp Plan"){
            document.getElementById("Plan_price").value="4500";
-           document.getElementById("GST_").value= "";
+      
+          
            document.getElementById("plan_").style.display = "block";
            document.getElementById("domain").style.display = "block";
            document.getElementById("domain1").style.display = "block";
@@ -634,9 +610,10 @@ function measure(x1){
          document.getElementById("submit_button").style.display = "none";
        }
        else if(x1=="Custom Plan"){
-        document.getElementById("GST_").value= "";
+        
            document.getElementById("domain_cost").value = "";
          document.getElementById("domain_GST").value = "";
+         
            document.getElementById("plan_").style.display = "none";
            document.getElementById("domain").style.display = "none";
            document.getElementById("domain1").style.display = "none";
@@ -646,14 +623,8 @@ function measure(x1){
        }
       
     }
-
-    
-  
-
   function prod_no(){
-
-   
-    var playersRef = firebase.database().ref('Projects1/') ;
+    var playersRef = firebase.database().ref('Marketors_Projects/') ;
     playersRef.on('value',getReq);
     function getReq(snap){
      var array = [];
@@ -675,7 +646,6 @@ function measure(x1){
          });
     }
 }
-
 </script>
 <script src="js/logout.js"></script>
 <script src="js/add.js"></script>
