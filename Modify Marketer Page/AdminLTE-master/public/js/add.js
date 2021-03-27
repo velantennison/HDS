@@ -106,13 +106,16 @@
     var Plan_ = document.getElementById("cur_plan").value;
     var budget_price= document.getElementById("Plan_price").value;
     var domain_price= document.getElementById("domain_cost").value;
+    var domain_gst = document.getElementById("domain_GST").value;
     var shop_address_ = document.getElementById("shop_address_").value;
-    var gst_ = document.getElementById("GST_").value;
+    var Total_cost_ = document.getElementById("total12_").value;
+    // var gst_ = document.getElementById("GST_").value;
 
     var Client_address_ = document.getElementById("address_").value;
-    var month_and_year_ = document.getElementById("demo").value;
+    var date_ = document.getElementById("demo").value;
     var select_domain_ = document.getElementById("domain_").value;
     var marketer_mob = localStorage.getItem("MOB");
+    var month_and_year_ = localStorage.getItem("MONTH");
     console.log(Project_Number_);
       var uploadTask = firebase.storage().ref('Marketors_Projects/' + month_and_year_ + Client_number_ +".png").put(files[0]);
   
@@ -129,10 +132,6 @@
       function(){
           uploadTask.snapshot.ref.getDownloadURL().then(function(url){
             ImgUrl = url;
-         
-        
-    
-          
           firebase.database().ref('Marketors_Projects/' + month_and_year_ + Client_number_).set({
                     Logo: ImgUrl,
                     Client_name:Client_name_,
@@ -140,19 +139,22 @@
                     project_number: Project_Number_,
                     Client_mail:Client_mail_,
                     Domain_cost:domain_price,
+                    Domain_Gst:domain_gst,
                     Client_number:Client_number_,
                     shop_address:shop_address_,
-                    GST: gst_,
                     Client_address:Client_address_,
                     Project_description:Project_description_,
                     select_domain:select_domain_,
                     month_and_year:month_and_year_,
+                    Date: date_,
                     Choosen_plan: Plan_,
+                    Total: Total_cost_,
                     Plan_price: budget_price,
                     Marketer_mobile:marketer_mob,
-                    MARKETER_EMAIL: user_email_fr_lg2
+                    MARKETER_EMAIL: user_email_fr_lg2,
+                    prject_status:"New"
             });
-          alert("Image Added Successfully");
+          alert("Data Added Successfully");
       }
 
     );

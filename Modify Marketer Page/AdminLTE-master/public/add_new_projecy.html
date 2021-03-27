@@ -273,6 +273,16 @@ float: right;
               </p>
             </a>
           </li> -->
+          <li class="nav-item">
+            <a href="invoice.html" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+               Invoice
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+           
+          </li>
 
                      
           <li class="nav-item">
@@ -345,7 +355,7 @@ float: right;
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" id="sec_form">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
@@ -449,6 +459,10 @@ float: right;
                     </div>
                   </div> -->
                 <!-- /.card-body -->
+                <div class="form-group">
+                  <label >Total</label>
+                  <input type="text" class="form-control" id="total12_" value="0">
+                </div>
                 <div class="card-footer" id="payment_button" style="display: block;">
                   <button type="submit" onclick="paymentProcess()" class="btn btn-primary" >Submit</button>
                 </div>

@@ -5,25 +5,47 @@ function gst(){
         document.getElementById("domain_GST").value = domaincost;
 }
 
+document.getElementById("sec_form").addEventListener('click', function(){
 
 
-
-
-function paymentProcess(){
-    var domainprice = document.getElementById("domain_cost").value;
+var domainprice = document.getElementById("domain_cost").value;
 var price = document.getElementById("Plan_price").value;
 var gst = document.getElementById("domain_GST").value;
   
     total = parseFloat(gst) + parseFloat(price) + parseFloat(domainprice);
 
      if(total){
-// 	var domainprice = document.getElementById("domain_cost").value;
-// var price = document.getElementById("Plan_price").value;
-// var gst = document.getElementById("domain_GST").value;
+        document.getElementById("total12_").value = total;
+    }   
+    else if(price){
+         total = document.getElementById("Plan_price").value;
+         document.getElementById("total12_").value = total;
+    }
 
+});
+document.getElementById("sec_form").addEventListener('keyup', function(){
+
+
+    var domainprice = document.getElementById("domain_cost").value;
+    var price = document.getElementById("Plan_price").value;
+    var gst = document.getElementById("domain_GST").value;
+      
+        total = parseFloat(gst) + parseFloat(price) + parseFloat(domainprice);
+    
+         if(total){
+            document.getElementById("total12_").value = total;
+        }   
+        else if(price){
+             total = document.getElementById("Plan_price").value;
+             document.getElementById("total12_").value = total;
+        }
+    
+    });
+function paymentProcess(){
+   var Tot_ = document.getElementById("total12_").value;
 var options = {
     "key": "rzp_test_GmJyzKJA6xsOC6", // Enter the Key ID generated from the Dashboard
-    "amount": total * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 means 50000 paise or ₹500.
+    "amount": Tot_ * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 means 50000 paise or ₹500.
     "currency": "INR",
     "name": "Hyper Mart",
     "description": "Tutorial",
@@ -48,38 +70,6 @@ var options = {
 }
 var propay = new Razorpay(options);
 propay.open();
-    }   
-   else if(price){
-        total = document.getElementById("Plan_price").value;
-        var options = {
-            "key": "rzp_test_GmJyzKJA6xsOC6", // Enter the Key ID generated from the Dashboard
-            "amount": total * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 means 50000 paise or ₹500.
-            "currency": "INR",
-            "name": "Hyper Mart",
-            "description": "Tutorial",
-            // "callback_url": 'https://www.google.com',
-            "image": "logo.png",// Replace this with the order_id created using Orders API (https://razorpay.com/docs/api/orders).
-            "handler": function (response){
-                savetoDB(response);
-                $('#myModal').modal();
-            },
-            "prefill": {
-                "name": "",
-                "email": "",
-                "contact": "",
-                "phoneno" : ""
-            },
-            "notes": {
-                "address": "note value"
-            },
-            "theme": {
-                "color": "blue"
-            }
-        }
-        var propay = new Razorpay(options);
-        propay.open();
-    }
-
   
 }
 
@@ -139,9 +129,13 @@ function myFunction() {
   month[11] = "December";
 //var year = new Array();
    d = new Date();
+   var day = d.getDate();
    n = month[d.getMonth()];
    year = d.getFullYear();
-   current_month =  n + ' ' + year;
+   current_month = day + ' ' + n + ' ' + year;
+
+   current_month_ =  n + ' ' + year;
+   localStorage.setItem("MONTH",current_month_);
   document.getElementById("demo").value = current_month;
 }
 
