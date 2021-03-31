@@ -1,0 +1,21 @@
+	<script>
+		function printDiv(divName){
+			var printContents = document.getElementById(divName).innerHTML;
+			var originalContents = document.body.innerHTML;
+
+			document.body.innerHTML = printContents;
+
+			window.print();
+
+			document.body.innerHTML = originalContents;
+
+		}
+	</script>
+<h1> do not print this </h1>
+
+<div id='printMe' style="width: 595px;height:  842px;">
+  Print this only 
+  <img src="images/hds.png" style="width: 100px;height:  50px;">
+</div>
+
+<button onclick="printDiv('printMe')">Print only the above div</button>

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>invoice</title>
 
-
-  <style> #Month_list{
+  
+<style> #Month_list{
     background-color:#007BFF;
     margin-left: 8%;
     width: 80%;
@@ -81,6 +81,7 @@ margin-top: 5%;
  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
  <!-- summernote -->
  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
 </head>
 <body onload="maininvoice()" class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -145,7 +146,7 @@ margin-top: 5%;
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="MyAccount.html" id="Marketer_Email" class="d-block"></a>
+          <a href="profile2.html" id="Marketer_Email" class="d-block"></a>
         </div>
       </div>
 
@@ -225,8 +226,8 @@ margin-top: 5%;
           </li>
 
               <li class="nav-item">
-                <a href="invoice.html" class="nav-link  active">
-                  <i class="nav-icon far fa-calendar-alt"></i>
+                <a href="#" class="nav-link  active">
+                  <i class="nav-icon far fa-edit"></i>
                   <p>
                     Invoice
                     <i class="fas fa-angle-left right"></i>
@@ -256,18 +257,42 @@ margin-top: 5%;
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
 
-    <div id="div1" style="margin-top:2%">
+    <div id="div1"  style="margin-top:2%">
 
     </div>
-    <div id="div2" style="margin-top:2%" style="display: none;">
+    <div  id="_invoice"  style="display: none;">
+      <div id="invoice_1" style="width: 580px;height:500px;">
+        <div id="img_logo" style="display: none;">
+            <img src="images/hds.png" style="height: 136px; width:25%;">
+            <div style="float: right; width: 75%; height:136px;border: none;">
+              <pre style="font-family: sans-serif;">
+                Hyper Delta Software Solutions,
+                Opposite to State Bank of India,
+                Alwarkurichi, Tenkasi,
+                Pin Code - 627 412.
+                Ph:04634-295 886.
+                Mail:contact@hdssolutions.in
+              </pre>
+            </div>
+          <!-- <h2 style="margin-top: -2%;margin-left: 10%;">HDS</h2> -->
+        </div>
+      </div>
+      <!-- <div id="empty_div"></div> -->
+      <div id="btn-div" style="display: none;">
+        <button class="btn btn-primary" id="download" onclick="printDiv('invoice_1')">Download</button>
+        <button class="btn btn-primary" id="back_btn">Back</button>
 
+      </div>
+
+    
     </div>
+  </div>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+            <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+            </aside>
+      <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
@@ -311,10 +336,22 @@ margin-top: 5%;
 // }) 
 
 //  }
+// $('#download').click(function() {
+//   var print = document.getElementById('invoice_1');
+//   print.style.marginLeft="none";
+//   var options = {
+//   };
+//   var pdf = new jsPDF('p', 'pt', 'a4');
+//   pdf.addHTML($("#invoice_1"), 15, 15, options, function() {
+//     pdf.save('pageContent.pdf');
+//   });
+// })
 
  function maininvoice()
  {
+  
     var user_email =  localStorage.getItem("Email_from_login");
+    document.getElementById('Marketer_Email').innerHTML = user_email;
 console.log(user_email);
   var playersRef1 = firebase.database().ref("Marketors_Projects/");
 
@@ -415,33 +452,104 @@ console.log(user_email);
  
  function mtb(A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13){
 
-  var div2 = document.getElementById('div2');
-	div2.className="row";
+  var div2 = document.getElementById('invoice_1');
+	// div2.style.width="50%";
+  // div2.style.height="800px";
+  div2.style.backgroundColor = "lightblue";
+  
+  
+  // div2.style.height = "px";
+
+  //1st child div
 	var view = document.createElement('div');
-  view.id="invoice_div";
-  div2.style.backgroundColor = "red";
-  div2.style.height = "100px";
-  div2.style.width = "100%";
+  
+  view.className = "col-6";
+ view.style.float = "left";
+ view.style.marginTop = "5%";
+  
+  // 2nd child div
+	var view1 = document.createElement('div');
+  view1.className = "col-6";
+  view1.style.float = "right";
+ view1.style.marginTop = "5%";
+  
 
 
   document.getElementById('div1').style.display = "none";
-  document.getElementById('div2').style.display = "block";
+  document.getElementById('_invoice').style.display = "block";
+  document.getElementById('img_logo').style.display = "block";
+  document.getElementById('btn-div').style.display = "block";
+
+  var P1 = document.createElement('p');
+  var P2 = document.createElement('p');
+  var P3 = document.createElement('p');
+  var P4 = document.createElement('p');
+  var P5 = document.createElement('p');
+  var P6 = document.createElement('p');
+  var P7 = document.createElement('p');
+  var P8 = document.createElement('p');
+  var P9 = document.createElement('p');
+  var P10 = document.createElement('p');
+  var P11 = document.createElement('p');
+  var P12 = document.createElement('p');
+  var P13 = document.createElement('p');
+ 
+  var Button_div1_ = document.getElementById('back_btn');
+  
+  Button_div1_.style.marginLeft = "2%";
+  Button_div1_.style.width = "8%";
+  Button_div1_.addEventListener('click',function(){
+    window.location.reload();
+   
+      
+    });
 
 
+  
+P1.innerHTML ="<b>Client Number:</b>"+' ' + A1;
+P2.innerHTML ="<b>Choosen plan:</b>" +' '+ A2;
+P3.innerHTML ="<b>Client Address:</b>"+' ' + A3;
+P4.innerHTML ="<b>Client  Mail:</b>"+' ' + A4;
+P5.innerHTML ="<b>Client Name:</b>" +' '+ A5;
+P6.innerHTML ="<b>Domail Cost:</b>" +' ' + A6;
+P7.innerHTML ="<b>Domail Gst:</b>" +' ' + A7;
+P8.innerHTML ="<b>Plan Price:</b>" +' ' + A8;
+P9.innerHTML ="<b>Project Number:</b>" +' ' + A9;
+P10.innerHTML="<b>Domain Name:</b>" +' ' + A10;
+P11.innerHTML="<b>Shop Address:</b>" +' ' + A11;
+P12.innerHTML= "<b>Date:</b>"  +' '+ A12;
+P13.innerHTML="<b>Total:</b>" +' ' + A13;
 
-
-
-
-
-
-
-
-
-
-
-
-
+view.appendChild(P1);
+view.appendChild(P2);
+view.appendChild(P3);
+view.appendChild(P4);
+view.appendChild(P5);
+view.appendChild(P6);
+view1.appendChild(P7);
+view1.appendChild(P8);
+view1.appendChild(P9);
+view1.appendChild(P10);
+view1.appendChild(P11);
+view1.appendChild(P12);
+view1.appendChild(P13);
+div2.appendChild(view);
+div2.appendChild(view1);
  }
+ 
+</script>
+<script>
+  function printDiv(divName){
+    var printContents = document.getElementById(divName).innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
+
+  }
 </script>
 
 </body>

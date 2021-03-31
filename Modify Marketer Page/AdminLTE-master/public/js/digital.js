@@ -9,7 +9,8 @@ var uploadTask1;
 var uploadTask2;
 var uploadTask3;
 var content_,domain_,phone_,mail_,Add_,Shop_address_,zone_,budget_,gst_1_;
-
+var marketer_mob;
+var user_email_fr_lg2;
 var link;
 var cost_add,cost,video_amount,total_cost,gst_amount;
 
@@ -98,50 +99,7 @@ document.getElementById("select1_").onclick = function(e){
     
     document.getElementById("gst1_").value = gst_amount;
 }
-// display div when click the click here button
-// document.getElementById("click_").onclick = function(){
-//   alert("welcome");
-//   document.getElementById("add_video").style.display = "block";
 
-//   document.getElementById("video_div").style.display = "block";
-//   document.getElementById("zone_div").style.display = "block";
-//   document.getElementById("cost_div").style.display = "block";
-
-
-// }
-
-// checked or not and payment calculation
-
-
-
-// function check_() {
-//   var checkBox = document.getElementById("myCheck");
-//   var text = document.getElementById("text");
-//   if (checkBox.checked == true){
-//     alert('Do you want to add Video Ad');
-//     document.getElementById("add_video").style.display = "block";
-//     document.getElementById("video_div").style.display = "block";
-//     document.getElementById("zone_div").style.display = "block";
-//     document.getElementById("cost_div").style.display = "block";
-//     cost = document.getElementById("budget").value;
-    
-//     total_cost = parseFloat(cost_add)+parseFloat(cost);
-//    document.getElementById("total_").value = total_cost;
-//     console.log(total_cost);
-
-  
-//   } else if(checkBox.checked == false) {
-    
-//     document.getElementById("add_video").style.display = "none";
-//     document.getElementById("video_div").style.display = "none";
-//     document.getElementById("zone_div").style.display = "none";
-//     document.getElementById("cost_div").style.display = "none";
-//     total_cost = parseFloat(total_cost)-parseFloat(cost);
-//    document.getElementById("total_").value = total_cost;
-//     console.log(total_cost);
-     
-//   }
-// }
 
 //video ad
 link = "null";
@@ -203,22 +161,7 @@ function video_ad(){
      }
    }
  }
-//image radio 
-// document.getElementById("my_banner").onclick = function() {
-//   alert("welcome");
-//  document.getElementById("image1_div").style.display = "block";
-//  document.getElementById("image_div").style.display = "none";
 
-
-// }                   
-// document.getElementById("new_banner").onclick = function() {
-//   alert("hello");
-//  document.getElementById("image_div").style.display = "block";
-//  document.getElementById("image1_div").style.display = "none";
-
-
-
-// }
 
 // add to database digital table
 function dataget(){
@@ -244,15 +187,14 @@ uploadTask1.snapshot.ref.getDownloadURL().then(function(url1){
       Domain: domain_,
       Mobile_number: phone_,
       Mail:  mail_,
+      Marketer_mobile: marketer_mob,
+      MARKETER_EMAIL: user_email_fr_lg2,
       Client_address: Add_,
       Shop_address:  Shop_address_,
       Video_url: Vid1,
-     
       Video_ad: link, 
-    
       Zone: zone_,
       Cost: budget_,
-    
       GST: gst_1_,
       Grand_Total: grand_total
      
@@ -282,7 +224,8 @@ function datainsert(){
    budget_ = document.getElementById("budget").value;
    gst_1_ = document.getElementById("gst1_").value;
    grand_total = document.getElementById("total_").value
-
+   marketer_mob = localStorage.getItem("MOB");
+   user_email_fr_lg2 =  localStorage.getItem("Email_from_login");
   console.log(domain_);
   // console.log(link);
 

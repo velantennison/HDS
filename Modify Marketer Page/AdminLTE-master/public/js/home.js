@@ -56,6 +56,7 @@ function fetch(){
     // Del();  
  
 	var marketer_mob = localStorage.getItem("MOB");
+
     var playersRef = firebase.database().ref("Projects/");
 
     playersRef.orderByChild("Marketer_mobile").equalTo(marketer_mob).on("child_added", function(data) {
@@ -77,8 +78,9 @@ function fetch(){
 		
     });
     var marketer_mob1 = localStorage.getItem("MOB");
+    console.log("12" + marketer_mob1);
     //var table = new Firebase('https://hyper-mart-shopping-default-rtdb.firebaseio.com/1%20year');
-    var playersRef1 =  firebase.database().ref('Projects/');
+    var playersRef1 =  firebase.database().ref('Marketors_Projects/');
     var child1 = playersRef1.orderByChild("Marketer_mobile").equalTo(marketer_mob1);
     // var Uid = localStorage.getItem('userNAME');
     //  send_value(Uid);
@@ -95,7 +97,7 @@ function fetch(){
        //count is now safe to use.
     });
     
-    console.log("hello")
+    console.log("hello");
     // var playersref = firebase.database().ref('Projects/')
     // playersref.orderByChild("Client_number").equalTo("9751059000").on('value', function(data) {
       var playersRef = firebase.database().ref("Projects/");
