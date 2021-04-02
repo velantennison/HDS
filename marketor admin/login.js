@@ -4,7 +4,7 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
    
-      window.location.assign("index.html");
+      window.location.assign("home.html");
      
   
       var user = firebase.auth().currentUser;
@@ -33,8 +33,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 	console.log(userEmail);
     localStorage.setItem("NAME", userEmail);
     localStorage.setItem("SURNAME", userPass);
-
-	
+var playersRef1 = firebase.database().ref("HR_site/");
+playersRef1.orderByChild("Email").equalTo(userEmail).once("value",snapshot => {
+  if(snapshot.exists()){
     firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -45,6 +46,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     return;
       // ...
     });
+
+  }
+  else{
+    alert('Wrong mail or password');
+  }
+})
+	
+ 
   
   }
   

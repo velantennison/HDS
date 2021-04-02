@@ -209,6 +209,6 @@ window.addEventListener('load', () => {
   
  function test()
  {
-  //window.location.assign('index.html');
-  window.location.href = 'login.html';
+  //window.location.assign('home.html');
+  window.location.href = 'index.html';
  }

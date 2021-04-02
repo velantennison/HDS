@@ -1,14 +1,8 @@
-//start of customer count
+
 function oncreate_(){
-    // var total_vac = localStorage.getItem("VACANCY");
-    // document.getElementById("vacancy_total").innerHTML = total_vac;
-
-
-    
+   
         var playersRef = firebase.database().ref("Vacancy/");
-       
-      
-        
+     
            playersRef.on('value',getReq);
            function getReq(snap){
             var array = [];
@@ -17,11 +11,7 @@ function oncreate_(){
                    var array_val = parseInt(total);
                    array.push(array_val);
                    console.log(array);
-                   
-                   
-               
-                
-                   var sum = 0;
+                    var sum = 0;
                    for(var i in array){
                         
                        sum += array[i];
@@ -107,8 +97,8 @@ window.addEventListener('load', () => {
   
  function test()
  {
-  //window.location.assign('index.html');
-  window.location.href = 'login.html';
+  
+  window.location.href = 'index.html';
   localStorage.clear();
  }
  
@@ -262,21 +252,7 @@ document.getElementById("mar_dev").onclick = function () {
             var ifsc_1_= ifsc_;
             var email_1_= Email_1;
             console.log(roll1_);
-            //  firebase.database().ref().child('MonthlySalary/').on('child_added', function(data) {
-            //     let Roll_number_ = data.val().Roll_number;
-            //     var arr= [];
-            //     arr.push(Roll_number_);
-            //     console
-            //  })
-            // if(Roll_number_ != roll1_){
-            //     let Salary = "0";
-            //     let task_complete_ = "0";
-            //     let task_incomplete_ = "0";
-            //     // let Roll_number_ = data.val().Roll_number;
-            //     addItemsToList(name1_, position_, roll1_,pass_,qualification_,DOB1_,mob1_,address_1_,country_1_,district_1_,aadhar_1_,account_1_,ifsc_1_,email_1_,status1_,task_complete_,task_incomplete_,Salary);
-            // }
-
-          
+            
             var fetch_1 = firebase.database().ref().child('MonthlySalary/');
 fetch_1.orderByChild("Roll_number").equalTo(roll1_).on('child_added', function(data) {
     let Roll_number_ = data.val().Roll_number;
@@ -286,75 +262,10 @@ fetch_1.orderByChild("Roll_number").equalTo(roll1_).on('child_added', function(d
     let task_incomplete_ = data.val().Task_Incompleted;
     // let Roll_number_ = data.val().Roll_number;
     addItemsToList(name1_, position_, roll1_,pass_,qualification_,DOB1_,mob1_,address_1_,country_1_,district_1_,aadhar_1_,account_1_,ifsc_1_,email_1_,status1_,task_complete_,task_incomplete_,Salary);
-
-
-
-}
-        
+}       
     )
-
         }
-
 }
-//     document.getElementById("mar_dev").onclick = function () {
-//         document.getElementById("web_dev").style.backgroundColor = "#2595af";
-//         document.getElementById("web_").style.color = "#212529";
-//         document.getElementById("app_dev").style.backgroundColor = "#2595af";
-//         document.getElementById("app_").style.color = "#212529";
-//         document.getElementById("mar_dev").style.backgroundColor = "#0b6c7b";
-//         document.getElementById("mar_").style.color = "white";
-//         Empty();
-//         //fetch salary details from MONTHLY SALARY TABLE
-        
-//        firebase.database().ref().child('MonthlySalary/').on('value', function(snapshot) {
-          
-//             snapshot.forEach(
-//                 function(ChilSnapshot) {
-                           
-//                      let Salary = ChilSnapshot.val().Salary;
-//                      let task_complete_ = ChilSnapshot.val().Task_Completed;
-//                      let task_incomplete_ = ChilSnapshot.val().Task_Incompleted;
-//                      let Roll_number_ = ChilSnapshot.val().Roll_number;
-//                     addItemsToList2(Salary,task_complete_,task_incomplete_,Roll_number_);
-                 
-//                 }
-//             )
-//         });
-// function addItemsToList2(Salary,task_complete_,task_incomplete_,Roll_number_){
-//             var task_complete1=task_complete_;
-//             var task_incomplete1=task_incomplete_;
-//             var salary_=Salary;
-//             var Marketer_Id = Roll_number_;
-//             console.log(Marketer_Id);
-
-// var fetch_1 = firebase.database().ref().child('Project1/Marketer/')
-// fetch_1.orderByChild("Roll_number").equalTo(Marketer_Id).on('child_added', function(data) {
-    
-                             
-//                 let Name = data.val().Candidate_name;
-//              let Position = data.val().Position;
-//              let Roll_ = data.val().Roll_number;
-//              let Status_ = data.val().Status;
-//              let pass1_ = data.val().Password;
-//              let qualification1_ = data.val().Qualification;
-//              let dob_1 = data.val().DOB;
-//              let mobile_no = data.val().Mobile_Number;
-//              let address_1 = data.val().Address;
-//              let country1_ = data.val().Country;
-//              let district_ = data.val().District;
-//              let aadhar_no = data.val().Aadhar_number;
-//              let account_1 = data.val().Bank_account_number;
-//              let ifsc_ = data.val().IFSC_number;
-//              let Email_1 = data.val().Email;
-//             addItemsToList(Name, Position, Roll_,pass1_,qualification1_,dob_1,mobile_no,address_1,country1_,district_,aadhar_no,account_1,ifsc_,Email_1,Status_,task_complete1,task_incomplete1,salary_);
-            
-//         }
-        
-//     )
-
-// }
-// console.log("value fetched")
-//     }
     
    function  addItemsToList(Name, Position, Roll_,pass1_,qualification1_,dob_1,mobile_no,address_1,country1_,district_,aadhar_no,account_1,ifsc_,Email_1,Status_,task_complete1,task_incomplete1,salary_){
   
@@ -629,40 +540,10 @@ if((a5 == "App Developer") || (a5 == "Web Developer")){
             Aadhar_number: block_Aadhar_number,
             Bank_account_number: block_Account_number,
             IFSC_number: block_IFSC
-        // Name: block_name,
-        // Mobile: block_Mobile,
-        // Email: block_Email,
-        // Roll: block_Roll,
-        // Position: block_Position,
-        // Status: block_Status,
-        // Address: block_Address,
-        // District: block_District,
-        // Country: block_Country,
-        // Aadhar_number: block_Aadhar_number,
-        // Account_number: block_Account_number,
-        // IFSC_number: block_IFSC,
-        // Task_completed: block_task_complited,
-        // Task_incompleted: block_task_incomplited,
-        // Salary: block_salary
+        
       });
       alert("Image Added Successfully");
 
       firebase.database().ref('Project1/'+ block_Position + "/" + block_Mobile + block_District).remove();
    }
 
-
-   // convert div to pdf 
-//    var doc = new jsPDF();
-// var specialElementHandlers = {
-//     '#editor': function (element, renderer) {
-//         return true;
-//     }
-// };
-
-// $('#cmd').click(function () {
-//     doc.fromHTML($('#main_div').html(), 15, 15, {
-//         'width': 170,
-//             'elementHandlers': specialElementHandlers
-//     });
-//     doc.save('sample-file.pdf');
-// });
