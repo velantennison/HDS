@@ -266,6 +266,7 @@ fetch_1.orderByChild("Roll_number").equalTo(roll1_).on('child_added', function(d
     )
         }
 }
+
     
    function  addItemsToList(Name, Position, Roll_,pass1_,qualification1_,dob_1,mobile_no,address_1,country1_,district_,aadhar_no,account_1,ifsc_,Email_1,Status_,task_complete1,task_incomplete1,salary_){
   
@@ -326,8 +327,8 @@ fetch_1.orderByChild("Roll_number").equalTo(roll1_).on('child_added', function(d
     var Block_BTN = document.createElement("button");
     Block_BTN.innerHTML = "Block";
     Block_BTN.id="Block_1";
-      p1.innerHTML=Name;
-      p2.innerHTML= mobile_no;
+      p1.innerHTML= "Name:"+Name;
+      p2.innerHTML= "Num"+mobile_no;
       p3.innerHTML=Email_1;
 
       p4 .innerHTML= Roll_;
