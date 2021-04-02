@@ -361,7 +361,7 @@ float: right;
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="digitalinvoice.html">Invoice</a></li>
               <li class="breadcrumb-item active">Add Project to your count</li>
             </ol>
           </div>
@@ -385,11 +385,15 @@ float: right;
 
                   <div class="form-group">
                     <label >Client Phone Number</label>
-                    <input type="number" class="form-control" id="phonenum_" placeholder="Enter Mobile Number">
+                    <input type="number" class="form-control" id="phonenum_" placeholder="Enter Mobile Number" onclick="digital_pro()">
                   </div>
                   <div class="form-group">
                     <label >Client Mail Id</label>
                     <input type="email" class="form-control" id="mail_" placeholder="Enter Mail id">
+                  </div>
+                  <div class="form-group">
+                    <label >Project Number</label>
+                    <input type="text" class="form-control" id="digit_pro_num" placeholder="Project Number">
                   </div>
                   <div class="form-group">
                     <label >Shop Address</label>
@@ -398,6 +402,10 @@ float: right;
                   <div class="form-group">
                     <label >Client Address</label>
                     <input type="text" class="form-control" id="s_address_" placeholder="Enter Address">
+                  </div>
+                  <div class="form-group">
+                    <label>Current Date</label>
+                    <input type="text" class="form-control" id="demo_" placeholder="Current Date">
                   </div>
                   <div class="form-group">
                     <label >Domain</label>
@@ -450,7 +458,7 @@ float: right;
                     
                   </div>
                   <div class="form-group" id="add_video" style="display: none;">
-                    <video id="video_1" controls autoplay>
+                    <video id="video_1" controls>
                       <source  type="video/mp4"></video>
 
                     <button class="btn3" id="v_select">+</button>
@@ -458,26 +466,26 @@ float: right;
                   
                   <div class="form-group" id="video_div" style="display: none;">
                     <input type="radio" name="video"  value="video1" onclick="video_ad()">
-                    <video  controls autoplay>
+                    <video  controls>
                       <source src="images/lux.mp4" type="video/mp4">
                       
                       Your browser does not support the video tag.
                     </video>
                     <input type="radio" name="video"  value="video2" onclick="video_ad()">
-                    <video controls autoplay>
+                    <video controls>
                       <source src="images/lux1.mp4" type="video/mp4">
                      
                       Your browser does not support the video tag.
                     </video>
                     <input type="radio" name="video" value="video3" onclick="video_ad()">
-                    <video controls autoplay>
+                    <video controls>
                       <source src="images/ponds.mp4" type="video/mp4">
                       
                       Your browser does not support the video tag.
                     </video> 
                    
                     <input type="radio" name="video" value="video4" onclick="video_ad()">
-                     <video controls autoplay>
+                     <video controls >
                       <source src="images/jewel.mp4" type="video/mp4">
                       
                       Your browser does not support the video tag.
@@ -586,6 +594,30 @@ float: right;
 function main(){
   var user_email =  localStorage.getItem("Email_from_login");
     document.getElementById('Marketer_Email').innerHTML = user_email;
+    myFunction_();
+}
+function digital_pro(){
+    var playersRef = firebase.database().ref('Digital_marketing/') ;
+    playersRef.on('value',getReq);
+    function getReq(snap){
+     var array = [];
+        snap.forEach(keyReq => { 
+            var total = keyReq.val().project_number;
+            console.log(total);
+            var res = total.split('-');
+            var Number=res[1];   
+            var array_val = parseInt(Number);
+            array.push(array_val);
+            console.log(array);
+            
+            var high_=Math.max(...array);
+            var project_1 = high_ + 1;
+            var x3_ = "HDSDMP";
+            var project_number =    x3_ + '-' + project_1 ;
+            console.log("project number :" + project_number);
+            document.getElementById("digit_pro_num").value = project_number;
+         });
+    }
 }
 </script>
 

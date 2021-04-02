@@ -10,9 +10,11 @@ var uploadTask2;
 var uploadTask3;
 var content_,domain_,phone_,mail_,Add_,Shop_address_,zone_,budget_,gst_1_;
 var marketer_mob;
+var Digit_pro_num_,currenet_date;
 var user_email_fr_lg2;
 var link;
 var cost_add,cost,video_amount,total_cost,gst_amount;
+var IMAGE_COST,VIDEO_COST;
 
 
 var reader = new FileReader();
@@ -187,6 +189,8 @@ uploadTask1.snapshot.ref.getDownloadURL().then(function(url1){
       Domain: domain_,
       Mobile_number: phone_,
       Mail:  mail_,
+      Image_cost: IMAGE_COST,
+      Video_cost: VIDEO_COST,
       Marketer_mobile: marketer_mob,
       MARKETER_EMAIL: user_email_fr_lg2,
       Client_address: Add_,
@@ -196,7 +200,9 @@ uploadTask1.snapshot.ref.getDownloadURL().then(function(url1){
       Zone: zone_,
       Cost: budget_,
       GST: gst_1_,
-      Grand_Total: grand_total
+      Grand_Total: grand_total,
+      project_number: Digit_pro_num_,
+      Date: currenet_date
      
     
     });
@@ -226,7 +232,12 @@ function datainsert(){
    grand_total = document.getElementById("total_").value
    marketer_mob = localStorage.getItem("MOB");
    user_email_fr_lg2 =  localStorage.getItem("Email_from_login");
+   IMAGE_COST = document.getElementById("cost_").value;
+   VIDEO_COST = document.getElementById("v_cost").value;
+   Digit_pro_num_ = document.getElementById("digit_pro_num").value;
   console.log(domain_);
+  
+
   // console.log(link);
 
 
@@ -256,66 +267,6 @@ function datainsert(){
 }
 
 
-// function paymentProcess(){
-//   //     var domainprice = document.getElementById("domain_cost").value;
-//   // var price = document.getElementById("Plan_price").value;
-//   // var gst = document.getElementById("domain_GST").value;
-    
-//   //     total = parseFloat(gst) + parseFloat(price) + parseFloat(domainprice);
-  
-     
-  
-//   var options = {
-//       "key": "rzp_test_GmJyzKJA6xsOC6", // Enter the Key ID generated from the Dashboard
-//       "amount": total * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 means 50000 paise or ₹500.
-//       "currency": "INR",
-//       "name": "Hyper Mart",
-//       "description": "Tutorial",
-//       // "callback_url": 'https://www.google.com',
-//       "image": "logo.png",// Replace this with the order_id created using Orders API (https://razorpay.com/docs/api/orders).
-//       "handler": function (response){
-//           savetoDB(response);
-//           $('#myModal').modal();
-//       },
-//       "prefill": {
-//           "name": "",
-//           "email": "",
-//           "contact": "",
-//           "phoneno" : ""
-//       },
-//       "notes": {
-//           "address": "note value"
-//       },
-//       "theme": {
-//           "color": "blue"
-//       }
-//   }
-//   var propay = new Razorpay(options);
-//   propay.open();
-//       }   
-//       function savetoDB(response){
-//         {
-//         console.log(response)
-//        datainsert();
-//         var name = document.getElementById('fname').value;
-//         var payRef = firebase.database().ref('payment/');
-       
-//         if (typeof response.razorpay_payment_id == 'undefined' || response.razorpay_payment_id < 1) {
-//             // redirect_url = 'preloadergeeks.html';
-//             console.log('failed');
-//            } else { 
-//             //    redirect_url = 'preloadergeeks.html';
-//                console.log('success');
-//                payRef.child(name).set({
-//                 NameOfStudent: name,
-//             payment_id : response.razorpay_payment_id
-//             })
-        
-//            }
-//     }
-    
-//     //    location.href = redirect_url;
-//     }
 
 // payment process
 function paymentProcess(){
@@ -355,12 +306,7 @@ propay.open();
 
 
 
-// if (typeof response.razorpay_payment_id == 'undefined' || response.razorpay_payment_id < 1) {
-//      redirect_url = '/you-owe-money.html';
-//     } else { 
-//         redirect_url = '/thnx-you-paid.html';
-//     }
-//     location.href = redirect_url;
+
 
 
 function savetoDB(response){
@@ -385,4 +331,36 @@ function savetoDB(response){
 }
 
 //    location.href = redirect_url;
+}
+
+
+function myFunction_() {
+
+  // prod_no();
+  user_email_fr_lg2 =  localStorage.getItem("Email_from_login");
+  document.getElementById('Marketer_Email').innerHTML = user_email_fr_lg2 ; 
+
+var month = new Array();
+month[0] = "January";
+month[1] = "February";
+month[2] = "March";
+month[3] = "April";
+month[4] = "May";
+month[5] = "June";
+month[6] = "July";
+month[7] = "August";
+month[8] = "September";
+month[9] = "October";
+month[10] = "November";
+month[11] = "December";
+//var year = new Array();
+ d = new Date();
+ var day = d.getDate();
+ n = month[d.getMonth()];
+ year = d.getFullYear();
+  currenet_date = day + ' ' + n + ' ' + year;
+
+  currenet_date_ =  n + ' ' + year;
+ localStorage.setItem("DATE", currenet_date_);
+document.getElementById("demo_").value = currenet_date;
 }

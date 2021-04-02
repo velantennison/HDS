@@ -1,4 +1,5 @@
 //start of customer count
+var count1,count;
 function fetch(){
 
 // fetching marketer id
@@ -88,15 +89,36 @@ function fetch(){
     child1.on('value', function(snapshot) {
         // var x1 = snapshot.val().email;
         // alert(x1);
-       var count = 0;
+      count = 0;
        snapshot.forEach(function() {
            count++;  
-       ready(count);
+       
        });
        console.log(count);
        //count is now safe to use.
     });
     
+
+    var playersRef2 =  firebase.database().ref('Digital_marketing/');
+    var child2 = playersRef2.orderByChild("Marketer_mobile").equalTo(marketer_mob1);
+    // var Uid = localStorage.getItem('userNAME');
+    //  send_value(Uid);
+    
+    child2.on('value', function(snapshot) {
+        // var x1 = snapshot.val().email;
+        // alert(x1);
+        count1 = 0;
+       snapshot.forEach(function() {
+           count1++;  
+           
+       
+       });
+       console.log("digital count"+ count1);
+       document.getElementById("digit_count").innerHTML = count1;
+       ready(count);
+       //count is now safe to use.
+    });
+
     console.log("hello");
     // var playersref = firebase.database().ref('Projects/')
     // playersref.orderByChild("Client_number").equalTo("9751059000").on('value', function(data) {
@@ -112,19 +134,21 @@ function fetch(){
     }
     function ready(count){
         document.getElementById("complted_tasks").innerHTML = count + "/50";
-        if(count <= 30){
-         salary = count * 335;
+        var D_count = document.getElementById("digit_count").innerHTML;
+        console.log("ready" + D_count);
+        if(count){
+         salary = (count * 350) + (D_count * 100);
         // alert(salary);
          document.getElementById("salary").innerHTML = salary;
         }
-        else if( (count > 30) && (count <= 40)  ){
-          salary = count * 345;
-          document.getElementById("salary").innerHTML = salary;
-        }
-        else if((count > 40) && (count <= 50)  ){
-          salary = count * 350;
-          document.getElementById("salary").innerHTML = salary ;
-        }
+        // else if( (count > 30) && (count <= 40)  ){
+        //   salary = (count * 345) + (D_count * 100);
+        //   document.getElementById("salary").innerHTML = salary;
+        // }
+        // else if((count > 40) && (count <= 50)  ){
+        //   salary = (count * 350)  + (D_count * 100);
+        //   document.getElementById("salary").innerHTML = salary ;
+        // }
         // document.getElementById("order_count").innerHTML = count1;
       
     
