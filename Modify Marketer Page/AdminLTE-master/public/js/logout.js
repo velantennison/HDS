@@ -17,6 +17,8 @@ document.getElementById("logout1").onclick = function()
 function test()
 {
 //window.location.assign('index.html');
+sessionStorage.clear();
+localStorage.clear();
 window.location.href = 'index.html';
 
 }
