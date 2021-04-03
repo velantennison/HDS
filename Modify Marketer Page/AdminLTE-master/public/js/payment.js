@@ -96,24 +96,19 @@ function savetoDB(response){
            console.log('success');
            payRef.child(name).set({
             Mobile_number: name,
+            Status:"new",
+            Date:current_month,
         payment_id : response.razorpay_payment_id
         })
     
        }
 }
 
-//    location.href = redirect_url;
 }
-
-
-
-var user_email_fr_lg2;
+var user_email_fr_lg2,current_month;
 function myFunction() {
-
-    // prod_no();
     user_email_fr_lg2 =  localStorage.getItem("Email_from_login");
     document.getElementById('Marketer_Email').innerHTML = user_email_fr_lg2 ; 
-	
   var month = new Array();
   month[0] = "January";
   month[1] = "February";

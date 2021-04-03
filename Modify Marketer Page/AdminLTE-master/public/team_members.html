@@ -53,20 +53,15 @@
    }
    #single_div{
 
-    height: 223px;
+    height: 320px;
     width: 25%;
    }
    #project_desc{
-  font-size: 40px;
+  font-size: 20px;
   font-weight: bold;
 
    }
-   #project_date {
-
-float: right;
-
-
-}
+  
 
 @media only screen and (max-width: 1080px) {
   #single_div{
@@ -82,10 +77,6 @@ margin-top: 5%;
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
  <!-- Font Awesome -->
  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
- 
-
-
-
 
  <!-- Ionicons -->
  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -114,7 +105,7 @@ margin-top: 5%;
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
+        <a href="home.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -154,7 +145,7 @@ margin-top: 5%;
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
+    <a href="#" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Marketers</span>
     </a>
@@ -182,7 +173,7 @@ margin-top: 5%;
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item menu-open">
-                <a href="./home.html" class="nav-link ">
+                <a href="home.html" class="nav-link ">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Home
@@ -324,6 +315,7 @@ margin-top: 5%;
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/logout.js"></script>
 <script>
  function myFunction()
  {
@@ -401,17 +393,18 @@ playersRef.orderByChild("Email").equalTo(user_email).on("child_added", function(
 	// Img_p.id="mainimage";
     
 
-  _Marketer_Email_Profile.innerHTML = Marketer_Email_Profile;
-  _Marketer_Name_Profile.innerHTML = Marketer_Name_Profile;
-  _Marketer_Mobile_Profile.innerHTML = Marketer_Mobile_Profile;
-  _Marketer_Working_city_Profile.innerHTML = Marketer_Working_city_Profile;
-  _Marketer_Address_Profile.innerHTML = Marketer_Address_Profile;
+  _Marketer_Email_Profile.innerHTML = "Email: "+Marketer_Email_Profile;
+  _Marketer_Name_Profile.innerHTML = "Name: "+Marketer_Name_Profile;
+  _Marketer_Mobile_Profile.innerHTML = "<b>Number: </b>"+Marketer_Mobile_Profile;
+  _Marketer_Working_city_Profile.innerHTML ="<b>Working city: </b>" + Marketer_Working_city_Profile;
+  _Marketer_Address_Profile.innerHTML ="<b>Address: </b>" + Marketer_Address_Profile;
 	
 	// Img_p.src = Image_main;
 //div1.appendChild(div4);
     //  div3.appendChild(Img_p);
-    div3.appendChild(_Marketer_Email_Profile);
     div3.appendChild(_Marketer_Name_Profile);
+    div3.appendChild(_Marketer_Email_Profile);
+   
     div3.appendChild(_Marketer_Mobile_Profile);
     div3.appendChild(style);
     // div3.appendChild(_Marketer_Working_city_Profile);
