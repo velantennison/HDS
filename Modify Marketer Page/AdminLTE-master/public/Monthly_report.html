@@ -336,9 +336,9 @@ margin-top: 8%;
       <a id="july_">July</a>
       <a id="aug_">August</a>
       <a id="sep_">September</a>
-      <a id="oct">October</a>
-      <a>November</a>
-      <a>December</a>
+      <a id="oct_">October</a>
+      <a id="nov_">November</a>
+      <a id="dec_">December</a>
        
      </div>
       
@@ -437,6 +437,38 @@ document.getElementById("may_").onclick = function(){
       month_get(_year_);
 
 }
+document.getElementById("june_").onclick = function(){
+      var _year_ = "June " +year;
+      month_get(_year_);
+}
+document.getElementById("july_").onclick = function(){
+      var _year_ = "July " +year;
+      month_get(_year_);
+}
+document.getElementById("aug_").onclick = function(){
+      var _year_ = "August " +year;
+      month_get(_year_);
+}
+document.getElementById("sep_").onclick = function(){
+      var _year_ = "September " +year;
+      month_get(_year_);
+}
+document.getElementById("oct_").onclick = function(){
+      var _year_ = "October " +year;
+      month_get(_year_);
+}
+document.getElementById("nov_").onclick = function(){
+      var _year_ = "November " +year;
+      month_get(_year_);
+}
+document.getElementById("dec_").onclick = function(){
+      var _year_ = "December " +year;
+      month_get(_year_);
+}
+
+
+
+
 
 function month_get(_year_)
 {
@@ -445,7 +477,7 @@ var month_set = _year_;
 
 
 var marketer_mob = localStorage.getItem("MOB");
-  var playersRef = firebase.database().ref("Projects/");
+  var playersRef = firebase.database().ref("Marketors_Projects/");
 
 
 playersRef.orderByChild("Marketer_mobile").equalTo(marketer_mob).on("child_added", function(data) {

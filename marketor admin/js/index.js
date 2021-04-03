@@ -134,6 +134,7 @@ function Empty(){
     $("#main_div").empty();
 }
 document.getElementById("web_dev").onclick = function () {
+ 
     document.getElementById("web_dev").style.backgroundColor = "#0b6c7b";
     document.getElementById("web_").style.color = "white";
     document.getElementById("app_dev").style.backgroundColor = "#2595af";
@@ -202,6 +203,7 @@ console.log("value fetched")
 
 }
 document.getElementById("mar_dev").onclick = function () {
+    alert("loosu veni");
         document.getElementById("web_dev").style.backgroundColor = "#2595af";
         document.getElementById("web_").style.color = "#212529";
         document.getElementById("app_dev").style.backgroundColor = "#2595af";

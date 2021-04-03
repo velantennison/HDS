@@ -120,7 +120,7 @@ view.style.marginTop = "10%";
    var view1 = document.createElement('div');
  view1.className = "col-6";
  view1.style.float = "right";
-view1.style.marginTop = "5%";
+view1.style.marginTop = "10%";
  
 
 
@@ -137,7 +137,7 @@ view1.style.marginTop = "5%";
  var P6 = document.createElement('p');
  var P7 = document.createElement('p');
  var P8 = document.createElement('p');
- var P9 = document.createElement('p');
+ var P9 = document.createElement('h3');
  var P10 = document.createElement('p');
 //  var P11 = document.createElement('p');
 //  var P12 = document.createElement('p');
@@ -155,29 +155,32 @@ view1.style.marginTop = "5%";
 
 
  
-P1.innerHTML ="<b>Digit Client num:</b>"+' ' + A1;
-P2.innerHTML ="<b>Digit mail:</b>" +' '+ A2;
-P3.innerHTML ="<b>Digit C Address:</b>"+' ' + A3;
-P4.innerHTML ="<b>Digit Project number:</b>"+' ' + A4;
-P5.innerHTML ="<b>Digit GST:</b>" +' '+ A5;
-P6.innerHTML ="<b>Digit Cost:</b>" +' ' + A6;
-P7.innerHTML ="<b>Digit Img Cost:</b>" +' ' + A7;
-P8.innerHTML ="<b>Digit Video Cost:</b>" +' ' + A8;
-P9.innerHTML ="<b>Digit Grand Total:</b>" +' ' + A9;
+P1.innerHTML ="<b>Client num:</b>"+' ' + A1;
+P2.innerHTML ="<b>Mail:</b>" +' '+ A2;
+P3.innerHTML ="<b>Address:</b>"+' ' + A3;
+P4.innerHTML ="<b>Invoice number:</b>"+'  ' + A4;
+
+P6.innerHTML ="<b>Advertising Cost:</b>" +' '+"₹" + A6;
+
+P7.innerHTML ="<b>Image Cost:</b>" +' ' +"₹"+ A7;
+P8.innerHTML ="<b>Video Cost:</b>" +' ' +"₹"+ A8;
+P5.innerHTML ="<b>IGST(18%): </b>" +"  "+"₹" +A5;
+P9.innerHTML ="<b>Grand Total:</b>" +' ' +"₹"+ A9;
 P10.innerHTML="<b>Date:</b>" +' ' + A10;
 // P11.innerHTML="<b>Shop Address:</b>" +' ' + A11;
 // P12.innerHTML= "<b>Date:</b>"  +' '+ A12;
 // P13.innerHTML="<b>Total:</b>" +' ' + A13;
-
+view.appendChild(P4);
 view.appendChild(P1);
 view.appendChild(P2);
 view.appendChild(P3);
-view.appendChild(P4);
+
 view1.appendChild(P10);
-view1.appendChild(P5);
+
 view1.appendChild(P6);
 view1.appendChild(P7);
 view1.appendChild(P8);
+view1.appendChild(P5);
 view1.appendChild(P9);
  
 // view1.appendChild(P11);

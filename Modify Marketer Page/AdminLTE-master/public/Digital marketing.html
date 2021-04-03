@@ -95,7 +95,19 @@ float: right;
   background-color: black;
   color: white;
 }
+#new_video{
+    margin-left: 5%;
+  }
+  #new_banner{
+    margin-left: 4%;
+  }
+  /* #my_video{
+    margin-left: 4%;
+  } */
 @media screen and (max-width: 1023px) {
+  #new_video{
+    margin-left: 8%;
+  }
 .logo {
   width: 100%;
   max-height: 165px;
@@ -216,7 +228,7 @@ float: right;
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="profile2.html" id="Marketer_Email" class="d-block"></a>
+          <a href="MyAccount.html" id="Marketer_Email" class="d-block"></a>
         </div>
       </div>
 
@@ -393,7 +405,7 @@ float: right;
                   </div>
                   <div class="form-group">
                     <label >Project Number</label>
-                    <input type="text" class="form-control" id="digit_pro_num" placeholder="Project Number">
+                    <input type="text" class="form-control" id="digit_pro_num" placeholder="Project Number" disabled> 
                   </div>
                   <div class="form-group">
                     <label >Shop Address</label>
@@ -405,19 +417,22 @@ float: right;
                   </div>
                   <div class="form-group">
                     <label>Current Date</label>
-                    <input type="text" class="form-control" id="demo_" placeholder="Current Date">
+                    <input type="text" class="form-control" id="demo_" placeholder="Current Date" disabled>
                   </div>
                   <div class="form-group">
                     <label >Domain</label>
                     <input type="text" class="form-control" id="domain" placeholder="Domain...">
                   </div>
-                
+                  <div class="form-group">
+                    <label >Content</label>
+                    <textarea class="form-control" id="content_" placeholder="Enter Content..."></textarea>
+                    <!-- <input type="text" class="form-control" id="client_name1" placeholder="Enter Name"> -->
+                  </div>
                   
                   <!-- image radio button -->
-                  <label>Image add </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           
-                    <input type="radio" name="Image" id="my_banner"  value="0" onclick="image_cost()">&nbsp;Add My Banner<br>
-                    <input type="radio" name="Image" id="new_banner" value="100" onclick="image_cost()" style="margin-left: 16%;">&nbsp;Add New Banner
+                  <label>Image add </label><br>
+                    <input type="radio" name="Image" id="my_banner"  value="0" onclick="image_cost()">&nbsp;Add My Banner
+                    <input type="radio" name="Image" id="new_banner" value="100" onclick="image_cost()">&nbsp;Add New Banner
                     <div class="form-group" id="image1_div" style="display: none;">
                       <label>Banner Add</label><br>
                       <div class="form-group">  
@@ -438,21 +453,17 @@ float: right;
                           <button class="btn1" id="select_">+</button>
                         </div>
                       
-                        <div class="form-group">
-                          <label >Content</label>
-                          <textarea class="form-control" id="content_" placeholder="Enter Content..."></textarea>
-                          <!-- <input type="text" class="form-control" id="client_name1" placeholder="Enter Name"> -->
-                        </div>
+                        
                     </div>
                   
                     <div class="form-group">
-                      <label >Cost For Image Ad</label>
+                      <label style="margin-top: 5%;">Cost For Image Ad</label>
                       <input type="text" class="form-control" id="cost_" value="0" placeholder="Cost for Image Ad.." disabled>
                     </div>
                   <div class="form-group">
-                    <label>video add (optional)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="video_" id="my_video"  value="0" onclick="video_cost()">&nbsp;Add My Banner <br>
-                    <input type="radio" name="video_" id="new_video" value="1000" onclick="video_cost()" style="margin-left: 29.25%;">&nbsp;Add New Banner
+                    <label>video add (optional)</label><br>
+                    <input type="radio" name="video_" id="my_video"  value="0" onclick="video_cost()">&nbsp;Add My Banner 
+                    <input type="radio" name="video_" id="new_video" value="1000" onclick="video_cost()">&nbsp;Add New Banner
                     
 
                     
@@ -501,14 +512,14 @@ float: right;
                   <input type="text" class="form-control" id="zone" value="upto 20 to 25km">
                 </div>
                 <div class="form-group" id="cost_div" >
-                  <label >Budget</label>
-                  <input type="number" class="form-control" id="budget" value="1250" onkeyup="gst1()" >
+                  <label >Budget <b>(Minimum - 1250)</b></label>
+                  <input type="number" class="form-control" id="budget" value ="1250" min="1250" onkeyup="gst1()" >
                 </div>
                
                 <label >GST</label>
                 <input type="text" class="form-control" id="gst1_" value="225" disabled>
                 <label >Total</label>
-                <input type="text" class="form-control" id="total_"  placeholder="Grant Total">
+                <input type="text" class="form-control" id="total_"  placeholder="Grant Total" disabled>
                 <div class="card-footer" id="payment_button" >
                   <button type="submit"  class="btn btn-primary"  onclick="paymentProcess()">Submit</button>
                 </div>
@@ -539,9 +550,8 @@ float: right;
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.1.0-rc
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy;2021 <a href="https://adminlte.io">hdssolutions.in</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
