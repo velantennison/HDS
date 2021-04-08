@@ -394,7 +394,10 @@ float: right;
               <!-- /.card-header -->
               <!-- form start -->
                 <div class="card-body">
-
+                  <div class="form-group">
+                    <label >Project Number</label>
+                    <input type="text" class="form-control" id="digit_pro_num" placeholder="Project Number" disabled> 
+                  </div>
                   <div class="form-group">
                     <label >Client Phone Number</label>
                     <input type="number" class="form-control" id="phonenum_" placeholder="Enter Mobile Number" onclick="digital_pro()">
@@ -404,21 +407,16 @@ float: right;
                     <input type="email" class="form-control" id="mail_" placeholder="Enter Mail id">
                   </div>
                   <div class="form-group">
-                    <label >Project Number</label>
-                    <input type="text" class="form-control" id="digit_pro_num" placeholder="Project Number"> 
-                  </div>
-                  <div class="form-group">
-                    <label >Shop Address</label>
-                    <input type="text" class="form-control" id="address1_" placeholder="Enter Address">
-                  </div>
-                  <div class="form-group">
                     <label >Client Address</label>
                     <input type="text" class="form-control" id="s_address_" placeholder="Enter Address">
                   </div>
+                  
                   <div class="form-group">
-                    <label>Current Date</label>
-                    <input type="text" class="form-control" id="demo_" placeholder="Current Date" disabled>
+                    <label >Shop Name</label>
+                    <input type="text" class="form-control" id="address1_" placeholder="Enter Address">
                   </div>
+                  
+                  
                   <div class="form-group">
                     <label >Domain</label>
                     <input type="text" class="form-control" id="domain" placeholder="Domain...">
@@ -427,6 +425,10 @@ float: right;
                     <label >Content</label>
                     <textarea class="form-control" id="content_" placeholder="Enter Content..."></textarea>
                     <!-- <input type="text" class="form-control" id="client_name1" placeholder="Enter Name"> -->
+                  </div>
+                  <div class="form-group">
+                    <label>Current Date</label>
+                    <input type="text" class="form-control" id="demo_" placeholder="Current Date" disabled>
                   </div>
                   
                   <!-- image radio button -->
@@ -462,8 +464,8 @@ float: right;
                     </div>
                   <div class="form-group">
                     <label>video add (optional)</label><br>
-                    <input type="radio" name="video_" id="my_video"  value="0" onclick="video_cost()">&nbsp;Add My Banner 
-                    <input type="radio" name="video_" id="new_video" value="1000" onclick="video_cost()">&nbsp;Add New Banner
+                    <input type="radio" name="video_" id="my_video"  value="0" onclick="video_cost()">&nbsp;Add My Video Ad
+                    <input type="radio" name="video_" id="new_video" value="1000" onclick="video_cost()">&nbsp;Add New Video Ad
                     
 
                     

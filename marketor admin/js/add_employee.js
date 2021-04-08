@@ -91,7 +91,7 @@ document.getElementById('add_emp_sub').onclick = function(){
                 //   var x1= firebase.auth().currentUser.uid;
                   
            
-                  firebase.database().ref('Project1/'+ position_+ "/" + mobile_number_ + district).set({
+                  firebase.database().ref('Marketers_Profile/'+ position_+ "/" + mobile_number_ + district).set({
                   
              
                     Candidate_name: first_name_,
@@ -159,7 +159,7 @@ document.getElementById('add_emp_sub').onclick = function(){
 function roll_no(){
     alert("hello");
     var x1_ = document.getElementById("add_position").value;
-    var playersRef = firebase.database().ref("Project1/" +  x1_ + "/") ;
+    var playersRef = firebase.database().ref("Marketers_Profile/" +  x1_ + "/") ;
     playersRef.on('value',getReq);
     function getReq(snap){
      var array = [];

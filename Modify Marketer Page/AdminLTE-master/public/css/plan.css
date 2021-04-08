@@ -130,7 +130,7 @@ to {transform: scale(1)}
 
 #second_div,#third_div,#fourth_div,#fifth_div,#tenth_div,#eleventh_div,#nineth_div,#eight_div{
 
-  height: 800px;
+  min-height: 700px;
   width: 20%;
   margin-left: 4%;
   margin-top: 2%;

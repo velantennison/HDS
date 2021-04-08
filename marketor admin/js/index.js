@@ -22,7 +22,7 @@ function oncreate_(){
                 });
            }
     
-        var child =  firebase.database().ref('Project1/Web Developer/');
+        var child =  firebase.database().ref('Marketers_Profile/Web Developer/');
         
         child.on('value', function(snapshot) {
            var web_dev_count = 0;
@@ -37,7 +37,7 @@ function oncreate_(){
         });
 
         //app developer count 
-        var child1 =  firebase.database().ref('Project1/App Developer/');
+        var child1 =  firebase.database().ref('Marketers_Profile/App Developer/');
         
         child1.on('value', function(snapshot) {
            var app_dev_count = 0;
@@ -52,7 +52,7 @@ function oncreate_(){
         });
 
            //marketer count 
-           var child2 =  firebase.database().ref('Project1/Marketer/');
+           var child2 =  firebase.database().ref('Marketers_Profile/Marketer/');
         
            child2.on('value', function(snapshot) {
               var mar_dev_count = 0;
@@ -142,7 +142,7 @@ document.getElementById("web_dev").onclick = function () {
     document.getElementById("mar_dev").style.backgroundColor = "#2595af";
     document.getElementById("mar_").style.color = "#212529";
     Empty();
-    firebase.database().ref().child('Project1/Web Developer/').on('value', function(snapshot) {
+    firebase.database().ref().child('Marketers_Profile/Web Developer/').on('value', function(snapshot) {
         snapshot.forEach(
             function(ChilSnapshot) {
                                  
@@ -176,7 +176,7 @@ document.getElementById("app_dev").onclick = function() {
     document.getElementById("mar_").style.color = "#212529";
     Empty();
     // console.log("hello  kowsi kutty");
-    firebase.database().ref().child('Project1/App Developer/').on('value', function(snapshot) {
+    firebase.database().ref().child('Marketers_Profile/App Developer/').on('value', function(snapshot) {
         snapshot.forEach(
             function(ChilSnapshot) {
                                  
@@ -212,7 +212,7 @@ document.getElementById("mar_dev").onclick = function () {
         document.getElementById("mar_").style.color = "white";
         Empty();
         //fetch salary details from MONTHLY SALARY TABLE
-            firebase.database().ref().child('Project1/Marketer/').on('value', function(snapshot) {
+            firebase.database().ref().child('Marketers_Profile/Marketer/').on('value', function(snapshot) {
           
             snapshot.forEach(
                 function(ChilSnapshot) {
@@ -547,6 +547,6 @@ if((a5 == "App Developer") || (a5 == "Web Developer")){
       });
       alert("Image Added Successfully");
 
-      firebase.database().ref('Project1/'+ block_Position + "/" + block_Mobile + block_District).remove();
+      firebase.database().ref('Marketers_Profile/'+ block_Position + "/" + block_Mobile + block_District).remove();
    }
 

@@ -39,7 +39,7 @@ document.getElementById('log_btn_').onclick = function(){
       
 
       localStorage.setItem("Email_from_login", userEmail);
-      var playersRef = firebase.database().ref("Project1/Marketer/");
+      var playersRef = firebase.database().ref("Marketers_Profile/Marketer/");
               playersRef.orderByChild("Email").equalTo(userEmail).once("value",snapshot => {
                 snapshot.forEach(function(ChilSnapshot){
 

@@ -75,7 +75,7 @@ function edit_form(){
     // var update__task_incompleted = document.getElementById("task_incomplete_").value;
     // var update_salary = document.getElementById("salary_").value;
      
-          firebase.database().ref('Project1/'+ update_position + "/" +update_mobile + update_city ).set({
+          firebase.database().ref('Marketers_Profile/'+ update_position + "/" +update_mobile + update_city ).set({
             Candidate_name: update_name,
             Position: update_position,
             Roll_number: update_roll_no,

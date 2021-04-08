@@ -6,7 +6,7 @@ function fetch(){
     var user_email =  localStorage.getItem("Email_from_login");
     document.getElementById('Marketer_Email').innerHTML = user_email;
 
-	var playersRef = firebase.database().ref("Project1/Marketer/");
+	var playersRef = firebase.database().ref("Marketers_Profile/Marketer/");
 
     playersRef.orderByChild("Email").equalTo(user_email).on("child_added", function(data) {
    

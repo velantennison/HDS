@@ -7,7 +7,7 @@ function Marketer_()
 
     var user_email_fr_lg =  localStorage.getItem("Email_from_login");
     document.getElementById('Marketer_Email').innerHTML = user_email_fr_lg; 
-	var playersRef = firebase.database().ref("Project1/Marketer/");
+	var playersRef = firebase.database().ref("Marketers_Profile/Marketer/");
 
     playersRef.orderByChild("Email").equalTo(user_email_fr_lg).on("child_added", function(data) {
    // firebase.database().ref('Confirm_marketors/' + User_id).on('value', function(snapshot) {

@@ -252,7 +252,7 @@ document.getElementById('result-name').innerHTML = name;
 })
     function fecth() {
         //fetch salary details from MONTHLY SALARY TABLE
-            firebase.database().ref().child('Project1/Marketer/').on('value', function(snapshot) {
+            firebase.database().ref().child('Marketers_Profile/Marketer/').on('value', function(snapshot) {
           
             snapshot.forEach(
                 function(ChilSnapshot) {
@@ -519,7 +519,7 @@ function add(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a16,a17,a18){
       });
       alert("Image Added Successfully");
 
-      firebase.database().ref('Project1/'+ block_Position + "/" + block_Mobile + block_District).remove();
+      firebase.database().ref('Marketers_Profile/'+ block_Position + "/" + block_Mobile + block_District).remove();
    }
 
 

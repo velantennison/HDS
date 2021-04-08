@@ -142,7 +142,6 @@ function video_ad(){
  }
  //video cost
  function video_cost(){
-   alert("welcome");
    let D = document.getElementsByName("video_");
    for(i = 0; i < D.length; i++){
      if(D[i].checked){
