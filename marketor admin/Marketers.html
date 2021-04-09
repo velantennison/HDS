@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/mark.css">
 </head>
 <body class="hold-transition sidebar-mini" onload="fecth()" >
 <div class="wrapper">
@@ -523,7 +523,18 @@ function add(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a16,a17,a18){
    }
 
 
-
+   document.getElementById("logout1").onclick = function()
+ {
+    localStorage.clear();
+      firebase.auth().signOut().then(() => {
+    
+      test();
+        }).catch((error) => {
+      
+      });
+      
+      
+ }
 </script>
 
 </body>

@@ -83,7 +83,7 @@ border-radius: 2px;
   #staff_1{
     background: #ece5e7;
     
-    height : 125px;
+    height : 220px;
     margin-top: 1%;
     border-bottom: 3px solid black;
     border-radius: 12px;
@@ -186,7 +186,7 @@ border-radius: 2px;
     }
     #staff_1{
     background: #ece5e7;
-    min-height: 355px;
+    min-height: 400px;
     margin-top: 1%;
     border-bottom: 3px solid black;
     border-radius: 12px;
