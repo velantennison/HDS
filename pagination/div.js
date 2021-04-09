@@ -105,6 +105,6 @@ window.onload = function() {
     div_content();
     setTimeout(function() {
         changePage(1);
-    }, 1000);
+    }, 5000);
     
 };

@@ -203,7 +203,7 @@ console.log("value fetched")
 
 }
 document.getElementById("mar_dev").onclick = function () {
-    alert("loosu veni");
+   
         document.getElementById("web_dev").style.backgroundColor = "#2595af";
         document.getElementById("web_").style.color = "#212529";
         document.getElementById("app_dev").style.backgroundColor = "#2595af";
