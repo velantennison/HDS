@@ -83,6 +83,7 @@
                     prject_status:"New"
             });
           alert("Data Added Successfully");
+          window.location.href="./success.html";
       }
 
     );

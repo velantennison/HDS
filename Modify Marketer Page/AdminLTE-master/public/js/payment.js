@@ -43,14 +43,15 @@ document.getElementById("sec_form").addEventListener('keyup', function(){
     });
 function paymentProcess(){
    var Tot_ = document.getElementById("total12_").value;
+   var imgge = document.getElementById("test1").src;
 var options = {
-    "key": "rzp_test_GmJyzKJA6xsOC6", // Enter the Key ID generated from the Dashboard
+    "key": "rzp_live_NZF7c9Rl5aYjpM", // Enter the Key ID generated from the Dashboard  test key : rzp_test_GmJyzKJA6xsOC6
     "amount": Tot_ * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 means 50000 paise or ₹500.
     "currency": "INR",
-    "name": "Hyper Mart",
-    "description": "Tutorial",
+    "name": "HDS",
+    "description": "E-commerce web & apps",
     // "callback_url": 'https://www.google.com',
-    "image": "logo.png",// Replace this with the order_id created using Orders API (https://razorpay.com/docs/api/orders).
+    "image": imgge,// Replace this with the order_id created using Orders API (https://razorpay.com/docs/api/orders).
     "handler": function (response){
         savetoDB(response);
         $('#myModal').modal();
@@ -93,6 +94,7 @@ function savetoDB(response){
         console.log('failed');
        } else { 
         //    redirect_url = 'preloadergeeks.html';
+        localStorage.setItem("PAYMENT",response.razorpay_payment_id);
            console.log('success');
            payRef.child(name).set({
             Mobile_number: name,
@@ -100,7 +102,7 @@ function savetoDB(response){
             Date:current_month,
         payment_id : response.razorpay_payment_id
         })
-    
+   
        }
 }
 
