@@ -15,7 +15,7 @@ function Marketer_()
         var Marketer_Name_Profile = data.val().Candidate_name; //getting values from user_account firebase
         var Marketer_Mobile_Profile = data.val().Mobile_Number;
         var Marketer_Working_city_Profile = data.val().District;
-        // var Marketer_Address_Profile= data.val().Address;
+        var Marketer_Roll_Profile = data.val().Roll_number;
         // var Marketer_Name _Profile = snapshot.val().Shop_number;
         // var test1_ = snapshot.val().Exp_Date;
 
@@ -27,7 +27,7 @@ function Marketer_()
         document.getElementById('marketer_Profile_name').innerHTML = Marketer_Name_Profile;
         document.getElementById('marketer_Profile_name1').innerHTML = Marketer_Name_Profile;
         document.getElementById('email_').innerHTML =  Marketer_Email_Profile;
-       
+        document.getElementById('marketer_roll_').innerHTML = Marketer_Roll_Profile;
         document.getElementById('mobile_').innerHTML = Marketer_Mobile_Profile;
         document.getElementById('dist_').innerHTML = Marketer_Working_city_Profile;
         // document.getElementById('address_').value = Marketer_Address_Profile;
