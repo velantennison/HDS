@@ -157,95 +157,58 @@ function fetch(){
 
     function additemtodiv(Project_domain,Project_description,Project_date,Client_name,Client_mob,Client_mail)
 {
-    
     var div1 = document.getElementById('div1');
-	
 	div1.className="row";
 	var div4 = document.createElement('div');
-   // var div2 = document.getElementById('div2');
-    var style = document.createElement('style'); 
+    
     var div3 = document.createElement('div');
-	
-	
-    
-	
-
     div3.className = "column";
-//	div4.className = "column2";
-	
-    // div3.style.backgroundColor = "#99c2ff";
-    // div3.style.border = "2px solid black";
-    
-    style.innerHTML = ` #div3{ backgroundColor: #99c2ff; border:2px solid black; }  `;
-	//style.innerHTML = ` img{height:185px;width:100px;}`;
+    div3.id ="box";
     var c_name_p  = document.createElement('p');
     c_name_p.id="domain_";
-   
     var b_name_p  = document.createElement('p');
     b_name_p.id="project_desc";
     var pr_name_p = document.createElement('p');
     pr_name_p.id="project_date";
     var desc_p    = document.createElement('p');
     var fat_p     = document.createElement('p');
-	
     var mod_p     = document.createElement('p');
     mod_p.id="client_mail";
-	// var Img_p    =  document.createElement('img');
-	// Img_p.id="mainimage";
+    c_name_p.innerHTML = "<b>Domain: </b>" + Project_domain;
+    b_name_p.innerHTML = "<b>Description: </b>" + Project_description;
+    pr_name_p.innerHTML = "<b>Date: </b>" + Project_date;
+    desc_p.innerHTML = "<b>Name : </b>" + Client_name;
+    fat_p.innerHTML = "<b>Number: </b>" + Client_mob;
+    mod_p.innerHTML = "<b>Mail: </b>" + Client_mail;
     
-
-    c_name_p.innerHTML = Project_domain;
-    b_name_p.innerHTML = Project_description;
-    pr_name_p.innerHTML = Project_date;
-    desc_p.innerHTML = Client_name;
-    fat_p.innerHTML = Client_mob;
-    mod_p.innerHTML = Client_mail;
-	
-	// Img_p.src = Image_main;
-//div1.appendChild(div4);
-    //  div3.appendChild(Img_p);
-    div3.appendChild(c_name_p);
     div4.appendChild(b_name_p);
 	div4.id = "mobile";
-   div3.appendChild(pr_name_p);
-    //div3.appendChild(desc_p);
-	
-    div3.appendChild(fat_p);
+   
+    
     div4.appendChild(mod_p);
-    div3.appendChild(style);
+    div3.appendChild( desc_p);
+    div3.appendChild(fat_p);
+    div3.appendChild(pr_name_p);
+    div3.appendChild(c_name_p);
 	div3.appendChild(div4);
-	
     
 	var div5 = document.createElement('div');
 	div5.id="Single_div";
-    div5.style.marginTop="2%";
-    div5.style.border="1px solid black";
-    div5.style.marginLeft="4%";
-	
+    div5.style.border="2px solid black";
+    div5.style.marginLeft="2%";
 	div5.appendChild(div3);
-	//div5.appendChild(div4);
 	div1.appendChild(div5);
-
-   
-    
- 
 }
-
 function addMonthSal()
 { 
     var Markter_ID = localStorage.getItem("Marketer_Id");
-
     var s1 = document.getElementById("complted_tasks").innerHTML;
     var s2 = s1.split('/');
     var completed_task = s2[0];
     var total_task = s2[1];
     var incomplete_task = total_task-completed_task;
-
-    // console.log("veeraempire" + incomplete_task);
     var user_email_for_sal =  localStorage.getItem("Email_from_login");
     var c_sal = document.getElementById('salary').innerHTML;
-
-    
     firebase.database().ref('MonthlySalary/' + Markter_ID  ).set({
         Marketer_EMAIL: user_email_for_sal,
         Total_Task: total_task,
