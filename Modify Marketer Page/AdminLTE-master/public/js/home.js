@@ -136,15 +136,16 @@ function fetch(){
         document.getElementById("complted_tasks").innerHTML = count + "/50";
         var D_count = document.getElementById("digit_count").innerHTML;
         console.log("ready" + D_count);
-        if(count){
-         salary = (count * 350) + (D_count * 100);
+        if(count <= 20){
+         salary = (count * 800) + (D_count * 100);
         // alert(salary);
+
          document.getElementById("salary").innerHTML = salary;
         }
-        // else if( (count > 30) && (count <= 40)  ){
-        //   salary = (count * 345) + (D_count * 100);
-        //   document.getElementById("salary").innerHTML = salary;
-        // }
+        else if(count > 20){
+          salary = ((count - 20) * 400) + 16000 + (D_count * 100);
+          document.getElementById("salary").innerHTML = salary;
+        }
         // else if((count > 40) && (count <= 50)  ){
         //   salary = (count * 350)  + (D_count * 100);
         //   document.getElementById("salary").innerHTML = salary ;
