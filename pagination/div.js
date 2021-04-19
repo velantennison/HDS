@@ -32,7 +32,7 @@ function  unmodifiableFunction(Name, Position){
 
 
 var current_page = 1;
-var records_per_page = 3;
+var records_per_page = 6;
 
 // var objJson = [
 //     { adName: "AdName 1"},
@@ -84,17 +84,17 @@ function changePage(page)
     }
     page_span.innerHTML = page + "/" + numPages();
 
-    if (page == 1) {
-        btn_prev.style.visibility = "hidden";
-    } else {
-        btn_prev.style.visibility = "visible";
-    }     
+    // if (page == 1) {
+    //     btn_prev.style.visibility = "hidden";
+    // } else {
+    //     btn_prev.style.visibility = "visible";
+    // }     
 
-    if (page == numPages()) {
-        btn_next.style.visibility = "hidden";
-    } else {
-        btn_next.style.visibility = "visible";
-    }
+    // if (page == numPages()) {
+    //     btn_next.style.visibility = "hidden";
+    // } else {
+    //     btn_next.style.visibility = "visible";
+    // }
 }
 
 function numPages()
