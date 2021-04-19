@@ -431,7 +431,7 @@ font-weight: bold;
 #tenth_div:hover, #tenth_div:active { background-color: #1b3266; cursor: pointer; font-weight: bold;color: white;}
 #third_div:hover, #third_div:active { background-color: #1b3266; cursor: pointer; font-weight: bold; color: white;}
 #fourth_div:hover, #fourth_div:active { background-color: #1b3266; cursor: pointer; font-weight: bold; color: white; }
-#fifth_div:hover, #fifth_div:active {  background-color: #1b3266; cursor: pointer; font-weight: bold; color: white; }
+#fifth_div:hover, #fifth_div:active {  background-color: #1b3266; cursor: pointer; color: white; }
 #eleventh_div:hover, #sixth_div:active {  background-color: #1b3266; cursor: pointer; font-weight: bold; color: white; }
 #nineth_div:hover, #sixth_div:active { background-color: #1b3266;  cursor: pointer; font-weight: bold; color: white;}
 #eight_div:hover, #sixth_div:active {  background-color: #1b3266; cursor: pointer; font-weight: bold; color: white; }

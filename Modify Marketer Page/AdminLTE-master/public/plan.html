@@ -84,6 +84,41 @@ float: right;
    form{
      margin-left: 50px;
    }
+   blink {
+  -webkit-animation: 2s linear infinite condemned_blink_effect; /* for Safari 4.0 - 8.0 */
+  animation: 2s linear infinite condemned_blink_effect;
+}
+
+/* for Safari 4.0 - 8.0 */
+@-webkit-keyframes condemned_blink_effect {
+  5% {
+    visibility: hidden;
+    color: rgb(6, 182, 6);
+  }
+  50% {
+    visibility: hidden;
+    color:rgb(228, 224, 22);
+  }
+  100% {
+    visibility: visible;
+    color: rgb(218, 11, 11);
+  }
+}
+
+@keyframes condemned_blink_effect {
+  5% {
+    visibility: hidden;
+    color:  rgb(6, 182, 6);
+  }
+  50% {
+    visibility: hidden;
+    color:rgb(228, 224, 22);
+  }
+  100% {
+    visibility: visible;
+    color: rgb(218, 11, 11);
+  }
+}
  </style>
 </head>
 <body onload="myFunction()" class="hold-transition sidebar-mini">
@@ -364,8 +399,10 @@ float: right;
          
          <div id="fifth_div" >
            <h1 >₹ 8,496/year</h1>
-           <P id="Price_">Inclusive GST)</P>
+           <P id="Price_">(Inclusive GST)</P>
+
            <h2>Smart Plan</h2>
+           <li><blink style="font-size: large;">Website and Free Billing software</blink></li>
            <li>1000 Products</li>
            <li>Unlimited Categories</li>
            <li>Authentication (Email and Password)</li>
@@ -375,7 +412,7 @@ float: right;
            <li>No Customation Domain</li>
            <li>Own Shipping</li>
            <li>35,000 Orders Allow</li>
-           <li>Website Only</li>
+           
            <li>Wishlist and Cart (1.2 Lakhs of Products)</li>
            <li>Maintanence Support</li>
            <li>Prefered Template Colors</li>
