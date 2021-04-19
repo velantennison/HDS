@@ -7,6 +7,7 @@ console.log(obj_1);
 function div_content(){
    
     firebase.database().ref().child('Test2/Accessories/').on('value', function(snapshot) {
+    
         snapshot.forEach(
             function(ChilSnapshot) {
                                  
@@ -15,6 +16,7 @@ function div_content(){
                 unmodifiableFunction(Name, Position);
             }
         )
+        changePage(1);
     });
 }
 function  unmodifiableFunction(Name, Position){
@@ -101,10 +103,7 @@ function numPages()
 }
 
 window.onload = function() {
-    debugger;
+  
     div_content();
-    setTimeout(function() {
-        changePage(1);
-    }, 5000);
     
 };
