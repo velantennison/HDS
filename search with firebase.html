@@ -48,14 +48,11 @@ function div_content(){
     firebase.database().ref().child('Test2/Accessories/').on('value', function(snapshot) {
     
         snapshot.forEach(
-            function(ChilSnapshot) {
-                                 
+            function(ChilSnapshot) {            
                  let Name = ChilSnapshot.val().Brand_Name;
                  let Position = ChilSnapshot.val().Shop_ID;
                 unmodifiableFunction(Name, Position);
-            }
-        )
-     
+            });
     });
 }
 function  unmodifiableFunction(Name, Position){
@@ -72,9 +69,6 @@ window.onload = function() {
   div_content();
 };
 
-
-
-
 $(document).ready(function(){
  $.ajaxSetup({ cache: false });
  $('#search').keyup(function(){
@@ -82,13 +76,22 @@ $(document).ready(function(){
   $('#state').val('');
   var searchField = $('#search').val();
   var expression = new RegExp(searchField, "i");
+  var ss = document.getElementById("search").value;
+  // console.log("hh" + ss);
 //   $.getJSON('data.json', function(data) {
+
    $.each(obj_1, function(key, value){
-    if (value.Brand.search(expression) != -1 || value.Shop.search(expression) != -1)
+   
+   
+  if(ss == "");
+  
+    else if (value.Brand.search(expression) != -1 || value.Shop.search(expression) != -1)
     {
-     $('#result').append('<li class="list-group-item link-class"><img src="'+value.image+'" height="40" width="40" class="img-thumbnail" /> '+value.Brand+' | <span class="text-muted">'+value.Shop+'</span></li>');
+
+     $('#result').append('<li id="seo'+x+'" class="list-group-item link-class" ><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2022-chevrolet-corvette-z06-1607016574.jpg?crop=0.737xw:0.738xh;0.181xw,0.218xh&resize=640:*" height="40" width="40" class="img-thumbnail" /> '+value.Brand+' | <span class="text-muted">'+value.Shop+'</span></li>');
     }
 //    });   
+
   });
  });
  
@@ -96,8 +99,10 @@ $(document).ready(function(){
   var click_text = $(this).text().split('|');
   $('#search').val($.trim(click_text[0]));
   $("#result").html('');
+  console.log(click_text + "d");0
  });
 });
+
 </script>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
