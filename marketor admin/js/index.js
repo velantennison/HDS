@@ -330,10 +330,10 @@ fetch_1.orderByChild("Roll_number").equalTo(roll1_).on('child_added', function(d
     Block_BTN.innerHTML = "Block";
     Block_BTN.id="Block_1";
       p1.innerHTML= "Name:"+Name;
-      p2.innerHTML= "Num"+mobile_no;
-      p3.innerHTML=Email_1;
+      p2.innerHTML= "Num:"+mobile_no;
+      p3.innerHTML= "mail:"+Email_1;
 
-      p4 .innerHTML= Roll_;
+      p4 .innerHTML= "R.Num:"+Roll_;
 
       p5 .innerHTML=  Position;
 
@@ -348,11 +348,11 @@ fetch_1.orderByChild("Roll_number").equalTo(roll1_).on('child_added', function(d
         p12 .innerHTML= ifsc_;
 
      p15.innerHTML = task_complete1;
-
+    p15.style.textAlign = "center";
      p16.innerHTML = task_incomplete1;
-
+     p16.style.textAlign = "center";
      p17.innerHTML=salary_;
-
+     p17.style.textAlign = "center";
     var a1=Name ;
     var a2= mobile_no;
     var a3=Email_1;
@@ -426,9 +426,9 @@ if((a5 == "App Developer") || (a5 == "Web Developer")){
      contact.appendChild(p1);
      contact.appendChild(p2);
      contact.appendChild(p3);
-     roll.appendChild(p4);
-     pos.appendChild(p5);
-     status.appendChild(p6);
+     contact.appendChild(p4);
+    //  pos.appendChild(p5);
+    //  status.appendChild(p6);
      details.appendChild(p7);
      details.appendChild(p8);
      details.appendChild(p9);

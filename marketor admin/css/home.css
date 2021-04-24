@@ -89,7 +89,7 @@ border-radius: 2px;
     border-radius: 12px;
   }
   #contact_div{
-    width: 14%; 
+    width: 28%; 
     float:left;
     margin-left: 10px;
   }
@@ -115,7 +115,7 @@ border-radius: 2px;
     float:left;
   }
   #detail_div{
-    width:10%;
+    width:18%;
     float:left;
   }
   #detail_div1{
@@ -139,23 +139,23 @@ border-radius: 2px;
     float:left;
   }
  #completed_div{
-    width: 10%;
+    width: 5%;
     float:left; 
   } 
   #incompleted_div{
-    width:10%;
+    width:5%;
     float:left;
   } 
   #salary_div{
-    width:5%;
+    width:10%;
     float:left;
   }
   #button_div{
-    width : 10%;
+    width : 20%;
     float:left;
   }
   #button_div1{
-    width : 14%;
+    width : 20%;
     float:left;
   }
   #Block_1{
