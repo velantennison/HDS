@@ -275,7 +275,7 @@ function paymentProcess(){
 var imge = document.getElementById("test").src;
 // img.src = "new logo.jpg";
 var options = {
-  "key": "rzp_test_GmJyzKJA6xsOC6", // Enter the Key ID generated from the Dashboard test key :rzp_test_GmJyzKJA6xsOC6  rzp_live_NZF7c9Rl5aYjpM
+  "key": "rzp_live_NZF7c9Rl5aYjpM", // Enter the Key ID generated from the Dashboard test key :rzp_test_GmJyzKJA6xsOC6  rzp_live_NZF7c9Rl5aYjpM
   "amount":  Payment_ * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 means 50000 paise or ₹500.
   "currency": "INR",
   "name": "HDS",
