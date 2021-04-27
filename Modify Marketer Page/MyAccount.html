@@ -90,16 +90,16 @@
     box-shadow: none!important;
 }
 .kyccom{
-  display: none;
+  display:block;
 }
 .kyccom1{
-  display: block;
+  display: none;
 }
 .kycincom{
   display:none;
 }
 .kycincom1{
-  display: none;
+  display: block;
 }
 .button {
   display: inline-block;
@@ -114,12 +114,32 @@
   transition: all 0.3s;
   width: 170px;
   text-align: center;
+ margin-left: 45%;
+ margin-top: 2%;
 }
 
 .button:hover {
   background: #fff;
   color: #339DFF;
   box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
+}
+@media screen and (max-width: 1020px) {
+  .button {
+  display: inline-block;
+  margin-right: 10px;
+  background: #339DFF;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 38px;
+  border-radius: 50px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 170px;
+  text-align: center;
+  margin-left: 23%;
+ margin-top: 2%;
+}
 }
     </style>
 </head>
@@ -395,8 +415,11 @@
             </div>
           </div>
 
-          <div id="kychide" class="kyccom">
-hgkjlh;ljhip;gui;
+          <div id="kychide" class="card kyccom">
+            <br>
+            <marquee style="margin-left: 20%;margin-right: 20%;"><h3>Please verify your KYC Here</h3></marquee>
+            <a onclick="kyc()" class="button" style="margin-left: 45%;margin-bottom: 2%;"> please  verify  KYC</a>
+      
           </div>
 
 
@@ -407,8 +430,8 @@ hgkjlh;ljhip;gui;
                 
                 <div class="row">
                   <div class=" col-sm-12" >
-                    Aadhar Number: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input id="aadhar" class="mb-0 col-sm-6" type="text" placeholder="Enter Aadhar Number">
+                    Id Proof: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="proof" class="mb-0 col-sm-6" type="text" placeholder="Enter Aadhar Number or license Number">
                   </div>
                 </div>
                 <hr>
@@ -428,7 +451,7 @@ hgkjlh;ljhip;gui;
 
                   <div class="row">
                 
-                     <a href="#" class="button" style="margin-left: 45%;margin-top: 2%;" onclick="kyc()">Submit</a>
+                     <a href="#" class="button" onclick="kycc()">Submit</a>
                     
                     </div>
 
@@ -458,9 +481,7 @@ hgkjlh;ljhip;gui;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
+
 
 
 <script src="js/auth.js"></script>
@@ -472,7 +493,30 @@ hgkjlh;ljhip;gui;
 
 
 <script type="text/javascript">
-	
+	function kyc(){
+    document.getElementById("kycshow").className ="col-md-12 kycincom1";
+    document.getElementById("kychide").className ="card kyccom1";
+  }
+  function kycc(){
+var prf = document.getElementById("proof").value;
+var accnum = document.getElementById("accnum").value;
+var ifsc = document.getElementById("ifsc").value;
+var db = firebase.database();
+
+var query = db.ref("Marketers_Profile/Marketer/").orderByChild("Mobile_Number").equalTo(Marketer_Mobile_Profile);
+query.once("child_added", function(snapshot) {
+  snapshot.ref.update({ 
+    // status: "Order_packed"
+    Aadhar_number: prf,
+    Bank_account_number: accnum,
+    IFSC_number: ifsc,
+   })
+   alert("your KYC is under process");
+   window.location.reload();
+});
+ 
+  }
+
 </script>
 </body>
 </html>

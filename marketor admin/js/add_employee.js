@@ -108,10 +108,6 @@ document.getElementById('add_emp_sub').onclick = function(){
                     Aadhar_number: aadhar_number_, 
                     Bank_account_number: bank_account_number_,
                     IFSC_number: ifsc_number_,
-
-
-                   
-                   
                     UserId: firebase.auth().currentUser.uid,
                     Email: firebase.auth().currentUser.email
                       })
@@ -127,35 +123,11 @@ document.getElementById('add_emp_sub').onclick = function(){
             });
         
             alert('hello ' + first_name_ + ' succesfully registered');
-            // document.getElementById('C_first_name').value = "";
-            // document.getElementById('C_college_name').value = "" ;
-            // document.getElementById('C_email1').value = "";
-            // document.getElementById('C_pass').value = "";
-            // document.getElementById('C_Confirm_pass').value = ""; 
-            // document.getElementById('C_Phone_number').value = "";
-            // document.getElementById('C_DOB').value = "";
-            // document.getElementById('C_address').value = "";
-            // document.getElementById('C_countrySelect').value = "";
-            // document.getElementById('C_citySelect').value = "";
-            // document.getElementById('C_qualification').value = "";
-            
-            // document.getElementById('C_aadhar_number').value = "";
-            // document.getElementById('C_bank_accounct_number').value = "";
-            // document.getElementById('C_IFSC_number').value = "";
-    // addveera(first_name);
+         
 }
 
 
 
-// $(function() {
-//     $("#add_position").keyup(function() {
-       
-//         var Add_pos_ = $("add_position").val();
-//         var hds = "HDS";
-//         var empId = Add_pos_.charAt(0) + hds ;
-//         $("add_roll_no_").val(empId);
-//     });
-// })
 function roll_no(){
     alert("hello");
     var x1_ = document.getElementById("add_position").value;
