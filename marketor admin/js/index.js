@@ -329,11 +329,11 @@ fetch_1.orderByChild("Roll_number").equalTo(roll1_).on('child_added', function(d
     var Block_BTN = document.createElement("button");
     Block_BTN.innerHTML = "Block";
     Block_BTN.id="Block_1";
-      p1.innerHTML= "Name:"+Name;
-      p2.innerHTML= "Num:"+mobile_no;
-      p3.innerHTML= "mail:"+Email_1;
+      p1.innerHTML= Name;
+      p2.innerHTML= mobile_no;
+      p3.innerHTML= Email_1;
 
-      p4 .innerHTML= "R.Num:"+Roll_;
+      p4 .innerHTML=Roll_;
 
       p5 .innerHTML=  Position;
 
@@ -344,7 +344,7 @@ fetch_1.orderByChild("Roll_number").equalTo(roll1_).on('child_added', function(d
         p9 .innerHTML= country1_;
 
         p10 .innerHTML= aadhar_no;
-        p11 .innerHTML= account_1;
+        p11 .innerHTML= "<b>Bank details:</b><br>"+account_1;
         p12 .innerHTML= ifsc_;
 
      p15.innerHTML = task_complete1;
@@ -405,23 +405,16 @@ if((a5 == "App Developer") || (a5 == "Web Developer")){
     Acc.appendChild(p10);
     Acc.appendChild(p11);
     Acc.appendChild(p12);
-    
-    
     button.appendChild(Edit_BTN);
     button.appendChild(Block_BTN);
-    
-
     rapper.appendChild(contact);
     rapper.appendChild(roll);
     rapper.appendChild( pos);
     rapper.appendChild(status);
     rapper.appendChild(details);
     rapper.appendChild(Acc);
-   
     rapper.appendChild(button);
     maindiv.appendChild(rapper);
-    
-
 } else{
      contact.appendChild(p1);
      contact.appendChild(p2);
@@ -432,17 +425,14 @@ if((a5 == "App Developer") || (a5 == "Web Developer")){
      details.appendChild(p7);
      details.appendChild(p8);
      details.appendChild(p9);
-     Acc.appendChild(p10);
+     contact.appendChild(p10);
      Acc.appendChild(p11);
      Acc.appendChild(p12);
-     
      completed.appendChild(p15);
      incompleted.appendChild(p16);
      salary.appendChild(p17);
      button.appendChild(Edit_BTN);
      button.appendChild(Block_BTN);
-     
-
      rapper.appendChild(contact);
      rapper.appendChild(roll);
      rapper.appendChild( pos);
@@ -476,8 +466,6 @@ if((a5 == "App Developer") || (a5 == "Web Developer")){
     var x16=a16;
     var x17=a17;
     var x18=a18;
-
-
     console.log("my fav" + x1);
     localStorage.setItem("Name", x1);
     localStorage.setItem("Mobile_number", x2);
@@ -497,9 +485,7 @@ if((a5 == "App Developer") || (a5 == "Web Developer")){
     localStorage.setItem("Pass_", x16); 
     localStorage.setItem("Qualification_", x17); 
     localStorage.setItem("DOB_", x18);
-
     window.location.href="edit_form.html";
-
    }
 
    function block(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18){
@@ -515,9 +501,9 @@ if((a5 == "App Developer") || (a5 == "Web Developer")){
        var block_Aadhar_number = a10;
        var block_Account_number = a11;
        var block_IFSC = a12;
-       var block_task_complited = a13;
-       var block_task_incomplited = a14;
-       var block_salary = a15;
+    //    var block_task_complited = a13;
+    //    var block_task_incomplited = a14;
+    //    var block_salary = a15;
        var block_pass_ = a16;
        var block_quali = a17;
        var block_Dob = a18;
