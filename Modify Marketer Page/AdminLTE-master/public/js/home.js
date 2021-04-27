@@ -133,7 +133,7 @@ function fetch(){
 
     }
     function ready(count){
-        document.getElementById("complted_tasks").innerHTML = count + "/50";
+        document.getElementById("complted_tasks").innerHTML = count + "/20";
         var D_count = document.getElementById("digit_count").innerHTML;
         console.log("ready" + D_count);
         if(count <= 20){
