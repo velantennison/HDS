@@ -407,13 +407,13 @@ float: right;
                     <label >Choose Plan</label>
                     <select id="cur_plan" class="form-control" onclick="measure(this.value)">
                       <option>Choose</option>
-                      <option>Demo Plan</option>
-                      <option>Base Plan</option>
-                      <option>Pre Plan</option>
-                      <option>Smart Plan</option>
-                      <option>Start Plan</option>
-                      <option>Green Plan</option>
-                      <option>SmartUp Plan</option>
+                      <option>Starter Plan</option>
+                      <option>Standard Plan</option>
+                      <option>Pro Plan</option>
+                      <option>Business Plan</option>
+                      <option>Standard Plus Plan</option>
+                      <option>Pro Plus Plan</option>
+                      <option>Business Plus Plan</option>
                       <option>Custom Plan</option>
                     </select>
                   </div>
@@ -528,7 +528,7 @@ $(function () {
 function measure(x1){  
            console.log(x1);
        if( x1=="Demo Plan"){
-         document.getElementById("Plan_price").value= "2408";
+         document.getElementById("Plan_price").value= "3186";
          
          document.getElementById("plan_").style.display = "block";
         
@@ -541,7 +541,7 @@ function measure(x1){
          document.getElementById("submit_button").style.display = "none";
        }
        else if(x1=="Base Plan"){
-           document.getElementById("Plan_price").value="2690";
+           document.getElementById("Plan_price").value="3328";
           
            document.getElementById("domain_cost").value = "";
          document.getElementById("domain_GST").value = "";
@@ -554,7 +554,7 @@ function measure(x1){
          document.getElementById("submit_button").style.display = "none";
        }
        else if(x1=="Pre Plan"){
-           document.getElementById("Plan_price").value="3399";
+           document.getElementById("Plan_price").value="3611";
         
            document.getElementById("domain_cost").value = "";
          document.getElementById("domain_GST").value = "";
@@ -567,7 +567,7 @@ function measure(x1){
          document.getElementById("submit_button").style.display = "none";
        }
        else if(x1=="Smart Plan"){
-           document.getElementById("Plan_price").value="8496";
+           document.getElementById("Plan_price").value="8921";
            document.getElementById("domain_cost").value = "";
  
          document.getElementById("domain_GST").value = "";
@@ -580,7 +580,7 @@ function measure(x1){
          document.getElementById("submit_button").style.display = "none";
        }
        else if(x1=="Start Plan"){
-           document.getElementById("Plan_price").value="2690";
+           document.getElementById("Plan_price").value="3328";
           
            
            document.getElementById("plan_").style.display = "block";
@@ -591,7 +591,7 @@ function measure(x1){
          document.getElementById("submit_button").style.display = "none";
        }
        else if(x1=="Green Plan"){
-           document.getElementById("Plan_price").value="3399";
+           document.getElementById("Plan_price").value="3611";
           
            
          document.getElementById("plan_").style.display = "block";
@@ -602,7 +602,7 @@ function measure(x1){
          document.getElementById("submit_button").style.display = "none";
        }
        else if(x1=="SmartUp Plan"){
-           document.getElementById("Plan_price").value="8496";
+           document.getElementById("Plan_price").value="8921";
       
           
            document.getElementById("plan_").style.display = "block";
