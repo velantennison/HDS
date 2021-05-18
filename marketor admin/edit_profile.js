@@ -50,7 +50,6 @@ function edit_form(){
   
 
   document.getElementById("edit_sub").onclick = function() {
-   // alert("HELLO tenison");
 
     var update_name = document.getElementById('edit_name_').value ;
     var update_position = document.getElementById('edit_position').value;
