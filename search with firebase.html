@@ -51,17 +51,19 @@ function div_content(){
             function(ChilSnapshot) {            
                  let Name = ChilSnapshot.val().Brand_Name;
                  let Position = ChilSnapshot.val().Shop_ID;
-                unmodifiableFunction(Name, Position);
+                 let Pic = ChilSnapshot.val().Img_url1;
+                unmodifiableFunction(Name, Position,Pic);
             });
     });
 }
-function  unmodifiableFunction(Name, Position){
+function  unmodifiableFunction(Name, Position,Pic){
     let Name_ = Name;
     let Position_ = Position;
     obj_1.push(
                     {
                         Brand: Name_,
-                        Shop: Position_
+                        Shop: Position_,
+                        image: Pic
                     });
                 console.log(obj_1);
 }
@@ -88,7 +90,7 @@ $(document).ready(function(){
     else if (value.Brand.search(expression) != -1 || value.Shop.search(expression) != -1)
     {
 
-     $('#result').append('<li id="seo'+x+'" class="list-group-item link-class" ><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2022-chevrolet-corvette-z06-1607016574.jpg?crop=0.737xw:0.738xh;0.181xw,0.218xh&resize=640:*" height="40" width="40" class="img-thumbnail" /> '+value.Brand+' | <span class="text-muted">'+value.Shop+'</span></li>');
+     $('#result').append('<li id="seo'+x+'" class="list-group-item link-class" ><img src="'+value.image+'" height="40" width="40" class="img-thumbnail" /> '+value.Brand+' | <span class="text-muted">'+value.Shop+'</span></li>');
     }
 //    });   
 
@@ -96,11 +98,28 @@ $(document).ready(function(){
  });
  
  $('#result').on('click', 'li', function() {
+   debugger;
+
   var click_text = $(this).text().split('|');
   $('#search').val($.trim(click_text[0]));
   $("#result").html('');
-  console.log(click_text[0]);
+  let se =click_text[1]+'-'+click_text[0];
+  console.log(se)
+  firebase.database().ref().child('Test2/Accessories/'+ se).on('value', function(data) {
+    
+    data.forEach(
+        function(data) {            
+             let Name = data.val().Brand_Name;
+             let Position = data.val().Shop_ID;
+             let Pic = data.val().Img_url1;
+             console.log(Position);
+        });
+});
+
  });
+
+
+
 });
 
 </script>

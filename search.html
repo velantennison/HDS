@@ -37,40 +37,43 @@
 </html>
 
 <script>
-var count;
-// var Brand,Shop;
-var obj_1 = [];
+// var count;
+// // var Brand,Shop;
+// var obj_1 = [];
 
-var x,y;
-console.log(obj_1);
-function div_content(){
+// var x,y;
+// console.log(obj_1);
+// function div_content(){
    
-    firebase.database().ref().child('Test2/Accessories/').on('value', function(snapshot) {
+//     firebase.database().ref().child('Test2/Accessories/').on('value', function(snapshot) {
     
-        snapshot.forEach(
-            function(ChilSnapshot) {
+//         snapshot.forEach(
+//             function(ChilSnapshot) {
                                  
-                 let Name = ChilSnapshot.val().Brand_Name;
-                 let Position = ChilSnapshot.val().Shop_ID;
-                unmodifiableFunction(Name, Position);
-            }
-        )
+//                  let Name = ChilSnapshot.val().Brand_Name;
+//                  let Position = ChilSnapshot.val().Shop_ID;
+//                 unmodifiableFunction(Name, Position);
+//             }
+//         )
      
-    });
-}
-function  unmodifiableFunction(Name, Position){
-    let Name_ = Name;
-    let Position_ = Position;
-    obj_1.push(
-                    {
-                        Brand: Name_,
-                        Shop: Position_
-                    });
-                console.log(obj_1);
-}
-window.onload = function() {
-  div_content();
-};
+//     });
+// }
+// function  unmodifiableFunction(Name, Position){
+//     let Name_ = Name;
+//     let Position_ = Position;
+//     obj_1.push(
+//                     {
+//                         Brand: Name_,
+//                         Shop: Position_
+//                     });
+//                 console.log(obj_1);
+// }
+
+
+
+// window.onload = function() {
+//   div_content();
+// };
 
 
 
@@ -99,7 +102,10 @@ $(document).ready(function(){
  });
 });
 </script>
-<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+
+
+<!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
@@ -120,4 +126,4 @@ $(document).ready(function(){
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
  
-  </script>
+  </script> -->
