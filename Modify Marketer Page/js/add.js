@@ -37,8 +37,6 @@
     var domain_gst = document.getElementById("domain_GST").value;
     var shop_address_ = document.getElementById("shop_address_").value;
     var Total_cost_ = document.getElementById("total12_").value;
-    // var gst_ = document.getElementById("GST_").value;
-
     var Client_address_ = document.getElementById("address_").value;
     var date_ = document.getElementById("demo").value;
     var select_domain_ = document.getElementById("domain_").value;

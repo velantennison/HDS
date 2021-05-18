@@ -368,5 +368,110 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/index.js"></script>
+
+<!-- <script>
+
+
+  document.getElementById("paid").onclick = function () {
+
+    add(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18);
+  //  firebase.database().ref().child('Marketors_Projects').on('value', function(snapshot) {
+   
+  //      snapshot.forEach(
+  //          function(ChilSnapshot) {            
+  //               let Name = ChilSnapshot.val().Brand_Name;
+  //               let Position = ChilSnapshot.val().Shop_ID;
+  //               let Pic = ChilSnapshot.val().Img_url1;
+  //              unmodifiableFunction(Name, Position,Pic);
+  //          });
+  //  });
+alert("worked")
+  var Name_form = localStorage.getItem("Name");
+    var Mobile_form = localStorage.getItem("Mobile_number");
+    var Email_mar = localStorage.getItem("Email_12");
+
+  var playersRef1 = firebase.database().ref("Marketors_Projects/");
+
+playersRef1.orderByChild("MARKETER_EMAIL").equalTo(Email_mar).on("child_added", function(data) {
+      var client_num = data.val().Client_number;
+      var plan = data.val().Choosen_plan;
+      var c_address = data.val().Client_address;
+      var c_mail = data.val().Client_mail;
+      var c_name = data.val().Client_name;
+      var d_cost = data.val().Domain_cost;
+      var d_gst = data.val().Domain_Gst;
+      var p_price = data.val().Plan_price;
+      var p_number = data.val().project_number;
+      var d_name = data.val().select_domain;
+      var s_address = data.val().shop_address;
+      var date = data.val().Date;
+      var Total_1 = data.val().Total;
+      var color = data.val().Design_color;
+      var logo = data.val().Logo;
+      var m_mail = data.val().MARKETER_EMAIL;
+      var m_mobile = data.val().Marketer_mobile;
+      var P_des = data.val().Project_description;
+      var MON_YEAR = data.val().month_and_year;
+      var P_status = data.val().prject_status;
+
+      olddata(client_num,plan,c_address,c_mail,c_name,d_cost,d_gst,p_price,p_number,d_name,s_address,date,Total_1,color,logo,m_mail,m_mobile,P_des,MON_YEAR,P_status);
+
+}) 
+}
+
+function olddata(w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14,w15,w16,w17,w18,w19,w20){
+      t1=w1;
+      t2=w2;
+      t3=w3;
+      t4=w4;
+      t5=w5;
+      t6=w6;
+      t7=w7;
+      t8=w8;
+      t9=w9;
+      t10=w10;
+      t11=w11;
+      t12=w12;
+      t13=w13;
+      t14=w14;
+      t15=w15;
+      t16=w16;
+      t17=w17;
+      t18=w18;
+      t19=w19;
+      t20=w20;
+          
+          firebase.database().ref('Marketors_Old_Projects/' + t13 + t1).set({
+            Client_number: t1,
+            Choosen_plan:t2,
+            Client_address: t3,
+            Client_mail: t4,
+            Client_name:t5,
+                   Domain_cost:t6,
+                    Domain_Gst:t7,
+                    Plan_price:t8,
+                    project_number:t9,
+                    select_domain:t10,
+                    shop_address:t11,
+                    Date:t12,
+                    Total:t13,
+                    Design_color: t14,
+                    Logo:t15,
+                    MARKETER_EMAIL: t16,
+                    Marketer_mobile:t17,
+                    Project_description:t18,
+                    month_and_year: t19,
+                    prject_status:t20
+            });
+          alert("Data removed Successfully");
+         firebase.database().ref('Marketors_Projects/' + t13 + t1).remove():
+
+      }
+
+    
+
+
+
+</script> -->
 </body>
 </html>

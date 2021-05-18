@@ -305,8 +305,10 @@ fetch_1.orderByChild("Roll_number").equalTo(roll1_).on('child_added', function(d
   
     var button = document.createElement("div");
     button.id="button_div";
-  
 
+    var salary_BTN = document.createElement("button");
+    salary_BTN.innerHTML = "All Paid";
+    salary_BTN.id="paid";
     var p1 = document.createElement("p"); 
     var p2 = document.createElement("p");
     var p3 = document.createElement("p");
@@ -322,7 +324,7 @@ fetch_1.orderByChild("Roll_number").equalTo(roll1_).on('child_added', function(d
     var p15 = document.createElement("p");
     var p16 = document.createElement("p");
     var p17 = document.createElement("p");
-
+    var p18 = document.createElement("br");
     var Edit_BTN = document.createElement("button");
     Edit_BTN.innerHTML = "Edit";
     Edit_BTN.id="Edit_1";
@@ -431,11 +433,13 @@ if((a5 == "App Developer") || (a5 == "Web Developer")){
      completed.appendChild(p15);
      incompleted.appendChild(p16);
      salary.appendChild(p17);
+     button.appendChild(salary_BTN);
+     button.appendChild(p18);
      button.appendChild(Edit_BTN);
      button.appendChild(Block_BTN);
      rapper.appendChild(contact);
      rapper.appendChild(roll);
-     rapper.appendChild( pos);
+     rapper.appendChild(pos);
      rapper.appendChild(status);
      rapper.appendChild(details);
      rapper.appendChild(Acc);
@@ -444,6 +448,7 @@ if((a5 == "App Developer") || (a5 == "Web Developer")){
      rapper.appendChild(salary);
      rapper.appendChild(button);
      maindiv.appendChild(rapper);
+     
     }  
    }
    function add(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18){
