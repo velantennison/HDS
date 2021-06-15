@@ -407,14 +407,14 @@ float: right;
                     <label >Choose Plan</label>
                     <select id="cur_plan" class="form-control" onclick="measure(this.value)">
                       <option>Choose</option>
-                      <option>Starter Plan</option>
-                      <option>Standard Plan</option>
-                      <option>Pro Plan</option>
+                      <option>Started Plan</option>
+                      <option>Business Plan</option>
+                      <!-- <option>Pro Plan</option>
                       <option>Business Plan</option>
                       <option>Standard Plus Plan</option>
                       <option>Pro Plus Plan</option>
                       <option>Business Plus Plan</option>
-                      <option>Custom Plan</option>
+                      <option>Custom Plan</option> -->
                     </select>
                   </div>
                   <div id="plan_" class="form-group" style="display: none;" >
@@ -454,9 +454,9 @@ float: right;
                 <div class="card-footer" id="payment_button" style="display: block;">
                   <button type="submit" onclick="paymentProcess()" class="btn btn-primary" >Submit</button>
                 </div>
-                <div class="card-footer" id="submit_button" style="display: none;">
+                <!-- <div class="card-footer" id="submit_button" style="display: none;">
                   <button type="submit" class="btn btn-primary"  onclick="datainsert()">Submit</button>
-                </div> 
+                </div>  -->
             </div>
             <!-- /.card -->
                   <div class="form-group">
@@ -527,71 +527,71 @@ $(function () {
 
 function measure(x1){  
            console.log(x1);
-       if( x1=="Starter Plan"){
-         document.getElementById("Plan_price").value= "3186";
+      //  if( x1=="Started Plan"){
+      //    document.getElementById("Plan_price").value= "3500";
          
-         document.getElementById("plan_").style.display = "block";
+      //    document.getElementById("plan_").style.display = "block";
         
-         document.getElementById("domain_cost").value = "";
-         document.getElementById("domain_GST").value = "";
-         document.getElementById("domain").style.display = "none";
-         document.getElementById("domain1").style.display = "none";
-         document.getElementById("domain2").style.display = "none";
-         document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Standard Plan"){
-           document.getElementById("Plan_price").value="3328";
+      //    document.getElementById("domain_cost").value = "";
+      //    document.getElementById("domain_GST").value = "";
+      //    document.getElementById("domain").style.display = "none";
+      //    document.getElementById("domain1").style.display = "none";
+      //    document.getElementById("domain2").style.display = "none";
+      //    document.getElementById("payment_button").style.display = "block";
+      //    document.getElementById("submit_button").style.display = "none";
+      //  }
+      //  else if(x1=="Business Plan"){
+      //      document.getElementById("Plan_price").value="6500";
           
-           document.getElementById("domain_cost").value = "";
-         document.getElementById("domain_GST").value = "";
+      //      document.getElementById("domain_cost").value = "";
+      //    document.getElementById("domain_GST").value = "";
         
-           document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "none";
-           document.getElementById("domain1").style.display = "none";
-         document.getElementById("domain2").style.display = "none";
-         document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Pro Plan"){
-           document.getElementById("Plan_price").value="3611";
+      //      document.getElementById("plan_").style.display = "block";
+      //      document.getElementById("domain").style.display = "none";
+      //      document.getElementById("domain1").style.display = "none";
+      //    document.getElementById("domain2").style.display = "none";
+      //    document.getElementById("payment_button").style.display = "block";
+      //    document.getElementById("submit_button").style.display = "none";
+      //  }
+      //  else if(x1=="Pro Plan"){
+      //      document.getElementById("Plan_price").value="3611";
         
-           document.getElementById("domain_cost").value = "";
-         document.getElementById("domain_GST").value = "";
+      //      document.getElementById("domain_cost").value = "";
+      //    document.getElementById("domain_GST").value = "";
        
+      //      document.getElementById("plan_").style.display = "block";
+      //      document.getElementById("domain").style.display = "none";
+      //      document.getElementById("domain1").style.display = "none";
+      //    document.getElementById("domain2").style.display = "none";
+      //    document.getElementById("payment_button").style.display = "block";
+      //    document.getElementById("submit_button").style.display = "none";
+      //  }
+      //  else if(x1=="Business Plan"){
+      //      document.getElementById("Plan_price").value="8921";
+      //      document.getElementById("domain_cost").value = "";
+ 
+      //    document.getElementById("domain_GST").value = "";
+        
+      //      document.getElementById("plan_").style.display = "block";
+      //      document.getElementById("domain").style.display = "none";
+      //      document.getElementById("domain1").style.display = "none";
+      //      document.getElementById("domain2").style.display = "none";
+      //      document.getElementById("payment_button").style.display = "block";
+      //    document.getElementById("submit_button").style.display = "none";
+      //  }
+       if(x1=="Started Plan"){
+           document.getElementById("Plan_price").value="4130";
+          
+           
            document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "none";
-           document.getElementById("domain1").style.display = "none";
-         document.getElementById("domain2").style.display = "none";
-         document.getElementById("payment_button").style.display = "block";
+           document.getElementById("domain").style.display = "block";
+           document.getElementById("domain1").style.display = "block";
+           document.getElementById("domain2").style.display = "block";
+           document.getElementById("payment_button").style.display = "block";
          document.getElementById("submit_button").style.display = "none";
        }
        else if(x1=="Business Plan"){
-           document.getElementById("Plan_price").value="8921";
-           document.getElementById("domain_cost").value = "";
- 
-         document.getElementById("domain_GST").value = "";
-        
-           document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "none";
-           document.getElementById("domain1").style.display = "none";
-           document.getElementById("domain2").style.display = "none";
-           document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Standard Plus Plan"){
-           document.getElementById("Plan_price").value="3328";
-          
-           
-           document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "block";
-           document.getElementById("domain1").style.display = "block";
-           document.getElementById("domain2").style.display = "block";
-           document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Pro Plus Plan"){
-           document.getElementById("Plan_price").value="3611";
+           document.getElementById("Plan_price").value="7670";
           
            
          document.getElementById("plan_").style.display = "block";
@@ -601,30 +601,30 @@ function measure(x1){
            document.getElementById("payment_button").style.display = "block";
          document.getElementById("submit_button").style.display = "none";
        }
-       else if(x1=="Business Plus Plan"){
-           document.getElementById("Plan_price").value="8921";
+      //  else if(x1=="Business Plus Plan"){
+      //      document.getElementById("Plan_price").value="8921";
       
           
-           document.getElementById("plan_").style.display = "block";
-           document.getElementById("domain").style.display = "block";
-           document.getElementById("domain1").style.display = "block";
-         document.getElementById("domain2").style.display = "block";
-         document.getElementById("payment_button").style.display = "block";
-         document.getElementById("submit_button").style.display = "none";
-       }
-       else if(x1=="Custom Plan"){
+      //      document.getElementById("plan_").style.display = "block";
+      //      document.getElementById("domain").style.display = "block";
+      //      document.getElementById("domain1").style.display = "block";
+      //    document.getElementById("domain2").style.display = "block";
+      //    document.getElementById("payment_button").style.display = "block";
+      //    document.getElementById("submit_button").style.display = "none";
+      //  }
+      //  else if(x1=="Custom Plan"){
         
-           document.getElementById("domain_cost").value = "";
-         document.getElementById("domain_GST").value = "";
-         document.getElementById("Plan_price").value="0";
+      //      document.getElementById("domain_cost").value = "";
+      //    document.getElementById("domain_GST").value = "";
+      //    document.getElementById("Plan_price").value="0";
       
-           document.getElementById("plan_").style.display = "none";
-           document.getElementById("domain").style.display = "none";
-           document.getElementById("domain1").style.display = "none";
-         document.getElementById("domain2").style.display = "none";
-         document.getElementById("payment_button").style.display = "none";
-         document.getElementById("submit_button").style.display = "block";
-       }
+      //      document.getElementById("plan_").style.display = "none";
+      //      document.getElementById("domain").style.display = "none";
+      //      document.getElementById("domain1").style.display = "none";
+      //    document.getElementById("domain2").style.display = "none";
+      //    document.getElementById("payment_button").style.display = "none";
+      //    document.getElementById("submit_button").style.display = "block";
+      //  }
       
     }
   function prod_no(){

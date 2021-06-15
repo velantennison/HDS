@@ -46,7 +46,6 @@ console.log(obj_1);
 function div_content(){
    
     firebase.database().ref().child('Test2/Accessories/').on('value', function(snapshot) {
-    
         snapshot.forEach(
             function(ChilSnapshot) {            
                  let Name = ChilSnapshot.val().Brand_Name;

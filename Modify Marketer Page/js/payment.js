@@ -41,7 +41,11 @@ document.getElementById("sec_form").addEventListener('keyup', function(){
         }
     
     });
-function paymentProcess(){
+
+
+
+function paymentProcess() {
+    // alert("hello velan");
    var Tot_ = document.getElementById("total12_").value;
    var imgge = document.getElementById("test1").src;
 var options = {

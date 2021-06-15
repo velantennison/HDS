@@ -136,14 +136,14 @@ function fetch(){
         document.getElementById("complted_tasks").innerHTML = count + "/20";
         var D_count = document.getElementById("digit_count").innerHTML;
         console.log("ready" + D_count);
-        if(count <= 20){
-         salary = (count * 800) + (D_count * 100);
+        if(count <= 12){
+         salary = (count * 1500) + (D_count * 100);
         // alert(salary);
 
          document.getElementById("salary").innerHTML = salary;
         }
-        else if(count > 20){
-          salary = ((count - 20) * 400) + 16000 + (D_count * 100);
+        else if(count > 12){
+          salary = ((count - 12) * 1000) + 18000 + (D_count * 100);
           document.getElementById("salary").innerHTML = salary;
         }
         // else if((count > 40) && (count <= 50)  ){
