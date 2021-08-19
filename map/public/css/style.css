@@ -1,0 +1,110 @@
+button{
+    color: cornflowerblue;
+    min-width: auto;
+    min-height: 25px;
+    margin-left: 33.33%;
+    margin-top: 15px;
+}
+#map {
+    height:100vh;
+    width: 100%;
+    position: relative;
+}
+
+.formBlock {
+
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    z-index: 999;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    border-radius: 5px;
+    width: 15%;
+}
+
+.leaflet-top .leaflet-control {
+    margin-top: 180px;
+}
+
+.input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+#form {
+    padding: 0;
+    margin: 0;
+}
+input:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.leaflet-control-layers-toggle {
+    width: 70px;
+    height: 70px;
+}
+.leaflet-control-layers-toggle {
+    background-size: 60px 60px;
+}
+@media only screen and (max-width:320px)  { 
+    #map {
+        width: 75%;
+       
+    }
+ }
+ @media only screen and (max-width:480px)  { 
+    .leaflet-control-layers-toggle {
+        background-size: 40px 40px;
+        width: 60px;
+        height: 60px;
+    }
+    #map {
+    width: 100%;
+} 
+}
+@media only screen and (max-width:600px)  { 
+    .leaflet-control-layers-toggle {
+        background-size: 40px 40px;
+        width: 60px;
+        height: 60px;
+    }
+    #map {
+    width: 100%;
+}
+.formBlock {
+    width: 85%;
+}
+}
+
+@media only screen and (max-width:1025px) { 
+    .formBlock {
+        width: 90%;
+    }
+    #map {
+    width: 75%;
+    position: relative;
+} }
+@media only screen and (max-width:1281px) { 
+    .leaflet-control-layers-toggle {
+        background-size: 40px 40px;
+        width: 60px;
+        height: 60px;
+    }
+    #map {
+    width: 100%;
+    position: relative;
+} 
+}
+
+#back{
+    position: absolute;
+    left: 42%;
+    color: cornflowerblue;
+    text-align: center;
+}
