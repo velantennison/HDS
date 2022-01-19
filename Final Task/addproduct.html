@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add products</title>
+        <style>
+            #add_product {
+                width: 99%;
+                background-color: rgb(177, 184, 184);
+                height: 700px;
+                position: absolute;
+            }
+            #form {
+                margin-left: 8%;
+                margin-right: 10%;
+                margin-top: 2%;
+                width: 80%;
+                height: 580px;
+                background-color: white;
+                padding: 2%;
+
+            }
+            input,select {
+                width: 50%;
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="add_product">
+            <div id="form">
+                <h2>Add Product</h2>
+                <form>
+                    <input type="file"><br><br>
+                    <label>Product Name</label><br><br>
+                    <input type="text" ><br><br>
+                    <label>Product category</label><br><br>
+                    <select name="category" id="category">
+                        <option value="Mobiles">Mobiles</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Fashion">Fashion</option>
+                        <option value="Appliances">Appliances</option>
+                        <option value="Laptops">Laptops</option>
+                      </select><br><br>
+                    <label>Product Brand</label><br><br>
+                    <input type="number"><br><br>
+                    <label>Product Price</label><br><br>
+                    <input type="number"><br><br>
+                    <label>Product Details</label><br><br>
+                    <input type="text"><br><br>
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,12 +1,12 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyBHMZB5nJXtm3UAnVACsxR-LXyK8KtVdno",
-    authDomain: "hyper-mart-shopping.firebaseapp.com",
-    databaseURL: "https://hyper-mart-shopping-default-rtdb.firebaseio.com",
-    projectId: "hyper-mart-shopping",
-    storageBucket: "hyper-mart-shopping.appspot.com",
-    messagingSenderId: "306358878756",
-    appId: "1:306358878756:web:9de20019ab10ca65998eb1",
-    measurementId: "G-8FNG928M5F"
+  apiKey: "AIzaSyDlAHAP09N5CVchxRdDcEv-LDdXTMnouyk",
+  authDomain: "hds-admin.firebaseapp.com",
+  databaseURL: "https://hds-admin.firebaseio.com",
+  projectId: "hds-admin",
+  storageBucket: "hds-admin.appspot.com",
+  messagingSenderId: "646749977065",
+  appId: "1:646749977065:web:e4789295f85716fe123378",
+  measurementId: "G-9XB29E6NGE"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSV to EXCEL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" crossorigin="anonymous">
+  <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="./css/index.css"> 
+</head>
+<body>
+
+  <div id = "header">
+    <p id = "error"></p>
+    <input type="file" id="fileUpload" accept=".csv,.xml,.json,.xls,.xlsx" />
+    <input type="button" id="upload" value="Upload" onclick="Upload()" />
+    <button onclick="leftAlign()"><i class="fas fa-align-left"></i></button>
+    <button onclick="centerAlign()"><i class="fas fa-align-center"></i></button>
+    <button onclick="rightAlign()"><i class="fas fa-align-right"></i></button>
+     <button onclick="justify()"><i class="fas fa-align-justify"></i></button>
+     <span id="searchtab" style="width: 20%;border:  2px solid black;display: inline-block;">
+      <input type="search" id="myInput" onkeyup="filter()" placeholder="Search ....." title="Type in a name" style="
+          border:  none;
+          background: none;
+          ">
+      </span>
+
+  <button id ="down" onmouseover="showdown()" onmouseout="unshowdown()">
+    Download
+  </button>
+  <div id="downs" onmouseover="showdown()" onmouseout="unshowdown()" >
+    <span onclick="downloadCSV()">  Download as CSV</span>
+    <span onclick="downloadJsonFile()">  Download as JSON</span>
+    <span onclick="downloadXml()">  Download as XML</span>
+    <span onclick="downloadexcel()">  Download as XLSX</span>
+  </div>
+  </div><br>
+
+  <div id="options" oncontextmenu="return false">
+    <span onmouseover="show()" onmouseout="unshow()">Insert  &nbsp;<i style="position: relative;left: 73px;" class="fa fa-angle-right" aria-hidden="true"></i></span>
+    <span onclick="deleteColumn()">Delete Column</span>
+    <span onclick="deleteRows()">Delete Row</span>
+    <span onmouseover="sort()" onmouseout="unsort()">Sort by<i style="position: relative;left: 73px;" class="fa fa-angle-right" aria-hidden="true"></i></span>
+    <span onclick="showall()" onmouseover="view()" onmouseout="unview()">View  &nbsp;&nbsp;<i style="position: relative;left: 73px;" class="fa fa-angle-right" aria-hidden="true"></i></span>
+    <div id="viewall"  style="display: none;" onmouseover="view()" onmouseout="unview()">
+      <span onclick="limitshow(obj_1.length-1)">All Row</span>
+      <span onclick="limitshow(10)">10 Row</span>
+      <span onclick="limitshow(50)">50 Row</span>
+      <span onclick="limitshow(100)">100 Row</span>
+    </div>
+    <div id="sot" style="display: none;" onmouseover="sort()" onmouseout="unsort()" >
+      <span onclick="ascsortTable()">Ascending</span>
+      <span onclick="dessortTable()">Descending</span>
+    </div>
+    <div id="opts" style="display: none;" onmouseover="show()" onmouseout="unshow()">
+      <span onclick="beforeRows()" >Before Row</span>
+      <span onclick="addRows()" >After Row</span>
+      <span onclick = "beforeColumn()" >Before Column</span>
+      <span onclick = "addColumn()" >After Column</span> 
+    </div>
+  </div>
+
+  <div id="TAB" contenteditable spellcheck="false">
+  </div>
+  <div  id="pagediv" style="visibility: hidden;">
+  <a href="javascript:prevPage()" id="btn_prev">Prev</a>
+  <a href="javascript:nextPage()" id="btn_next">Next</a>
+  page: <span id="page"></span>
+</div>
+</body>
+<script type="text/javascript" src="./js/index.js">
+  
+</script>
+</html>

@@ -2,37 +2,37 @@ var count;
 // var Brand,Shop;
 const obj_1 = [];
 
-var x,y;
-console.log(obj_1);
-function div_content(){
+// var x,y;
+// console.log(obj_1);
+// function div_content(){
    
-    firebase.database().ref().child('Test2/Accessories/').on('value', function(snapshot) {
+    // firebase.database().ref().child('Test2/Accessories/').on('value', function(snapshot) {
     
-        snapshot.forEach(
-            function(ChilSnapshot) {
+    //     snapshot.forEach(
+    //         function(ChilSnapshot) {
                                  
-                 let Name = ChilSnapshot.val().Brand_Name;
-                 let Position = ChilSnapshot.val().Shop_ID;
-                unmodifiableFunction(Name, Position);
-            }
-        )
-        changePage(1);
-    });
-}
-function  unmodifiableFunction(Name, Position){
-    let Name_ = Name;
-    let Position_ = Position;
-    obj_1.push(
-                    {
-                        Brand: Name_,
-                        Shop: Position_
-                    });
-                console.log(obj_1);
-}
+    //              let Name = ChilSnapshot.val().Brand_Name;
+    //              let Position = ChilSnapshot.val().Shop_ID;
+    //             unmodifiableFunction(Name, Position);
+    //         }
+    //     )
+        // changePage(1);
+    // });
+// }
+// function  unmodifiableFunction(Name, Position){
+//     let Name_ = Name;
+//     let Position_ = Position;
+//     obj_1.push(
+//                     {
+//                         Brand: Name_,
+//                         Shop: Position_
+//                     });
+//                 console.log(obj_1);
+// }
 
 
 var current_page = 1;
-var records_per_page = 6;
+var records_per_page = 2;
 
 // var objJson = [
 //     { adName: "AdName 1"},
@@ -67,34 +67,37 @@ function changePage(page)
 {
     var btn_next = document.getElementById("btn_next");
     var btn_prev = document.getElementById("btn_prev");
-    var listing_table = document.getElementById("listingTable");
+    var listing_table = document.getElementById("myTable");
     var page_span = document.getElementById("page");
+    // table = document.getElementById("myTable");
  
     // Validate page
         if (page < 1) {
             page = 1;
             // listing_table.innerHTML += "<b>Brand Name: </b>" + obj_1[i].Brand + "<br>" + "<b>Shop Number:</b>" + obj_1[i].Shop + "<br>";
         } 
-    if (page > numPages()) page = numPages();
+    if (page > numPages()) 
+        page = numPages();
 
     listing_table.innerHTML = "";
 
     for (var i = (page-1) * records_per_page; i < (page * records_per_page) && i < obj_1.length; i++) {
-        listing_table.innerHTML += "<b>Brand Name: </b>" + obj_1[i].Brand + "<br>" + "<b>Shop Number:</b>" + obj_1[i].Shop + "<br>";
+        listing_table.appendChild(obj_1[i]);
+        // listing_table.innerHTML += "<b>Brand Name: </b>" + obj_1[i].Brand + "<br>" + "<b>Shop Number:</b>" + obj_1[i].Shop + "<br>";
     }
     page_span.innerHTML = page + "/" + numPages();
 
-    // if (page == 1) {
-    //     btn_prev.style.visibility = "hidden";
-    // } else {
-    //     btn_prev.style.visibility = "visible";
-    // }     
+    if (page == 1) {
+        btn_prev.style.visibility = "hidden";
+    } else {
+        btn_prev.style.visibility = "visible";
+    }     
 
-    // if (page == numPages()) {
-    //     btn_next.style.visibility = "hidden";
-    // } else {
-    //     btn_next.style.visibility = "visible";
-    // }
+    if (page == numPages()) {
+        btn_next.style.visibility = "hidden";
+    } else {
+        btn_next.style.visibility = "visible";
+    }
 }
 
 function numPages()
@@ -102,8 +105,8 @@ function numPages()
     return Math.ceil(obj_1.length / records_per_page);
 }
 
-window.onload = function() {
+// window.onload = function() {
   
-    div_content();
+//     div_content();
     
-};
+// };
